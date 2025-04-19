@@ -1,4 +1,34 @@
-.sass-cache/
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+.cache/
+
+# Testing
+coverage/
+cypress/videos/
+cypress/screenshots/
+*.log
+
+# VS Code & IDE settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Sass & CSS maps (OK to ignore)
 *.css.map
 *.sass.map
 *.scss.map
+
+# Sass cache (fine to ignore)
+.sass-cache/
