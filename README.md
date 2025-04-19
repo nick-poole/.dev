@@ -13,8 +13,8 @@ Built with:
 - HTML
 - Sass (SCSS)
 - JavaScript
+- Cypress for testing
 - [Optional] Node.js for dev tooling
-- [Optional] Cypress or Jest for testing
 
 Deployed via Netlify.
 
@@ -26,13 +26,36 @@ Deployed via Netlify.
 
 - [x] Clean semantic HTML
 - [x] Light/Dark mode toggle
+- [x] Accessibility audit and fixes
+- [x] Lighthouse optimization
+- [ ] Integrate Cypress Testing
+- [ ] Copy Curation
 - [ ] Contact form with spam protection
+- [ ] Adjust color palette
+- [ ] Curate icons/images
+- [ ] Import an update resume/CV
 - [ ] Portfolio/project grid with filters or tags
-- [ ] Accessibility audit and fixes
-- [ ] Lighthouse optimization
+- [ ] Deploy on Netlify
+- [ ] JS splitting & image compression
+- [ ] Add sitemap
 - [ ] Easter egg: `/everyone-starts-somewhere.html`
 
 ## Commit Log
+
+[4/19/25]
+
+- **refactor: improve semantic HTML and WCAG 2.1 AA accessibility**
+  - Added skip link and main landmark region for screen reader navigation
+  - Refactored all headings to follow semantic hierarchy (h1 → h4)
+  - Added aria-labels to icon-only links (GitHub, LinkedIn, social icons)
+  - Marked decorative images and divs with aria-hidden="true"
+  - Updated nav toggle and theme button to be keyboard accessible
+  - Implemented rel="noopener noreferrer" for all target="_blank" links
+  - Removed title attributes and avoided unnecessary tooltip clutter
+  - Standardized aria-label tone to 3rd person ("Nick's profile") for clarity
+  - Ensured all form inputs have proper labels and required attributes
+  - Improved dark theme toggle state tracking with aria-pressed
+  - Cleaned up redundant JS and began exploring performance optimizations
 
 [4/18/25]
 

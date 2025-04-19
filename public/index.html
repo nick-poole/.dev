@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-   <html lang="en">
+   <html lang="en-US">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,21 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="css/styles.css">
 
       <title>Nick Poole | Web Developer | Portfolio</title>
    </head>
    <body>
+   <div id="top"></div>
+   <a href="#main-content" class="skip-link">Skip to main content</a>
+
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
             <a href="#" class="nav__logo">
                <span class="nav__logo-circle">N</span>
 
-               <span class="nav__logo-name">Nick Poole.</span>
+               <span class="nav__logo-name">Nick Poole</span>
             </a>
 
             <div class="nav__menu" id="nav-menu">
@@ -49,25 +52,38 @@
                </ul>
 
                <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-line"></i>
+               <div class="nav__close"
+                    id="nav-close"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Close menu">
+                      <i class="ri-close-line" aria-hidden="true"></i>
                </div>
             </div>
 
             <div class="nav__buttons">
-               <!-- Theme button -->
-               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <!-- Toggle Dark Mode -->
+               <i class="ri-moon-line change-theme"
+                  id="theme-button"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Toggle dark mode"
+                  aria-pressed="false"></i>
 
-               <!-- Toggle button -->
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-4-line"></i>
+               <!-- Toggle menu button -->
+               <div class="nav__toggle"
+                    id="nav-toggle"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Open navigation menu">
+                      <i class="ri-menu-4-line" aria-hidden="true"></i>
                </div>
             </div>
          </nav>
       </header>
 
       <!--==================== MAIN ====================-->
-      <main class="main">
+      <main class="main" id="main-content">
          <!--==================== HOME ====================-->
          <section class="home section" id="home">
             <div class="home__container container grid">
@@ -77,25 +93,25 @@
 
                <div class="home__perfil">
                   <div class="home__image">
-                     <img src="assets/images/home-perfil.jpg" alt="image" class="home__img">
-                     <div class="home__shadow"></div>
+                     <img src="images/home-perfil.jpg" alt="Profile picture of Nick Poole" class="home__img">
+                     <div class="home__shadow" aria-hidden="true"></div>
 
-                     <img src="assets/images/curved-arrow.svg" alt="" class="home__arrow">
-                     <img src="assets/images/random-lines.svg" alt="" class="home__line">
+                     <img src="images/curved-arrow.svg" alt="" aria-hidden="true" class="home__arrow">
+                     <img src="images/random-lines.svg" alt="" aria-hidden="true" class="home__line">
 
-                     <div class="geometric-box"></div>
+                     <div class="geometric-box" aria-hidden="true"></div>
                   </div>
 
                   <div class="home__social">
-                     <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="View Nick's Instagram page">
                         <i class="ri-instagram-line"></i>
                      </a>
 
-                     <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
+                     <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="View Nick's LinkedIn page">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
 
-                     <a href="https://github.com/" target="_blank" class="home__social-link">
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="View Nick's Github" >
                         <i class="ri-github-line"></i>
                      </a>
                   </div>
@@ -103,12 +119,12 @@
 
                <div class="home__info">
                   <p class="home__description">
-                     <b>Frontend Developer</b>, with knowledge in web
+                     <b>Web Developer</b>, with knowledge in web
                      development and design, I offer the best
                      projects resulting in quality work.
                   </p>
 
-                  <a href="#about" class="home__scroll">
+                  <a href="#about" class="home__scroll" aria-label="Scroll down to the about section">
                      <div class="home__scroll-box">
                         <i class="ri-arrow-down-s-line"></i>
                      </div>
@@ -128,12 +144,12 @@
 
                <div class="about__perfil">
                   <div class="about__image">
-                     <img src="assets/images/about-perfil.jpg" alt="image" class="about__img">
+                     <img src="images/about-perfil.jpg" alt="image" class="about__img">
 
-                     <div class="about__shadow"></div>
+                     <div class="about__shadow" aria-hidden="true"></div>
 
-                     <div class="geometric-box"></div>
-                     <img src="assets/images/random-lines.svg" alt="" class="about__line">
+                     <div class="geometric-box" aria-hidden="true"></div>
+                     <img src="images/random-lines.svg" alt="" aria-hidden="true" class="about__line">
                      <div class="about__box"></div>
                   </div>
                </div>
@@ -159,7 +175,7 @@
                         <i class="ri-send-plane-line"></i> Contact Me
                      </a>
 
-                     <a href="https://www.linkedin.com/" target="_blank" class="button__ghost">
+                     <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="button__ghost" aria-label="View Nick's LinkedIn page">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
                   </div>
@@ -179,11 +195,11 @@
 
                   <div class="services__content">
                      <div class="services__icon">
-                        <div class="services__box"></div>
-                        <i class="ri-layout-4-line"></i>
+                        <div class="services__box" aria-hidden="true"></div>
+                        <i class="ri-layout-4-line" aria-hidden="true"></i>
                      </div>
 
-                     <h2 class="services__title">Web Design</h2>
+                     <h3 class="services__title">Web Design</h3>
 
                      <p class="services__description">
                         Beautiful and elegant designs with
@@ -198,11 +214,11 @@
 
                   <div class="services__content">
                      <div class="services__icon">
-                        <div class="services__box"></div>
-                        <i class="ri-code-box-line"></i>
+                        <div class="services__box" aria-hidden="true"></div>
+                        <i class="ri-code-box-line" aria-hidden="true"></i>
                      </div>
 
-                     <h2 class="services__title">Development</h2>
+                     <h3 class="services__title">Development</h3>
 
                      <p class="services__description">
                         Custom web development tailored to your
@@ -217,11 +233,11 @@
 
                   <div class="services__content">
                      <div class="services__icon">
-                        <div class="services__box"></div>
-                        <i class="ri-smartphone-line"></i>
+                        <div class="services__box" aria-hidden="true"></div>
+                        <i class="ri-smartphone-line" aria-hidden="true"></i>
                      </div>
 
-                     <h2 class="services__title">Mobile App</h2>
+                     <h3 class="services__title">Mobile App</h3>
 
                      <p class="services__description">
                         Design and transform website projects
@@ -242,16 +258,16 @@
             <div class="projects__container container grid">
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/images/project-1.jpg" alt="image" class="projects__img">
+                     <img src="images/project-1.jpg" alt="image" class="projects__img">
 
-                     <a href="#" class="projects__button button">
-                        <i class="ri-arrow-right-up-line"></i>
+                     <a href="#" class="projects__button button" aria-label="Visit Restaurant Website">
+                        <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
                      </a>
                   </div>
 
                   <div class="projects__content">
-                     <h3 class="projects__subtitle">Website</h3>
-                     <h2 class="projects__title">Restaurant Website</h2>
+                     <h4 class="projects__subtitle">Website</h4>
+                     <h3 class="projects__title">Restaurant Website</h3>
 
                      <p class="projects__description">
                         Project that you carry out in the design
@@ -261,28 +277,28 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://github.com/" target="_blank" class="projects__link">
-                        <i class="ri-github-line"></i> View
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-github-line" aria-hidden="true"></i> View
                      </a>
 
-                     <a href="https://dribbble.com/" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
+                     <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-dribbble-line" aria-hidden="true"></i> View
                      </a>
                   </div>
                </article>
 
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/images/project-2.jpg" alt="image" class="projects__img">
+                     <img src="images/project-2.jpg" alt="image" class="projects__img">
 
-                     <a href="#" class="projects__button button">
+                     <a href="#" class="projects__button button" aria-label="Visit Yoga Website">
                         <i class="ri-arrow-right-up-line"></i>
                      </a>
                   </div>
 
                   <div class="projects__content">
-                     <h3 class="projects__subtitle">App</h3>
-                     <h2 class="projects__title">Yoga App</h2>
+                     <h4 class="projects__subtitle">App</h4>
+                     <h3 class="projects__title">Yoga App</h3>
 
                      <p class="projects__description">
                         Project that you carry out in the design
@@ -292,28 +308,28 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://github.com/" target="_blank" class="projects__link">
-                        <i class="ri-github-line"></i> View
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-github-line" aria-hidden="true"></i> View
                      </a>
 
-                     <a href="https://dribbble.com/" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
+                     <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-dribbble-line" aria-hidden="true"></i> View
                      </a>
                   </div>
                </article>
 
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/images/project-3.jpg" alt="image" class="projects__img">
+                     <img src="images/project-3.jpg" alt="image" class="projects__img">
 
-                     <a href="#" class="projects__button button">
+                     <a href="#" class="projects__button button" aria-label="Visit Food Website">
                         <i class="ri-arrow-right-up-line"></i>
                      </a>
                   </div>
 
                   <div class="projects__content">
-                     <h3 class="projects__subtitle">App</h3>
-                     <h2 class="projects__title">Fast Food App</h2>
+                     <h4 class="projects__subtitle">App</h4>
+                     <h3 class="projects__title">Fast Food App</h3>
 
                      <p class="projects__description">
                         Project that you carry out in the design
@@ -323,28 +339,28 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://github.com/" target="_blank" class="projects__link">
-                        <i class="ri-github-line"></i> View
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-github-line" aria-hidden="true"></i> View
                      </a>
 
-                     <a href="https://dribbble.com/" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
+                     <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-dribbble-line" aria-hidden="true"></i> View
                      </a>
                   </div>
                </article>
 
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/images/project-1.jpg" alt="image" class="projects__img">
+                     <img src="images/project-1.jpg" alt="image" class="projects__img">
 
-                     <a href="#" class="projects__button button">
+                     <a href="#" class="projects__button button" aria-label="Visit Coffee Website">
                         <i class="ri-arrow-right-up-line"></i>
                      </a>
                   </div>
 
                   <div class="projects__content">
-                     <h3 class="projects__subtitle">Website</h3>
-                     <h2 class="projects__title">Coffee Delivery Website</h2>
+                     <h4 class="projects__subtitle">Website</h4>
+                     <h3 class="projects__title">Coffee Delivery Website</h3>
 
                      <p class="projects__description">
                         Project that you carry out in the design
@@ -354,28 +370,28 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://github.com/" target="_blank" class="projects__link">
-                        <i class="ri-github-line"></i> View
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-github-line" aria-hidden="true"></i> View
                      </a>
 
-                     <a href="https://dribbble.com/" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
+                     <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-dribbble-line" aria-hidden="true"></i> View
                      </a>
                   </div>
                </article>
 
                <article class="projects__card">
                   <div class="projects__image">
-                     <img src="assets/images/project-2.jpg" alt="image" class="projects__img">
+                     <img src="images/project-2.jpg" alt="image" class="projects__img">
 
-                     <a href="#" class="projects__button button">
+                     <a href="#" class="projects__button button" aria-label="Visit Barbershop Website">
                         <i class="ri-arrow-right-up-line"></i>
                      </a>
                   </div>
 
                   <div class="projects__content">
-                     <h3 class="projects__subtitle">Website</h3>
-                     <h2 class="projects__title">Barbershop Website</h2>
+                     <h4 class="projects__subtitle">Website</h4>
+                     <h3 class="projects__title">Barbershop Website</h3>
 
                      <p class="projects__description">
                         Project that you carry out in the design
@@ -385,12 +401,12 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://github.com/" target="_blank" class="projects__link">
-                        <i class="ri-github-line"></i> View
+                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-github-line" aria-hidden="true"></i> View
                      </a>
 
-                     <a href="https://dribbble.com/" target="_blank" class="projects__link">
-                        <i class="ri-dribbble-line"></i> View
+                     <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="projects__link">
+                        <i class="ri-dribbble-line" aria-hidden="true"></i> View
                      </a>
                   </div>
                </article>
@@ -415,13 +431,13 @@
                      you won't receive anything other than your reply.
                   </p>
 
-                  <div class="geometric-box"></div>
+                  <div class="geometric-box" aria-hidden="true"></div>
                </div>
 
                <div class="contact__mail">
-                  <h2 class="contact__title">
+                  <h3 class="contact__title">
                      Send Me A Message
-                  </h2>
+                  </h3>
 
                   <form action="" class="contact__form" id="contact-form">
                      <div class="contact__group">
@@ -455,7 +471,7 @@
                </div>
 
                <div class="contact__social">
-                  <img src="assets/images/curved-arrow.svg" alt="" class="contact__social-arrow">
+                  <img src="images/curved-arrow.svg" alt="" aria-hidden="true" class="contact__social-arrow">
 
                   <div class="contact__social-data">
                      <div>
@@ -469,16 +485,16 @@
                      </div>
 
                      <div class="contact__social-links">
-                        <a href="https://www.facebook.com/" class="contact__social-link" target="_blank">
-                           <i class="ri-facebook-circle-line"></i>
+                        <a href="https://www.facebook.com/" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="View Nick's Facebook page">
+                           <i class="ri-facebook-circle-line" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.instagram.com/" class="contact__social-link" target="_blank">
-                           <i class="ri-instagram-line"></i>
+                        <a href="https://www.instagram.com/" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="View Nick's LinkedIn page">
+                           <i class="ri-instagram-line" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.linkedin.com/" class="contact__social-link" target="_blank">
-                           <i class="ri-linkedin-box-line"></i>
+                        <a href="https://www.linkedin.com/" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="View Nick's LinkedIn page" >
+                           <i class="ri-linkedin-box-line" aria-hidden="true"></i>
                         </a>
                      </div>
                   </div>
@@ -505,22 +521,23 @@
             </ul>
 
             <span class="footer__copy">
-               &#169; All Rights Reserved By
-               <a href="#">Bedimcode.</a>
+               2025 &#169;
+               <a href="#">nickpoole.dev</a>
+               All Rights Reserved
             </span>
          </div>
       </footer>
 
       <!--========== SCROLL UP ==========-->
-      <a href="#" class="scrollup" id="scroll-up">
+      <a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
          <i class="ri-arrow-up-s-line"></i>
       </a>
 
       <!--=============== SCROLLREVEAL ===============-->
-      <script src="js/scrollreveal.min.js"></script>
+      <script src="js/scrollreveal.min.js" defer></script>
 
       <!--=============== EMAIL JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 
       <!--=============== MAIN JS ===============-->
       <script src="js/main.js"></script>
