@@ -1,14 +1,4 @@
 /*============= ACCESSIBILITY HELPERS =============*/
-// ICON TEMPLATES
-// --------------------------------------
-// 1. Decorative (ignored by screen readers)
-// <i class="ri-some-icon" aria-hidden="true"></i>
-//
-// 2. Interactive link icon (screen reader label)
-// <a href="..." aria-label="Describe link"><i class="ri-icon-name"></i></a>
-//
-// 3. Icon-only button
-// <button aria-label="Describe action"><i class="ri-icon-name"></i></button>
 
 /* Skip link */
 .skip-link {
