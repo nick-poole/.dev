@@ -1,3 +1,10 @@
+/*=============== UTILITY ===============*/
+.font-heading {
+	font-family: var(--heading-font);
+	font-weight: var(--font-semi-bold); // or bold if needed
+	letter-spacing: -0.02em;
+}
+
 /*=============== THEME ===============*/
 .nav__buttons {
 	display: flex;

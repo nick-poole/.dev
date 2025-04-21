@@ -165,7 +165,7 @@ const sr = ScrollReveal({
 	// reset: true // Animations repeat
 });
 
-sr.reveal(`.home__perfil, .about__image, .contact__mail`, { origin: 'right' });
+sr.reveal(`.home__profile, .about__image, .contact__mail`, { origin: 'right' });
 sr.reveal(
 	`.home__name, .home__info,
             .about__container .section__title-1, .about__info,

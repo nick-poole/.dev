@@ -42,6 +42,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[4/20/25]
+
+- **chore: update project section text, refine fonts, and swap icons for cleaner look**
+
 [4/19/25]
 
 - **refactor: improve semantic HTML and WCAG 2.1 AA accessibility**

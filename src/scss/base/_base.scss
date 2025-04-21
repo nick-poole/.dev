@@ -15,14 +15,19 @@ body {
 	background-color: var(--body-color);
 	color: var(--text-color);
 	transition: background-color 0.4s; /* for dark mode */
+	// line-height: 1.6;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	color: var(--title-color);
+	font-family: var(--heading-font);
 	font-weight: var(--font-bold);
+	color: var(--title-color);
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+	// text-transform: uppercase;
 }
 
 ul {
