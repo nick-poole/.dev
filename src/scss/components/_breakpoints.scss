@@ -17,6 +17,10 @@
 			height: 330px;
 			right: -2.5rem;
 		}
+		&__stack-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.5rem;
+		}
 	}
 
 	.contact {
@@ -29,6 +33,15 @@
 		}
 	}
 }
+/* For small devices */
+@media screen and (min-width: 340px) {
+	.about {
+		&__stack-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1rem;
+		}
+	}
+}
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
@@ -37,6 +50,11 @@
 	.projects__container {
 		grid-template-columns: 350px;
 		justify-content: center;
+	}
+	.about {
+		&__stack-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 
 	.contact {

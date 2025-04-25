@@ -42,6 +42,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[4/24/25]
+
+- **feat: added icons to About section and curated Services content**
+
 [4/20/25]
 
 - **chore: update project section text, refine fonts, and swap icons for cleaner look**
