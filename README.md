@@ -42,6 +42,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[5/2/25]
+
+- **chore: added project card images, reshuffled layout, and dropped in fresh copy**
+
 [4/24/25]
 
 - **feat: added icons to About section and curated Services content**
