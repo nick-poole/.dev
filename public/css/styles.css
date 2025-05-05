@@ -97,6 +97,10 @@ img {
   letter-spacing: -0.02em;
 }
 
+.accent {
+  color: var(--first-color);
+}
+
 /*=============== THEME ===============*/
 .nav__buttons {
   display: flex;

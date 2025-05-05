@@ -42,6 +42,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[5/5/25]
+
+- **chore: reconfigures boxicons to font injection via CDN**
+
 [5/2/25]
 
 - **chore: added project card images, reshuffled layout, and dropped in fresh copy**
