@@ -44,6 +44,8 @@ Deployed via Netlify.
 
 [5/5/25]
 
+- **feat: added certs section + polished copy to make it resonate**
+
 - **chore: reconfigures boxicons to font injection via CDN**
 
 [5/2/25]
