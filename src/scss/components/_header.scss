@@ -16,12 +16,22 @@
 	justify-content: space-between;
 	align-items: center;
 
+	// &__logo {
+	// 	display: flex;
+	// 	column-gap: 0.5rem;
+	// 	align-items: center;
+	// 	font-weight: var(--font-semi-bold);
+	// 	color: var(--title-color);
+	// }
 	&__logo {
-		display: flex;
-		column-gap: 0.5rem;
-		align-items: center;
-		font-weight: var(--font-semi-bold);
-		color: var(--title-color);
+		background-image: url('/public/images/logos/np-bar-dark.png');
+		background: cover;
+		background-position: 50% 50%;
+		height: 45px;
+		width: 250px;
+	}
+	&__logo-img {
+		height: 50px;
 	}
 	&__logo-circle,
 	&__toggle {

@@ -298,12 +298,14 @@ body.dark-theme {
   align-items: center;
 }
 .nav__logo {
-  display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-  align-items: center;
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
+  background-image: url("/public/images/logos/np-bar-dark.png");
+  background: cover;
+  background-position: 50% 50%;
+  height: 45px;
+  width: 250px;
+}
+.nav__logo-img {
+  height: 50px;
 }
 .nav__logo-circle, .nav__toggle {
   width: 32px;

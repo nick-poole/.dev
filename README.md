@@ -28,41 +28,46 @@ Deployed via Netlify.
 - [x] Light/Dark mode toggle
 - [x] Accessibility audit and fixes
 - [x] Lighthouse optimization
+- [x] Adjust color palette
+- [x] Curate icons/images
+- [x] Deploy on Netlify
 - [ ] Integrate Cypress Testing
 - [ ] Copy Curation
 - [ ] Contact form with spam protection
-- [ ] Adjust color palette
-- [ ] Curate icons/images
 - [ ] Import an update resume/CV
 - [ ] Portfolio/project grid with filters or tags
-- [ ] Deploy on Netlify
 - [ ] JS splitting & image compression
 - [ ] Add sitemap
+- [ ] Deploy to domain URL
 - [ ] Easter egg: `/everyone-starts-somewhere.html`
 
 ## Commit Log
 
+[7/19/25]
+
+- **feat: adds images and logo**
+
 [5/5/25]
 
-- **feat: added certs section + polished copy to make it resonate**
+- **feat: adds certs section + polished copy to make it resonate**
 
 - **chore: reconfigures boxicons to font injection via CDN**
 
 [5/2/25]
 
-- **chore: added project card images, reshuffled layout, and dropped in fresh copy**
+- **chore: adds project card images, reshuffled layout, and dropped in fresh copy**
 
 [4/24/25]
 
-- **feat: added icons to About section and curated Services content**
+- **feat: adds icons to About section and curated Services content**
 
 [4/20/25]
 
-- **chore: update project section text, refine fonts, and swap icons for cleaner look**
+- **chore: updates project section text, refine fonts, and swap icons for cleaner look**
 
 [4/19/25]
 
-- **refactor: improve semantic HTML and WCAG 2.1 AA accessibility**
+- **refactor: improves semantic HTML and WCAG 2.1 AA accessibility**
   - Added skip link and main landmark region for screen reader navigation
   - Refactored all headings to follow semantic hierarchy (h1 → h4)
   - Added aria-labels to icon-only links (GitHub, LinkedIn, social icons)
