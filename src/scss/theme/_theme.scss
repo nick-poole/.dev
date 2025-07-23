@@ -20,7 +20,11 @@
 	font-size: 1.25rem;
 	color: var(--title-color);
 	cursor: pointer;
-	transition: color 0.3s;
+	transition: color 2.9s ease-in-out;
+	-webkit-transition: color 2.9s ease-in-out;
+	-moz-transition: color 2.9s ease-in-out;
+	-ms-transition: color 2.9s ease-in-out;
+	-o-transition: color 2.9s ease-in-out;
 }
 
 /*========== Variables Dark theme ==========*/

@@ -29,10 +29,12 @@
 		<header class="header" id="header">
 			<nav class="nav container">
 				<a href="#" class="nav__logo">
-					<!-- <span class="nav__logo-circle">N</span>-->
-
-					<!-- <img src="images/logos/np-bar-dark.png" alt="" class="nav__logo-img" /> -->
-					<!-- <span class="nav__logo-name">Nick Poole</span> -->
+					<span class="sr-only">Nick Poole - Web Developer</span>
+					<img
+						src="images/logos/np-bar-light.png"
+						alt=""
+						class="nav__logo-img logo-light fade-logo visible" />
+					<img src="images/logos/np-bar-dark.png" alt="" class="nav__logo-img logo-dark fade-logo" />
 				</a>
 
 				<div class="nav__menu" id="nav-menu">
@@ -110,30 +112,31 @@
 
 						<div class="home__social">
 							<a
-								href="https://www.instagram.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="home__social-link"
-								aria-label="View Nick's Instagram page">
-								<i class="ri-instagram-line"></i>
-							</a>
-
-							<a
 								href="https://www.linkedin.com/"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="home__social-link"
-								aria-label="View Nick's LinkedIn page">
+								aria-label="View Nick's LinkedIn page"
+								title="View Nick's LinkedIn page">
 								<i class="ri-linkedin-box-line"></i>
 							</a>
-
 							<a
 								href="https://github.com/"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="home__social-link"
-								aria-label="View Nick's Github">
-								<i class="ri-github-line"></i>
+								aria-label="View Nick's Github"
+								title="View Nick's Github">
+								<i class="ri-github-fill"></i>
+							</a>
+							<a
+								href="https://buymeacoffee.com/nickpoole"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="home__social-link"
+								aria-label="Buy me a Coffee"
+								title="Buy me a Coffee">
+								<i class="ri-drinks-line"></i>
 							</a>
 						</div>
 					</div>
@@ -220,30 +223,66 @@
 								<span>Bootstrap</span>
 							</li>
 							<li class="about__tech">
-								<i class="bx bxl-tux" aria-hidden="true"></i>
-								<span>Linux</span>
+								<i class="bx bxl-figma" aria-hidden="true"></i>
+								<span>Figma</span>
 							</li>
+
 							<li class="about__tech">
-								<i class="bx bxl-git" aria-hidden="true"></i>
-								<span>Git</span>
+								<i class="bx bxl-wordpress" aria-hidden="true"></i>
+								<span>Wordpress</span>
 							</li>
+
+							<li class="about__tech">
+								<i class="bx bxl-php" aria-hidden="true"></i>
+								<span>PHP</span>
+							</li>
+
 							<li class="about__tech">
 								<i class="bx bxl-mongodb" aria-hidden="true"></i>
 								<span>MongoDB</span>
 							</li>
+
+							<li class="about__tech">
+								<i class="bx bxl-git" aria-hidden="true"></i>
+								<span>Git</span>
+							</li>
+
+							<li class="about__tech">
+								<i class="bx bxl-tux" aria-hidden="true"></i>
+								<span>Linux</span>
+							</li>
+
+							<!--
+
+							<li class="about__tech">
+								<i class="bx" aria-hidden="true"></i>
+								<span>Tech</span>
+							</li>
+
+							-->
 						</ul>
 
 						<div class="about__contact">
 							<div class="about__buttons">
-								<a href="#contact" class="button">
-									<!-- <i class="ri-send-plane-line"></i> -->
-									<i class="ri-mail-send-fill"></i>
-									Contact Me
+								<a
+									href="https://flowcv.com/resume/prw5asp43g"
+									target="_blank"
+									rel="noopener noreferrer"
+									title="View Nick's Resume"
+									aria-label="View Nick's Resume"
+									class="button">
+									<i class="ri-file-list-3-line" aria-hidden="true"></i>
+									View Resume
 								</a>
 
-								<!-- <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="button__ghost" aria-label="View Nick's LinkedIn page">
-                        <i class="ri-linkedin-box-line"></i>
-                     </a> -->
+								<!-- <a
+									href="https://www.linkedin.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="button__ghost"
+									aria-label="View Nick's LinkedIn page">
+									<i class="ri-linkedin-box-line"></i>
+								</a> -->
 							</div>
 						</div>
 					</div>
@@ -322,14 +361,78 @@
 				</h2>
 
 				<div class="projects__container container grid">
+					<!--======== BH&A CF BCBS ========-->
+					<article class="projects__card">
+						<div class="projects__image">
+							<img src="images/bha-card-640x425.jpg" alt="image" class="projects__img" />
+
+							<a
+								href="https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="projects__button button"
+								title="Visit carefirst.com"
+								aria-label="Visit carefirst.com">
+								<i class="ri-external-link-line"></i>
+							</a>
+						</div>
+
+						<div class="projects__content">
+							<h4 class="projects__subtitle">CareFirst BCBS</h4>
+							<h3 class="projects__title">Behavioral Health &amp; Addiction</h3>
+
+							<p class="projects__description">
+								I led the development and delivery of CareFirst’s mental health landing page, ensuring
+								an accessible, SEO-optimized user experience aligned with enterprise goals.
+							</p>
+						</div>
+
+						<span>Enterprise</span>
+					</article>
+					<!--======== Supporting You Through Changes CF BCBS ========-->
+					<article class="projects__card">
+						<div class="projects__image">
+							<img src="images/sytc-card-2-640x425.jpg" alt="image" class="projects__img" />
+
+							<a
+								href="https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="projects__button button"
+								title="Visit carefirst.com/fedhmo"
+								aria-label="Visit carefirst.com/fedhmo">
+								<i class="ri-external-link-line"></i>
+							</a>
+						</div>
+
+						<div class="projects__content">
+							<h4 class="projects__subtitle">CareFirst BCBS</h4>
+							<h3 class="projects__title">Supporting You Through Changes</h3>
+
+							<p class="projects__description">
+								I handled the full development and implementation, adapting provided copy into a
+								responsive, accessible layout that integrates seamlessly with the broader site
+								structure.
+							</p>
+						</div>
+
+						<div class="projects__buttons">
+							<span>Enterprise</span>
+						</div>
+					</article>
 					<!--======== AL-HAKEEM's TONSORIAL ========-->
 					<article class="projects__card">
 						<div class="projects__image">
 							<img src="images/aht-card-640x425.jpg" alt="image" class="projects__img" />
 
-							<a href="#" class="projects__button button" aria-label="Visit Restaurant Website">
-								<!-- <i class="ri-arrow-right-up-line" aria-hidden="true"></i> -->
-								<i class="ri-link" aria-hidden="true"></i>
+							<a
+								href="https://alhakeems.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="projects__button button"
+								title="Visit Al-Hakeem's Tonsorial"
+								aria-label="Visit Al-Hakeem's Tonsorial">
+								<i class="ri-external-link-line"></i>
 							</a>
 						</div>
 
@@ -346,21 +449,12 @@
 
 						<div class="projects__buttons">
 							<a
-								href="https://github.com/"
+								href="https://github.com/nick-poole/cliftonbey"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								Repo
-							</a>
-
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
+								<i class="ri-github-fill" aria-hidden="true"></i>
+								View Repo
 							</a>
 						</div>
 					</article>
@@ -370,8 +464,14 @@
 						<div class="projects__image">
 							<img src="images/hsm-card-640x425.jpg" alt="image" class="projects__img" />
 
-							<a href="#" class="projects__button button" aria-label="Visit Coffee Website">
-								<i class="ri-arrow-right-up-line"></i>
+							<a
+								href="https://haitiansensationmission.org/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="projects__button button"
+								title="Visit haitiansensationmission.org"
+								aria-label="Visit Haitian Sensation Mission dot org">
+								<i class="ri-external-link-line"></i>
 							</a>
 						</div>
 
@@ -388,21 +488,12 @@
 
 						<div class="projects__buttons">
 							<a
-								href="https://github.com/"
+								href="https://github.com/nick-poole/hsmission"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								View
-							</a>
-
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
+								<i class="ri-github-fill" aria-hidden="true"></i>
+								View Repo
 							</a>
 						</div>
 					</article>
@@ -413,10 +504,13 @@
 							<img src="images/nhr-card-640-425.jpg" alt="image" class="projects__img" />
 
 							<a
-								href="#"
+								href="https://newharlemrenaissance.com/"
+								target="_blank"
+								rel="noopener noreferrer"
 								class="projects__button button"
+								title="Visit newharlemrenaissance.com"
 								aria-label="Visit New Harlem Renaissance dot com">
-								<i class="ri-arrow-right-up-line"></i>
+								<i class="ri-external-link-line"></i>
 							</a>
 						</div>
 
@@ -433,62 +527,12 @@
 
 						<div class="projects__buttons">
 							<a
-								href="https://github.com/"
+								href="https://github.com/nick-poole/harlemren"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								View
-							</a>
-
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
-							</a>
-						</div>
-					</article>
-
-					<!--======== BH&A CF BCBS ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img src="images/bha-card-640x425.jpg" alt="image" class="projects__img" />
-
-							<a href="#" class="projects__button button" aria-label="Visit Barbershop Website">
-								<i class="ri-arrow-right-up-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">CareFirst BCBS</h4>
-							<h3 class="projects__title">Behavioral Health &amp; Addiction</h3>
-
-							<p class="projects__description">
-								I led the development and delivery of CareFirst’s mental health landing page, ensuring
-								an accessible, SEO-optimized user experience aligned with enterprise goals.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								View
-							</a>
-
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
+								<i class="ri-github-fill" aria-hidden="true"></i>
+								View Repo
 							</a>
 						</div>
 					</article>
@@ -498,8 +542,14 @@
 						<div class="projects__image">
 							<img src="images/ruf-card-640x425.jpg" alt="image" class="projects__img" />
 
-							<a href="#" class="projects__button button" aria-label="Visit Barbershop Website">
-								<i class="ri-arrow-right-up-line"></i>
+							<a
+								href="https://revolturbanfarms.org/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="projects__button button"
+								title="Visit revolturbanfarms.org"
+								aria-label="Visit Revolt Urban Farms dot org">
+								<i class="ri-external-link-line"></i>
 							</a>
 						</div>
 
@@ -508,40 +558,30 @@
 							<h3 class="projects__title">Revolt Urban Farms</h3>
 
 							<p class="projects__description">
-								I designed a mission-driven nonprofit website for Revolt Urban Farms, amplifying their
-								urban agriculture and community impact with clean, SEO-friendly design and optimized
-								performance.
+								I designed a mission-driven nonprofit website, amplifying their urban agriculture and
+								community impact with clean, SEO-friendly design and optimized performance.
 							</p>
 						</div>
 
 						<div class="projects__buttons">
 							<a
-								href="https://github.com/"
+								href="https://github.com/nick-poole/revolturbanfarms"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								View
-							</a>
-
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
+								<i class="ri-github-fill" aria-hidden="true"></i>
+								View Repo
 							</a>
 						</div>
 					</article>
 
 					<!--======== NEXTMETRO ========-->
-					<article class="projects__card">
+					<!-- <article class="projects__card">
 						<div class="projects__image">
 							<img src="images/nm-card-640x425.jpg" alt="image" class="projects__img" />
 
-							<a href="#" class="projects__button button" aria-label="Visit Next Metro dot live">
-								<i class="ri-arrow-right-up-line"></i>
+							<a href="#" target="_blank" class="projects__button button" aria-label="Visit Next Metro dot live">
+							<i class="ri-external-link-line"></i>
 							</a>
 						</div>
 
@@ -562,20 +602,12 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="projects__link">
-								<i class="ri-github-line" aria-hidden="true"></i>
-								View
+								<i class="ri-github-fill" aria-hidden="true"></i>
+								View Repo
 							</a>
 
-							<a
-								href="https://dribbble.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-dribbble-line" aria-hidden="true"></i>
-								View
-							</a>
 						</div>
-					</article>
+					</article> -->
 				</div>
 			</section>
 
@@ -650,17 +682,17 @@
 						<h2 class="section__title-2">
 							<span>Contact Me.</span>
 						</h2>
-
 						<p class="contact__description-1">
-							I will read all emails. Send me any message you want and I'll get back to you.
+							I won't spam you. I don't have a newsletter.
+							<br />
+							<br />
+							<b>I promise.</b>
 						</p>
-
 						<p class="contact__description-2">
-							I need your
-							<b>Name</b>
-							and
-							<b>Email Address</b>
-							, but you won't receive anything other than your reply.
+							Have an idea for a website or a brand?
+							<br />
+							Tell me what you’re working on, what you’re building, or what’s been sitting in your head
+							for too long. I’d love to hear about it.
 						</p>
 
 						<div class="geometric-box" aria-hidden="true"></div>
@@ -729,37 +761,38 @@
 
 						<div class="contact__social-data">
 							<div>
-								<p class="contact__social-description-1">Does not send emails</p>
+								<p class="contact__social-description-1">Make it RESONATE,</p>
 
-								<p class="contact__social-description-2">Write me on my social networks</p>
+								<p class="contact__social-description-2">Then, Refine</p>
 							</div>
 
 							<div class="contact__social-links">
 								<a
-									href="https://www.facebook.com/"
-									class="contact__social-link"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="View Nick's Facebook page">
-									<i class="ri-facebook-circle-line" aria-hidden="true"></i>
-								</a>
-
-								<a
-									href="https://www.instagram.com/"
-									class="contact__social-link"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="View Nick's LinkedIn page">
-									<i class="ri-instagram-line" aria-hidden="true"></i>
-								</a>
-
-								<a
 									href="https://www.linkedin.com/"
-									class="contact__social-link"
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="View Nick's LinkedIn page">
-									<i class="ri-linkedin-box-line" aria-hidden="true"></i>
+									class="home__social-link"
+									aria-label="View Nick's LinkedIn page"
+									title="View Nick's LinkedIn page">
+									<i class="ri-linkedin-box-line"></i>
+								</a>
+								<a
+									href="https://github.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="home__social-link"
+									aria-label="View Nick's Github"
+									title="View Nick's Github">
+									<i class="ri-github-fill"></i>
+								</a>
+								<a
+									href="https://buymeacoffee.com/nickpoole"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="home__social-link"
+									aria-label="Buy me a Coffee"
+									title="Buy me a Coffee">
+									<i class="ri-drinks-line"></i>
 								</a>
 							</div>
 						</div>
@@ -781,7 +814,18 @@
 					</li>
 
 					<li>
-						<a href="#projects" class="footer__link">Projects</a>
+						<a href="#projects" class="footer__link">Portfolio</a>
+					</li>
+					<li>
+						<a
+							href="https://flowcv.com/resume/prw5asp43g"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="View My Resume"
+							aria-label="View my resume on FlowCV"
+							class="footer__link">
+							Resume
+						</a>
 					</li>
 				</ul>
 

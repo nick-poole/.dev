@@ -31,17 +31,21 @@ Deployed via Netlify.
 - [x] Adjust color palette
 - [x] Curate icons/images
 - [x] Deploy on Netlify
+- [x] Import an update resume link to flowCV
+- [x] Image compression
+- [x] Portfolio/project grid
 - [ ] Integrate Cypress Testing
 - [ ] Copy Curation
 - [ ] Contact form with spam protection
-- [ ] Import an update resume/CV
-- [ ] Portfolio/project grid with filters or tags
-- [ ] JS splitting & image compression
 - [ ] Add sitemap
 - [ ] Deploy to domain URL
 - [ ] Easter egg: `/everyone-starts-somewhere.html`
 
 ## Commit Log
+
+[7/22/25]
+
+- **feat: finalized nav icon toggle, polished buttons, links, and site copy**
 
 [7/19/25]
 

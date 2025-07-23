@@ -116,6 +116,9 @@ window.addEventListener('scroll', scrollActive);
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'ri-sun-line';
+//grab light and and dark logo
+const logoLight = document.getElementsByClassName('logo-light');
+const logoDark = document.getElementsByClassName('logo-dark');
 
 // Keyboard support for accessibility
 themeButton.addEventListener('keydown', (e) => {
@@ -143,17 +146,22 @@ if (selectedTheme) {
 	themeButton.setAttribute('aria-pressed', isDark.toString());
 }
 
+// Logo Toggle
+const toggleLogos = (isDark) => {
+	document.querySelectorAll('.logo-light').forEach((el) => el.classList.toggle('visible', !isDark));
+	document.querySelectorAll('.logo-dark').forEach((el) => el.classList.toggle('visible', isDark));
+};
 // Toggle theme on click
 themeButton.addEventListener('click', () => {
 	const isDark = document.body.classList.toggle(darkTheme);
 	themeButton.classList.toggle(iconTheme);
-
 	// Store choice
 	localStorage.setItem('selected-theme', getCurrentTheme());
 	localStorage.setItem('selected-icon', getCurrentIcon());
-
 	// Update aria-pressed for screen readers
 	themeButton.setAttribute('aria-pressed', isDark.toString());
+
+	toggleLogos(isDark); // ⚡ Immediate, smooth transition handled in CSS
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
