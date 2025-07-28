@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://nickpoole.dev/</loc>
+    <priority>1.00</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Section anchors -->
+  <url>
+    <loc>https://nickpoole.dev/#about</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://nickpoole.dev/#projects</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://nickpoole.dev/#contact</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Thank You page -->
+  <url>
+    <loc>https://nickpoole.dev/thank-you.html</loc>
+    <priority>0.70</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Redirect paths -->
+  <url>
+    <loc>https://nickpoole.dev/resume</loc>
+    <priority>0.70</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://nickpoole.dev/legacy</loc>
+    <priority>0.60</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+</urlset>
