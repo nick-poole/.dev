@@ -630,7 +630,7 @@
 
 							<h3 class="services__title">CompTIA A+</h3>
 							<p class="services__description">
-								Expert troubleshooting and deep system knowledge let me spot and resolve performance
+								Expert troubleshooting and deep system knowledge lets me spot and resolve performance
 								issues most developers miss — ensuring smooth, efficient web applications that
 								<b class="accent">resonate</b>
 								with users.
@@ -683,16 +683,14 @@
 							<span>Contact Me.</span>
 						</h2>
 						<p class="contact__description-1">
-							I won't spam you. I don't have a newsletter.
+							I don’t have a newsletter. I don’t do marketing blasts.
 							<br />
 							<br />
-							<b>I promise.</b>
+							<b>I just like building things that matter with people who care.</b>
 						</p>
 						<p class="contact__description-2">
-							Have an idea for a website or a brand?
-							<br />
-							Tell me what you’re working on, what you’re building, or what’s been sitting in your head
-							for too long. I’d love to hear about it.
+							Tell me about your brand or what you’re passionate about&mdash; I'd love to hear what you’ve
+							been building, planning, or quietly obsessing over.
 						</p>
 
 						<div class="geometric-box" aria-hidden="true"></div>
@@ -701,7 +699,11 @@
 					<div class="contact__mail">
 						<h3 class="contact__title">Send Me A Message</h3>
 
-						<form action="" class="contact__form" id="contact-form">
+						<form
+							action="https://formspree.io/f/xnqkvqpy"
+							method="POST"
+							class="contact__form"
+							id="contact-form">
 							<div class="contact__group">
 								<div class="contact__box">
 									<input
@@ -710,8 +712,8 @@
 										class="contact__input"
 										id="name"
 										required
-										placeholder="First Name" />
-									<label for="name" class="contact__label">First Name</label>
+										placeholder="Name" />
+									<label for="name" class="contact__label">Name</label>
 								</div>
 
 								<div class="contact__box">
@@ -721,8 +723,8 @@
 										class="contact__input"
 										id="email"
 										required
-										placeholder="Email Address" />
-									<label for="email" class="contact__label">Email Address</label>
+										placeholder="Email" />
+									<label for="email" class="contact__label">Email</label>
 								</div>
 							</div>
 
@@ -748,7 +750,10 @@
 							</div>
 
 							<p class="contact__message" id="contact-message"></p>
-
+							<div class="contact__botcheck" aria-hidden="true">
+								<label for="botcheck"></label>
+								<input type="text" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" />
+							</div>
 							<button type="submit" class="contact__button button">
 								<i class="ri-send-plane-line"></i>
 								Send Message

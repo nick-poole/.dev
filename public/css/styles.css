@@ -114,10 +114,6 @@ img {
   color: var(--title-color);
   cursor: pointer;
   transition: color 2.9s ease-in-out;
-  -webkit-transition: color 2.9s ease-in-out;
-  -moz-transition: color 2.9s ease-in-out;
-  -ms-transition: color 2.9s ease-in-out;
-  -o-transition: color 2.9s ease-in-out;
 }
 
 /*========== Variables Dark theme ==========*/
@@ -883,7 +879,7 @@ body.dark-theme {
 .contact__data {
   position: relative;
   width: 300px;
-  height: 300px;
+  height: 330px;
   background-color: var(--container-color);
   padding: 3rem 1.5rem 3.5rem;
   margin-left: auto;
@@ -898,7 +894,7 @@ body.dark-theme {
 .contact__description-1 {
   color: var(--title-color);
   font-weight: var(--font-medium);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .contact__description-2 {
   color: var(--title-color);
@@ -912,7 +908,7 @@ body.dark-theme {
   position: relative;
   background-color: var(--black-color);
   padding: 5rem 1.5rem 2.5rem;
-  margin-top: -2.5rem;
+  margin-top: -0.5rem;
   transition: background-color 0.4s; /* for dark mode */
 }
 .contact__title {
@@ -986,6 +982,9 @@ body.dark-theme {
   resize: none;
   padding-top: 1rem;
 }
+.contact__botcheck {
+  display: none;
+}
 .contact__button {
   background-color: var(--first-color);
   cursor: pointer;
@@ -996,7 +995,7 @@ body.dark-theme {
 .contact__input:focus::placeholder {
   opacity: 0;
 }
-.contact__input:not(:-moz-placeholder-shown).contact__input:not(:focus) + .contact__label {
+.contact__input:not(:-moz-placeholder).contact__input:not(:focus) + .contact__label {
   opacity: 1;
   top: -16px;
 }

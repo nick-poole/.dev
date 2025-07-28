@@ -34,18 +34,22 @@ Deployed via Netlify.
 - [x] Import an update resume link to flowCV
 - [x] Image compression
 - [x] Portfolio/project grid
+- [x] Contact form with spam protection
 - [ ] Integrate Cypress Testing
 - [ ] Copy Curation
-- [ ] Contact form with spam protection
 - [ ] Add sitemap
 - [ ] Deploy to domain URL
 - [ ] Easter egg: `/everyone-starts-somewhere.html`
 
 ## Commit Log
 
+[7/28/25]
+
+- **feat: Sets up Formspree contact form with honeypot spam check, localStorage flag for post-submit message, and graceful form reset on return**
+
 [7/22/25]
 
-- **feat: finalized nav icon toggle, polished buttons, links, and site copy**
+- **feat: finalizes nav icon toggle, polished buttons, links, and site copy**
 
 [7/19/25]
 

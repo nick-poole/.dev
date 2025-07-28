@@ -161,7 +161,7 @@ themeButton.addEventListener('click', () => {
 	// Update aria-pressed for screen readers
 	themeButton.setAttribute('aria-pressed', isDark.toString());
 
-	toggleLogos(isDark); // ⚡ Immediate, smooth transition handled in CSS
+	toggleLogos(isDark);
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
@@ -181,3 +181,41 @@ sr.reveal(
 	{ origin: 'left' }
 );
 sr.reveal(`.services__card, .projects__card`, { interval: 100 });
+
+/*=============== HONEYPOT &* FORM LOGIC ===============*/
+const contactForm = document.getElementById('contact-form');
+const contactMessage = document.getElementById('contact-message');
+
+if (contactForm) {
+	contactForm.addEventListener('submit', function (e) {
+		const botcheck = document.getElementById('botcheck');
+		if (botcheck && botcheck.value.trim() !== '') {
+			e.preventDefault();
+			contactMessage.textContent = 'Bot detected. Submission blocked.';
+			contactMessage.style.color = 'red';
+			return;
+		}
+
+		// Set the flag so when the user returns to the site, we know
+		localStorage.setItem('formSubmitted', 'true');
+
+		// Allow Formspree to submit normally
+		contactMessage.textContent = 'Sending...';
+		contactMessage.style.color = 'var(--text-color-light)';
+	});
+}
+
+// On return visit from Formspree's thank-you page:
+window.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('contact-form');
+	const message = document.getElementById('contact-message');
+
+	if (localStorage.getItem('formSubmitted') === 'true') {
+		if (form) form.reset();
+		if (message) {
+			message.textContent = 'Thanks again — your message was sent.';
+			message.style.color = 'green';
+		}
+		localStorage.removeItem('formSubmitted');
+	}
+});
