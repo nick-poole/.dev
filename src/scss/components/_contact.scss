@@ -232,7 +232,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		background: var(--first-color, #007bff);
+		background: var(--black-color);
 		color: #fff;
 		padding: 1rem 2rem;
 		border-radius: 0.5rem;
@@ -244,7 +244,7 @@
 	}
 
 	&__button:hover {
-		background: var(--first-color-alt, #0056b3);
+		background: var(--first-color);
 		transform: translateY(-2px);
 	}
 

@@ -22,22 +22,28 @@
 		align-items: center;
 		font-weight: var(--font-semi-bold);
 		color: var(--title-color);
-
-		// &-tag {
-		// 	width: 48px;
-		// 	height: 48px;
-		// }
 	}
-	// &__logo {
-	// 	background-image: url('/public/images/logos/np-bar-dark.png');
-	// 	background: cover;
-	// 	background-position: 50% 50%;
-	// 	height: 45px;
-	// 	width: 250px;
-	// }
+
 	&__logo-img {
 		height: auto;
 		width: auto;
+	}
+	&__logo-tag {
+		height: 70px;
+	}
+	&__logo-name {
+		font-size: 1.15rem;
+		margin-left: -0.5rem;
+		margin-bottom: 0.7rem;
+	}
+	&__logo-title {
+		position: relative;
+		top: 13px;
+		left: -134px;
+		font-weight: var(--font-regular);
+		color: var(--text-color);
+		font-size: 10px;
+		letter-spacing: 0.2rem;
 	}
 	&__logo-circle,
 	&__toggle {

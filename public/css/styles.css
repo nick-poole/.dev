@@ -329,6 +329,23 @@ body.dark-theme {
   height: auto;
   width: auto;
 }
+.nav__logo-tag {
+  height: 70px;
+}
+.nav__logo-name {
+  font-size: 1.15rem;
+  margin-left: -0.5rem;
+  margin-bottom: 0.7rem;
+}
+.nav__logo-title {
+  position: relative;
+  top: 13px;
+  left: -134px;
+  font-weight: var(--font-regular);
+  color: var(--text-color);
+  font-size: 10px;
+  letter-spacing: 0.2rem;
+}
 .nav__logo-circle, .nav__toggle {
   width: 32px;
   height: 32px;
@@ -1102,7 +1119,7 @@ body.dark-theme {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--first-color, #007bff);
+  background: var(--black-color);
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -1113,7 +1130,7 @@ body.dark-theme {
   cursor: pointer;
 }
 .thank-you__button:hover {
-  background: var(--first-color-alt, #0056b3);
+  background: var(--first-color);
   transform: translateY(-2px);
 }
 .thank-you__button i {
