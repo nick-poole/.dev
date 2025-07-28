@@ -184,21 +184,21 @@ sr.reveal(`.services__card, .projects__card`, { interval: 100 });
 
 /*==================== FORM CLEAR ====================*/
 // Enhanced form handling
-const contactForm = document.getElementById('contact-form');
-const contactMessage = document.getElementById('contact-message');
+// const contactForm = document.getElementById('contact-form');
+// const contactMessage = document.getElementById('contact-message');
 
-if (contactForm) {
-	contactForm.addEventListener('submit', function (e) {
-		// Show loading state
-		const submitBtn = this.querySelector('button[type="submit"]');
-		const originalText = submitBtn.innerHTML;
-		submitBtn.innerHTML = '<i class="ri-loader-4-line"></i> Sending...';
-		submitBtn.disabled = true;
+// if (contactForm) {
+// 	contactForm.addEventListener('submit', function (e) {
+// 		// Show loading state
+// 		const submitBtn = this.querySelector('button[type="submit"]');
+// 		const originalText = submitBtn.innerHTML;
+// 		submitBtn.innerHTML = '<i class="ri-loader-4-line"></i> Sending...';
+// 		submitBtn.disabled = true;
 
-		// Clear previous messages
-		contactMessage.textContent = '';
+// 		// Clear previous messages
+// 		contactMessage.textContent = '';
 
-		// Let Netlify handle the actual submission
-		// The form will redirect to thank-you.html on success
-	});
-}
+// 		// Let Netlify handle the actual submission
+// 		// The form will redirect to thank-you.html on success
+// 	});
+// }

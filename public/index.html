@@ -676,7 +676,6 @@
 			</section>
 
 			<!--==================== CONTACT ====================-->
-			<!--==================== CONTACT ====================-->
 			<section class="contact section" id="contact">
 				<div class="contact__container grid">
 					<div class="contact__data">
@@ -684,13 +683,13 @@
 							<span>Contact Me.</span>
 						</h2>
 						<p class="contact__description-1">
-							I don’t have a newsletter. I don’t do marketing blasts.
+							I don't have a newsletter. I don't do marketing blasts.
 							<br />
 							<br />
 							<b>I just like building things that matter with people who care.</b>
 						</p>
 						<p class="contact__description-2">
-							Tell me about your brand or what you’re passionate about&mdash; I'd love to hear what you’ve
+							Tell me about your brand or what you're passionate about&mdash; I'd love to hear what you've
 							been building, planning, or quietly obsessing over.
 						</p>
 						<div class="geometric-box" aria-hidden="true"></div>
@@ -700,21 +699,23 @@
 						<h3 class="contact__title">Send Me A Message</h3>
 
 						<form
-							name="contact"
 							method="POST"
-							action="thank-you.html"
-							data-netlify="true"
-							data-netlify-honeypot="bot-field"
+							action="https://formsubmit.co/napoole@protonmail.com"
 							class="contact__form"
 							id="contact-form">
-							<!-- Hidden field for Netlify -->
-							<input type="hidden" name="form-name" value="contact" />
+							<!-- FormSubmit Configuration -->
+							<input type="hidden" name="_next" value="https://npdotdev.netlify.app/thank-you.html" />
+							<input type="hidden" name="_subject" value="New Submission from nickpoole.dev#contact" />
+							<input type="hidden" name="_template" value="table" />
+							<input type="hidden" name="_captcha" value="true" />
 
-							<!-- Honeypot field (keep hidden) -->
-							<div class="contact__botcheck" aria-hidden="true">
-								<label for="bot-field">Don't fill this out if you're human:</label>
-								<input type="text" name="bot-field" id="bot-field" />
-							</div>
+							<!-- Honeypot field for spam protection -->
+							<input
+								type="text"
+								title="_honey"
+								name="_honey"
+								class="contact__botcheck"
+								autocomplete="off" />
 
 							<div class="contact__group">
 								<div class="contact__box">
@@ -776,135 +777,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- <section class="contact section" id="contact">
-				<div class="contact__container grid">
-					<div class="contact__data">
-						<h2 class="section__title-2">
-							<span>Contact Me.</span>
-						</h2>
-						<p class="contact__description-1">
-							I don’t have a newsletter. I don’t do marketing blasts.
-							<br />
-							<br />
-							<b>I just like building things that matter with people who care.</b>
-						</p>
-						<p class="contact__description-2">
-							Tell me about your brand or what you’re passionate about&mdash; I'd love to hear what you’ve
-							been building, planning, or quietly obsessing over.
-						</p>
-
-						<div class="geometric-box" aria-hidden="true"></div>
-					</div>
-
-					<div class="contact__mail">
-						<h3 class="contact__title">Send Me A Message</h3>
-
-						<form
-							action="https://formspree.io/f/xnqkvqpy"
-							method="POST"
-							class="contact__form"
-							id="contact-form">
-							<div class="contact__group">
-								<div class="contact__box">
-									<input
-										type="text"
-										name="user_name"
-										class="contact__input"
-										id="name"
-										required
-										placeholder="Name" />
-									<label for="name" class="contact__label">Name</label>
-								</div>
-
-								<div class="contact__box">
-									<input
-										type="email"
-										name="user_email"
-										class="contact__input"
-										id="email"
-										required
-										placeholder="Email" />
-									<label for="email" class="contact__label">Email</label>
-								</div>
-							</div>
-
-							<div class="contact__box">
-								<input
-									type="text"
-									name="user_subject"
-									class="contact__input"
-									id="subject"
-									required
-									placeholder="Subject" />
-								<label for="subject" class="contact__label">Subject</label>
-							</div>
-
-							<div class="contact__box contact__area">
-								<textarea
-									name="user_message"
-									class="contact__input"
-									id="message"
-									required
-									placeholder="Message"></textarea>
-								<label for="message" class="contact__label">Message</label>
-							</div>
-
-							<p class="contact__message" id="contact-message"></p>
-							<div class="contact__botcheck" aria-hidden="true">
-								<label for="botcheck"></label>
-								<input type="text" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" />
-							</div>
-							<button type="submit" class="contact__button button">
-								<i class="ri-send-plane-line"></i>
-								Send Message
-							</button>
-						</form>
-					</div>
-
-					<div class="contact__social">
-						<img src="images/curved-arrow.svg" alt="" aria-hidden="true" class="contact__social-arrow" />
-
-						<div class="contact__social-data">
-							<div>
-								<p class="contact__social-description-1">Make it RESONATE,</p>
-
-								<p class="contact__social-description-2">Then, Refine</p>
-							</div>
-
-							<div class="contact__social-links">
-								<a
-									href="https://www.linkedin.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="home__social-link"
-									aria-label="View Nick's LinkedIn page"
-									title="View Nick's LinkedIn page">
-									<i class="ri-linkedin-box-line"></i>
-								</a>
-								<a
-									href="https://github.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="home__social-link"
-									aria-label="View Nick's Github"
-									title="View Nick's Github">
-									<i class="ri-github-fill"></i>
-								</a>
-								<a
-									href="https://buymeacoffee.com/nickpoole"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="home__social-link"
-									aria-label="Buy me a Coffee"
-									title="Buy me a Coffee">
-									<i class="ri-drinks-line"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
 		</main>
 
 		<!--==================== FOOTER ====================-->
