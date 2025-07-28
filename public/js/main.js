@@ -182,40 +182,23 @@ sr.reveal(
 );
 sr.reveal(`.services__card, .projects__card`, { interval: 100 });
 
-/*=============== HONEYPOT &* FORM LOGIC ===============*/
+/*==================== FORM CLEAR ====================*/
+// Enhanced form handling
 const contactForm = document.getElementById('contact-form');
 const contactMessage = document.getElementById('contact-message');
 
 if (contactForm) {
 	contactForm.addEventListener('submit', function (e) {
-		const botcheck = document.getElementById('botcheck');
-		if (botcheck && botcheck.value.trim() !== '') {
-			e.preventDefault();
-			contactMessage.textContent = 'Bot detected. Submission blocked.';
-			contactMessage.style.color = 'red';
-			return;
-		}
+		// Show loading state
+		const submitBtn = this.querySelector('button[type="submit"]');
+		const originalText = submitBtn.innerHTML;
+		submitBtn.innerHTML = '<i class="ri-loader-4-line"></i> Sending...';
+		submitBtn.disabled = true;
 
-		// Set the flag so when the user returns to the site, we know
-		localStorage.setItem('formSubmitted', 'true');
+		// Clear previous messages
+		contactMessage.textContent = '';
 
-		// Allow Formspree to submit normally
-		contactMessage.textContent = 'Sending...';
-		contactMessage.style.color = 'var(--text-color-light)';
+		// Let Netlify handle the actual submission
+		// The form will redirect to thank-you.html on success
 	});
 }
-
-// On return visit from Formspree's thank-you page:
-window.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('contact-form');
-	const message = document.getElementById('contact-message');
-
-	if (localStorage.getItem('formSubmitted') === 'true') {
-		if (form) form.reset();
-		if (message) {
-			message.textContent = 'Thanks again — your message was sent.';
-			message.style.color = 'green';
-		}
-		localStorage.removeItem('formSubmitted');
-	}
-});

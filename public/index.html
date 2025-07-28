@@ -676,7 +676,108 @@
 			</section>
 
 			<!--==================== CONTACT ====================-->
+			<!--==================== CONTACT ====================-->
 			<section class="contact section" id="contact">
+				<div class="contact__container grid">
+					<div class="contact__data">
+						<h2 class="section__title-2">
+							<span>Contact Me.</span>
+						</h2>
+						<p class="contact__description-1">
+							I don’t have a newsletter. I don’t do marketing blasts.
+							<br />
+							<br />
+							<b>I just like building things that matter with people who care.</b>
+						</p>
+						<p class="contact__description-2">
+							Tell me about your brand or what you’re passionate about&mdash; I'd love to hear what you’ve
+							been building, planning, or quietly obsessing over.
+						</p>
+						<div class="geometric-box" aria-hidden="true"></div>
+					</div>
+
+					<div class="contact__mail">
+						<h3 class="contact__title">Send Me A Message</h3>
+
+						<form
+							name="contact"
+							method="POST"
+							action="/thank-you.html"
+							data-netlify="true"
+							data-netlify-honeypot="bot-field"
+							class="contact__form"
+							id="contact-form">
+							<!-- Hidden field for Netlify -->
+							<input type="hidden" name="form-name" value="contact" />
+
+							<!-- Honeypot field (keep hidden) -->
+							<div class="contact__botcheck" aria-hidden="true">
+								<label for="bot-field">Don't fill this out if you're human:</label>
+								<input type="text" name="bot-field" id="bot-field" />
+							</div>
+
+							<div class="contact__group">
+								<div class="contact__box">
+									<input
+										type="text"
+										name="name"
+										class="contact__input"
+										id="name"
+										required
+										placeholder="Name"
+										aria-required="true" />
+									<label for="name" class="contact__label">Name</label>
+								</div>
+
+								<div class="contact__box">
+									<input
+										type="email"
+										name="email"
+										class="contact__input"
+										id="email"
+										required
+										placeholder="Email"
+										aria-required="true" />
+									<label for="email" class="contact__label">Email</label>
+								</div>
+							</div>
+
+							<div class="contact__box">
+								<input
+									type="text"
+									name="subject"
+									class="contact__input"
+									id="subject"
+									required
+									placeholder="Subject"
+									aria-required="true" />
+								<label for="subject" class="contact__label">Subject</label>
+							</div>
+
+							<div class="contact__box contact__area">
+								<textarea
+									name="message"
+									class="contact__input"
+									id="message"
+									required
+									placeholder="Message"
+									aria-required="true"></textarea>
+								<label for="message" class="contact__label">Message</label>
+							</div>
+
+							<!-- Status Message Area -->
+							<p class="contact__message" id="contact-message" role="status" aria-live="polite"></p>
+
+							<button type="submit" class="contact__button button">
+								<i class="ri-send-plane-line"></i>
+								Send Message
+							</button>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<!-- <section class="contact section" id="contact">
 				<div class="contact__container grid">
 					<div class="contact__data">
 						<h2 class="section__title-2">
@@ -803,7 +904,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 		</main>
 
 		<!--==================== FOOTER ====================-->

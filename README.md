@@ -35,6 +35,7 @@ Deployed via Netlify.
 - [x] Image compression
 - [x] Portfolio/project grid
 - [x] Contact form with spam protection
+- [x] Dedicated `/thank-you.html` page after form submission
 - [ ] Integrate Cypress Testing
 - [ ] Copy Curation
 - [ ] Add sitemap
@@ -44,6 +45,8 @@ Deployed via Netlify.
 ## Commit Log
 
 [7/28/25]
+
+- **feat: migrate contact form from Formspree to Netlify Forms**
 
 - **feat: Sets up Formspree contact form with honeypot spam check, localStorage flag for post-submit message, and graceful form reset on return**
 
