@@ -47,7 +47,7 @@ Deployed via Netlify.
 
 [7/29/25]
 
-- **chore: adds robots.text**
+- **chore: adds robots.txt**
 
 - **feat: polished home and about web copy content**
 
