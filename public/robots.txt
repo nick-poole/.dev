@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /thank-you.html
+
+Sitemap: https://nickpoole.dev/sitemap.xml
