@@ -18,32 +18,36 @@
 
 	&__logo {
 		display: flex;
-		column-gap: 0.5rem;
 		align-items: center;
-		font-weight: var(--font-semi-bold);
+		gap: 0.5rem;
 		color: var(--title-color);
-	}
+		font-weight: var(--font-semi-bold);
+		text-decoration: none;
 
-	&__logo-img {
-		height: auto;
-		width: auto;
-	}
-	&__logo-tag {
-		height: 70px;
-	}
-	&__logo-name {
-		font-size: 1.15rem;
-		margin-left: -0.5rem;
-		margin-bottom: 0.7rem;
-	}
-	&__logo-title {
-		position: relative;
-		top: 13px;
-		left: -134px;
-		font-weight: var(--font-regular);
-		color: var(--text-color);
-		font-size: 10px;
-		letter-spacing: 0.2rem;
+		&-tag {
+			height: 50px;
+			width: auto;
+			flex-shrink: 0;
+		}
+
+		&-text {
+			display: flex;
+			flex-direction: column;
+			line-height: 1.2;
+		}
+
+		&-name {
+			font-size: var(--normal-font-size);
+			margin: 0;
+		}
+
+		&-title {
+			font-size: var(--smaller-font-size);
+			color: var(--text-color);
+			letter-spacing: 0.05rem;
+			margin-top: 0.15rem;
+			font-weight: var(--font-regular);
+		}
 	}
 	&__logo-circle,
 	&__toggle {
@@ -144,34 +148,6 @@
 		right: 1.5rem;
 		cursor: pointer;
 	}
-}
-.fade-logo {
-	z-index: 0;
-	opacity: 0;
-	visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: -30px;
-	height: auto;
-	width: 250px;
-	pointer-events: none;
-	filter: blur(0px);
-	transform: translateZ(0);
-	// border: 5px solid var(--first-color);
-
-	-webkit-transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
-	-moz-transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
-	-ms-transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
-	-o-transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
-	transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
-}
-
-.fade-logo.visible {
-	opacity: 1;
-	z-index: 1;
-	visibility: visible;
-	pointer-events: auto;
-	mix-blend-mode: normal;
 }
 
 /* Show menu */

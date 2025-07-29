@@ -36,15 +36,22 @@ Deployed via Netlify.
 - [x] Portfolio/project grid
 - [x] Contact form with spam protection
 - [x] Dedicated `/thank-you.html` page after form submission
+- [x] Copy Curation
+- [x] Configure redirects
+- [x] Add sitemap
+- [x] Deploy to domain URL
 - [ ] Integrate Cypress Testing
-- [ ] Copy Curation
-- [ ] Add sitemap
-- [ ] Deploy to domain URL
 - [ ] Easter egg: `/everyone-starts-somewhere.html`
 
 ## Commit Log
 
 [7/28/25]
+
+- **fix: stabilize nav logo layout and update remixicon CDN config**
+
+- **chore: adds redirects**
+
+- **chore: adds sitemap**
 
 - **feat: migrate contact form from Formspree to Netlify Forms**
 

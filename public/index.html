@@ -16,7 +16,8 @@
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-			crossorigin="" />
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
 
 		<!--=============== BOXICONS ===============-->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
@@ -54,8 +55,10 @@
 				<a href="#" class="nav__logo">
 					<span class="sr-only">Nick Poole - Web Developer</span>
 					<img src="images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
-					<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
-					<span class="nav__logo-title" aria-hidden="true">Web Developer</span>
+					<div class="nav__logo-text">
+						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
+						<span class="nav__logo-title" aria-hidden="true">Web Developer</span>
+					</div>
 				</a>
 
 				<div class="nav__menu" id="nav-menu">
@@ -155,9 +158,9 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="home__social-link"
-								aria-label="Buy me a Coffee"
-								title="Buy me a Coffee">
-								<i class="ri-drinks-line"></i>
+								aria-label="Buy Me a Coffee"
+								title="Buy Me a Coffee">
+								<i class="ri-cup-line"></i>
 							</a>
 						</div>
 					</div>
@@ -716,7 +719,7 @@
 							class="contact__form"
 							id="contact-form">
 							<!-- FormSubmit Configuration -->
-							<input type="hidden" name="_next" value="https://npdotdev.netlify.app/thank-you.html" />
+							<input type="hidden" name="_next" value="https://nickpoole.dev/thank-you.html" />
 							<input type="hidden" name="_subject" value="New Submission from nickpoole.dev#contact" />
 							<input type="hidden" name="_template" value="table" />
 							<input type="hidden" name="_captcha" value="true" />
@@ -823,7 +826,7 @@
 									class="home__social-link"
 									aria-label="Buy me a Coffee"
 									title="Buy me a Coffee">
-									<i class="ri-drinks-line"></i>
+									<i class="ri-cup-line"></i>
 								</a>
 							</div>
 						</div>
