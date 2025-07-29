@@ -540,9 +540,10 @@ body.dark-theme {
   margin-top: 4rem;
 }
 .home__description {
-  text-align: center;
+  text-align: left;
   color: var(--title-color);
   margin-bottom: 1.5rem;
+  padding: 0 1.5rem 0 1.5rem;
 }
 .home__description b {
   background: linear-gradient(90deg, hsla(14, 98%, 50%, 0.3), hsla(14, 98%, 50%, 0));
@@ -1442,7 +1443,7 @@ body.dark-theme {
   }
   .home__line {
     left: -15rem;
-    bottom: 4rem;
+    bottom: 0rem;
     width: 80px;
     rotate: 30deg;
   }

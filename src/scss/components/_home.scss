@@ -88,9 +88,10 @@
 		margin-top: 4rem;
 	}
 	&__description {
-		text-align: center;
+		text-align: left;
 		color: var(--title-color);
 		margin-bottom: 1.5rem;
+		padding: 0 1.5rem 0 1.5rem;
 
 		& b {
 			background: linear-gradient(90deg, hsla(14, 98%, 50%, 0.3), hsla(14, 98%, 50%, 0));

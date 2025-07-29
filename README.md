@@ -47,6 +47,8 @@ Deployed via Netlify.
 
 [7/29/25]
 
+- **feat: polished home and about web copy content**
+
 - **fix: refactors icons to meet minimum tap target standards**
 
 - **fix: iOS icon and menu display issues**
