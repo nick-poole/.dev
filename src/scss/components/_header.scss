@@ -51,8 +51,8 @@
 	}
 	&__logo-circle,
 	&__toggle {
-		width: 32px;
-		height: 32px;
+		width: 44px;
+		height: 44px;
 		background-color: var(--black-color);
 		color: var(--white-color);
 		display: grid;
@@ -62,7 +62,7 @@
 		border-radius: 50%;
 	}
 	&__toggle {
-		font-size: 1.25rem;
+		font-size: 1.75rem;
 		cursor: pointer;
 	}
 	// Navigation for mobile devices

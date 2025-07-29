@@ -110,7 +110,7 @@ img {
 }
 
 .change-theme {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: var(--title-color);
   cursor: pointer;
   transition: color 2.9s ease-in-out;
@@ -347,8 +347,8 @@ body.dark-theme {
   font-weight: var(--font-regular);
 }
 .nav__logo-circle, .nav__toggle {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   background-color: var(--black-color);
   color: var(--white-color);
   display: grid;
@@ -358,7 +358,7 @@ body.dark-theme {
   border-radius: 50%;
 }
 .nav__toggle {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   cursor: pointer;
 }
 @media screen and (max-width: 1150px) {
@@ -509,7 +509,7 @@ body.dark-theme {
 }
 .home__social {
   position: absolute;
-  left: -3rem;
+  left: -3.5rem;
   top: 4.5rem;
   margin: auto 0;
   display: flex;
@@ -520,14 +520,14 @@ body.dark-theme {
 .home__social-link {
   background-color: var(--black-color-light);
   color: var(--white-color);
-  font-size: 1.25rem;
-  padding: 6px;
+  font-size: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   aspect-ratio: 1/1;
+  transition: background-color 0.3s;
 }
 .home__social-link:hover {
   background-color: var(--black-color);
@@ -559,8 +559,8 @@ body.dark-theme {
 .home__scroll-box {
   background-color: var(--black-color);
   color: var(--white-color);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   font-size: 1rem;
@@ -570,6 +570,7 @@ body.dark-theme {
 }
 .home__scroll-box i {
   animation: scroll-down 3s infinite;
+  font-size: 1.75rem;
 }
 
 /* Animate scroll icon */
@@ -1206,7 +1207,7 @@ body.dark-theme {
   background: var(--black-color);
   display: inline-flex;
   padding: 8px;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: var(--white-color);
   z-index: var(--z-tooltip);
   transition: bottom 0.4s, transform 0.4s, background-color 0.4s;

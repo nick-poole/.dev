@@ -45,6 +45,12 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[7/29/25]
+
+- **fix: refactors icons to meet minimum tap target standards**
+
+- **fix: iOS icon and menu display issues**
+
 [7/28/25]
 
 - **fix: stabilize nav logo layout and update remixicon CDN config**

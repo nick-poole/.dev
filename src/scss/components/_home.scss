@@ -50,10 +50,8 @@
 		z-index: 10;
 	}
 	&__social {
-		// height: max-content;
-		// height: auto;
 		position: absolute;
-		left: -3rem;
+		left: -3.5rem;
 		top: 4.5rem;
 
 		margin: auto 0;
@@ -65,18 +63,17 @@
 		&-link {
 			background-color: var(--black-color-light);
 			color: var(--white-color);
-			font-size: 1.25rem;
-			padding: 6px;
+			font-size: 1.75rem;
 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 
-			width: 30px;
-			height: 30px;
+			width: 44px;
+			height: 44px;
 			aspect-ratio: 1 / 1;
 
-			// transition: background-color 0.3s;
+			transition: background-color 0.3s;
 
 			&:hover {
 				background-color: var(--black-color);
@@ -110,8 +107,8 @@
 		&-box {
 			background-color: var(--black-color);
 			color: var(--white-color);
-			width: 36px;
-			height: 36px;
+			width: 44px;
+			height: 44px;
 			display: grid;
 			place-items: center;
 			font-size: 1rem;
@@ -121,6 +118,7 @@
 
 			& i {
 				animation: scroll-down 3s infinite;
+				font-size: 1.75rem;
 			}
 		}
 	}
