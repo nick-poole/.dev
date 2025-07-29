@@ -50,13 +50,16 @@
 		z-index: 10;
 	}
 	&__social {
-		height: max-content;
+		// height: max-content;
+		// height: auto;
 		position: absolute;
 		left: -3rem;
-		top: 0;
-		bottom: 0;
+		top: 4.5rem;
+
 		margin: auto 0;
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		row-gap: 1rem;
 
 		&-link {
@@ -73,7 +76,7 @@
 			height: 30px;
 			aspect-ratio: 1 / 1;
 
-			transition: background-color 0.3s;
+			// transition: background-color 0.3s;
 
 			&:hover {
 				background-color: var(--black-color);
