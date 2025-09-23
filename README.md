@@ -45,6 +45,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[9/22/25]
+
+- **feat: adds pregnancy and next metro cards**
+
 [7/29/25]
 
 - **chore: adds meta description and head tags**
