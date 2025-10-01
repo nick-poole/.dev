@@ -45,6 +45,10 @@ Deployed via Netlify.
 
 ## Commit Log
 
+[10/1/25]
+
+- **refactor: Removes CFBCBS**
+
 [9/22/25]
 
 - **feat: adds pregnancy and next metro cards**
