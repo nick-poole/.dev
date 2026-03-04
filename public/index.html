@@ -9,12 +9,12 @@
 		<title>Nick Poole | Web Developer | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="Baltimore-based web developer specializing in accessible, responsive, and SEO-optimized modern sites that resonate. View my portfolio and get in touch." />
+			content="Baltimore-based freelance web developer specializing in accessible, responsive, and SEO-optimized websites for small businesses and nonprofits. View my portfolio and get in touch." />
 		<!--=============== OPEN GRAPH ===============-->
 		<meta property="og:title" content="Nick Poole | Web Developer | Baltimore, MD" />
 		<meta
 			property="og:description"
-			content="Baltimore-based web developer specializing in accessible, responsive, and SEO-optimized modern sites that resonate. View my portfolio and get in touch." />
+			content="Baltimore-based freelance web developer specializing in accessible, responsive, and SEO-optimized websites for small businesses and nonprofits. View my portfolio and get in touch." />
 		<meta property="og:url" content="https://nickpoole.dev/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://nickpoole.dev/images/ilya-pavlov.webp" />
@@ -25,7 +25,29 @@
 		<meta name="twitter:title" content="Nick Poole | Web Developer | Baltimore, MD" />
 		<meta
 			name="twitter:description"
-			content="Baltimore-based web developer specializing in accessible, responsive, and SEO-optimized modern sites that resonate. View my portfolio and get in touch." />
+			content="Baltimore-based freelance web developer specializing in accessible, responsive, and SEO-optimized websites for small businesses and nonprofits. View my portfolio and get in touch." />
+
+		<!--=============== STRUCTURED DATA ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Nick Poole",
+				"url": "https://nickpoole.dev/",
+				"jobTitle": "Web Developer",
+				"description": "Baltimore-based freelance web developer specializing in accessible, responsive, and SEO-optimized websites for small businesses and nonprofits.",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Baltimore",
+					"addressRegion": "MD",
+					"addressCountry": "US"
+				},
+				"sameAs": [
+					"https://www.linkedin.com/in/napoole",
+					"https://github.com/nick-poole"
+				]
+			}
+		</script>
 		<meta name="twitter:image" content="https://nickpoole.dev/images/ilya-pavlov.webp" />
 
 		<!--=============== FAVICON ===============-->
@@ -128,7 +150,7 @@
 					<div class="home__profile">
 						<div class="home__image">
 							<!-- <img src="images/safar-safarov.webp" alt="" class="home__img" /> -->
-							<img src="images/ilya-pavlov.webp" alt="" class="home__img" />
+							<img src="images/ilya-pavlov.webp" alt="Portrait-style hero image illustrating web development workspace" class="home__img" />
 							<!-- <img src="images/wes-hicks.webp" alt="" class="home__img" /> -->
 							<div class="home__shadow" aria-hidden="true"></div>
 
@@ -171,12 +193,12 @@
 
 					<div class="home__info">
 						<p class="home__description">
-							<b>Web Developer</b>
+							<b>Baltimore-based Web Developer</b>
 							<br />
-							I engineer and develop web experiences that are thoughtfully structured, functionally solid,
-							and rooted in purpose. My work emphasizes semantic HTML, accessible design practices (WCAG
-							2.1 AA), and clean, scalable code. I understand how to improve and maintain large web
-							systems—supporting performance, SEO, and content clarity.
+							I'm a freelance web developer in Baltimore, MD helping small businesses and nonprofits launch
+							accessible, SEO-friendly, and responsive websites that actually resonate with their audiences.
+							My work emphasizes semantic HTML, accessible design practices (WCAG 2.1 AA), and clean,
+							scalable code — with a focus on performance, long-term maintainability, and content clarity.
 						</p>
 
 						<a href="#about" class="home__scroll" aria-label="Scroll down to the about section">
@@ -477,7 +499,7 @@
 					<!--======== AL-HAKEEM's TONSORIAL ========-->
 					<article class="projects__card">
 						<div class="projects__image">
-							<img src="images/aht-card-640x425.jpg" alt="image" class="projects__img" />
+							<img src="images/aht-card-640x425.jpg" alt="Al-Hakeem's Tonsorial barbershop website homepage" class="projects__img" />
 
 							<a
 								href="https://alhakeems.com/"
@@ -515,7 +537,7 @@
 					<!--======== NEXTMETRO ========-->
 					<article class="projects__card">
 						<div class="projects__image">
-							<img src="images/nextmetro-center-640x425.png" alt="image" class="projects__img" />
+							<img src="images/nextmetro-center-640x425.png" alt="Next Metro transit web app showing Washington DC Metro arrivals" class="projects__img" />
 
 							<a
 								href="https://nextmetro.netlify.app/"
@@ -553,7 +575,7 @@
 					<!--======== HAITIAN SENSATION ========-->
 					<article class="projects__card">
 						<div class="projects__image">
-							<img src="images/hsm-card-640x425.jpg" alt="image" class="projects__img" />
+							<img src="images/hsm-card-640x425.jpg" alt="Haitian Sensation Mission nonprofit website homepage" class="projects__img" />
 
 							<a
 								href="https://haitiansensationmission.org/"
@@ -592,7 +614,7 @@
 					<!--======== NEW HARLEM RENAISSANCE ========-->
 					<article class="projects__card">
 						<div class="projects__image">
-							<img src="images/nhr-card-640-425.jpg" alt="image" class="projects__img" />
+							<img src="images/nhr-card-640-425.jpg" alt="New Harlem Renaissance barbershop website homepage in Northeast Baltimore" class="projects__img" />
 
 							<a
 								href="https://newharlemrenaissance.com/"
@@ -631,7 +653,7 @@
 					<!--======== REVOLT URBAN FARMS ========-->
 					<article class="projects__card">
 						<div class="projects__image">
-							<img src="images/ruf-card-640x425.jpg" alt="image" class="projects__img" />
+							<img src="images/ruf-card-640x425.jpg" alt="Revolt Urban Farms nonprofit website homepage" class="projects__img" />
 
 							<a
 								href="https://revolturbanfarms.org/"
@@ -747,7 +769,8 @@
 						</p>
 						<p class="contact__description-2">
 							Tell me about your brand or what you're passionate about&mdash; I'd love to hear what you've
-							been building, planning, or quietly obsessing over.
+							been building, planning, or quietly obsessing over. I'm based in Baltimore, MD and partner
+							with clients locally and across the U.S. on accessible, SEO-focused web projects.
 						</p>
 						<div class="geometric-box" aria-hidden="true"></div>
 					</div>
