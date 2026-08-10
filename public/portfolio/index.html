@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Nick Poole" />
+		<link rel="canonical" href="https://nickpoole.dev/portfolio/" />
+		<title>Portfolio | Nick Poole | Baltimore, MD</title>
+		<meta
+			name="description"
+			content="Web development portfolio of Nick Poole. Nonprofit sites, web apps, and brand sites, plus the infrastructure underneath: APIs, payments, booking, DNS, and accessibility." />
+
+		<!--=============== OPEN GRAPH ===============-->
+		<meta property="og:title" content="Portfolio | Nick Poole | Baltimore, MD" />
+		<meta
+			property="og:description"
+			content="Sites I designed, built, and shipped myself, plus the layers you don't see: domain, DNS, code, integrations, and the search signals underneath." />
+		<meta property="og:url" content="https://nickpoole.dev/portfolio/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:site_name" content="Nick Poole" />
+
+		<!--=============== TWITTER CARD ===============-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Portfolio | Nick Poole | Baltimore, MD" />
+		<meta
+			name="twitter:description"
+			content="Sites I designed, built, and shipped myself, plus the layers you don't see: domain, DNS, code, integrations, and the search signals underneath." />
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+
+		<!--=============== STRUCTURED DATA ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "CollectionPage",
+				"name": "Portfolio | Nick Poole",
+				"url": "https://nickpoole.dev/portfolio/",
+				"about": { "@type": "Person", "name": "Nick Poole", "url": "https://nickpoole.dev/" },
+				"mainEntity": {
+					"@type": "ItemList",
+					"itemListElement": [
+						{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "Next Metro", "url": "https://nextmetro.live" } },
+						{ "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Haitian Sensation Mission", "url": "https://haitiansensationmission.org/" } },
+						{ "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "name": "New Harlem Renaissance", "url": "https://newharlemrenaissance.com/" } },
+						{ "@type": "ListItem", "position": 4, "item": { "@type": "WebSite", "name": "Revolt Urban Farms", "url": "https://revolturbanfarms.org/" } },
+						{ "@type": "ListItem", "position": 5, "item": { "@type": "WebSite", "name": "Al-Hakeem's Tonsorial", "url": "https://alhakeems.com/" } }
+					]
+				}
+			}
+		</script>
+
+		<!--=============== BREADCRUMB ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nickpoole.dev/" },
+					{ "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://nickpoole.dev/portfolio/" }
+				]
+			}
+		</script>
+
+		<!--=============== FAVICON ===============-->
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+		<!--=============== CSS ===============-->
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<div id="top"></div>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+
+		<!--==================== HEADER ====================-->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="/" class="nav__logo">
+					<span class="sr-only">Nick Poole - SEO Specialist</span>
+					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<div class="nav__logo-text">
+						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
+						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
+					</div>
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<span class="nav__title">Menu</span>
+					<span class="nav__name">Nick</span>
+
+					<ul class="nav__list">
+						<li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+						<li class="nav__item"><a href="/expertise/seo/" class="nav__link">SEO</a></li>
+						<li class="nav__item">
+							<a href="/portfolio/" class="nav__link active-link" aria-current="page">Portfolio</a>
+						</li>
+						<li class="nav__item"><a href="/credentials/" class="nav__link">Credentials</a></li>
+						<li class="nav__item"><a href="/resume/" class="nav__link">Resume</a></li>
+						<li class="nav__item">
+							<a href="/#contact" class="nav__link nav__link-button">Contact</a>
+						</li>
+					</ul>
+
+					<div class="nav__close" id="nav-close" role="button" tabindex="0" aria-label="Close menu">
+						<i class="ri-close-line" aria-hidden="true"></i>
+					</div>
+				</div>
+
+				<div class="nav__buttons">
+					<i
+						class="ri-moon-line change-theme"
+						id="theme-button"
+						role="button"
+						tabindex="0"
+						aria-label="Toggle dark mode"
+						aria-pressed="false"></i>
+
+					<div
+						class="nav__toggle"
+						id="nav-toggle"
+						role="button"
+						tabindex="0"
+						aria-label="Open navigation menu">
+						<i class="ri-menu-line" aria-hidden="true"></i>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!--==================== MAIN ====================-->
+		<main class="main" id="main-content">
+			<!--==================== HERO ====================-->
+			<section class="page-hero" style="--hero-pos: 50% 50%; --hero-overlay: 0.85">
+				<img
+					class="page-hero__img"
+					src="/images/heros/website-code-on-laptop.jpg"
+					alt=""
+					aria-hidden="true"
+					onerror="this.remove()" />
+				<div class="page-hero__overlay" aria-hidden="true"></div>
+				<div class="container page-hero__inner">
+					<p class="breadcrumb"><a href="/">Home</a> / Portfolio</p>
+					<h1>I know websites inside and out.</h1>
+					<p class="lede">
+						Every site here I designed, built, and shipped myself. Not just the pages you see, but the
+						layers you don't:
+						<b>the domain, the DNS, the code, the integrations, and the search signals underneath.</b>
+					</p>
+					<div class="layers" role="list" aria-label="Layers of a website I have owned">
+						<span class="layer" role="listitem">Domain &amp; DNS</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">Hosting &amp; SSL</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">Code</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">CMS</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">Content</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">Search</span>
+						<span class="layer--sep" aria-hidden="true">›</span>
+						<span class="layer" role="listitem">Analytics</span>
+					</div>
+				</div>
+			</section>
+
+			<!--==================== SELECTED WORK ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>Selected Work.</span></h2>
+				<div class="projgrid">
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb"><img src="/images/nextmetro.png" alt="Next Metro web app showing live DC Metro arrival times" loading="lazy" /></div>
+								<span class="proj__tag">Web App · Live Data</span>
+							<h3>Next Metro</h3>
+							<p class="proj__dates">nextmetro.live</p>
+							<p class="proves">
+								Real-time DC Metro arrivals powered by the official WMATA API. Proves I can consume a
+								third-party API, handle live data, and keep a mobile-first interface fast.
+							</p>
+							<div class="proj__chips"><span>JavaScript</span><span>WMATA API</span><span>Tailwind</span></div>
+							<p class="proj__links">
+								<a href="https://nextmetro.live" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/nextmetro" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb"><img src="/images/hsm-card-640x425.jpg" alt="Haitian Sensation Mission nonprofit website homepage" loading="lazy" /></div>
+								<span class="proj__tag">Nonprofit · Donations</span>
+							<h3>Haitian Sensation Mission</h3>
+							<p class="proj__dates">2023 · Digital Project Engineer</p>
+							<p class="proves">
+								Donation platform with transparent payment processing through Zeffy. Proves I can
+								integrate payments, author mission content, and run review cycles with a nonprofit team.
+							</p>
+							<div class="proj__chips"><span>Sass</span><span>JavaScript</span><span>Zeffy</span></div>
+							<p class="proj__links">
+								<a href="https://haitiansensationmission.org/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/hsmission" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb"><img src="/images/nhr-card-640-425.jpg" alt="New Harlem Renaissance barber brand website homepage" loading="lazy" /></div>
+								<span class="proj__tag">Brand Site · Booking</span>
+							<h3>New Harlem Renaissance</h3>
+							<p class="proj__dates">2022 – 2023</p>
+							<p class="proves">
+								Barber brand site with Acuity Scheduling for bookings and a VIP section for loyalty-tier
+								patrons. Proves I can build a brand identity and wire in the systems that run the
+								business.
+							</p>
+							<div class="proj__chips"><span>Sass</span><span>JavaScript</span><span>Acuity</span><span>Formspree</span></div>
+							<p class="proj__links">
+								<a href="https://newharlemrenaissance.com/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/harlemren" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb"><img src="/images/ruf-card-640x425.jpg" alt="Revolt Urban Farms nonprofit website homepage" loading="lazy" /></div>
+								<span class="proj__tag">Nonprofit · Outreach</span>
+							<h3>Revolt Urban Farms</h3>
+							<p class="proj__dates">2021 – 2022</p>
+							<p class="proves">
+								Mobile-first site for an urban agriculture nonprofit, with accessible FAQ patterns and an
+								EmailJS contact flow. I also collaborated on grant proposals and targeted outreach
+								messaging.
+							</p>
+							<div class="proj__chips"><span>HTML</span><span>CSS</span><span>EmailJS</span><span>A11y</span></div>
+							<p class="proj__links">
+								<a href="https://revolturbanfarms.org/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/revolturbanfarms" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb"><img src="/images/aht-card-640x425.jpg" alt="Al-Hakeem's Tonsorial barbershop website homepage" loading="lazy" /></div>
+								<span class="proj__tag">Local Business · Local SEO</span>
+							<h3>Al-Hakeem's Tonsorial</h3>
+							<p class="proj__dates">Owings Mills, MD</p>
+							<p class="proves">
+								Barbershop site built responsive and accessible, with local SEO baked in. Proves the
+								craft translates to Main Street: fast, findable, and easy to maintain.
+							</p>
+							<div class="proj__chips"><span>HTML</span><span>CSS</span><span>Local SEO</span></div>
+							<p class="proj__links">
+								<a href="https://alhakeems.com/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/cliftonbey" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<span class="proj__tag">Consulting · Healthcare</span>
+							<h3>Therapist Platform</h3>
+							<p class="proj__dates">2023 · Private engagement</p>
+							<p class="proves">
+								Dual-purpose site pairing a professional showcase with a crisis-resource guide for
+								Baltimore City residents. Proves I can distill sensitive healthcare topics into clear,
+								usable content.
+							</p>
+							<div class="proj__chips"><span>HTML</span><span>CSS</span><span>Maps API</span><span>Content</span></div>
+							<p class="proj__links">
+								<span style="color: var(--text-color-light); font-weight: 400">
+									Client engagement · no public link
+								</span>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<span class="proj__tag">This Site</span>
+							<h3>nickpoole.dev</h3>
+							<p class="proj__dates">2021 – Present · Rebuilt 2025</p>
+							<p class="proves">
+								The site you're reading. Hand-built with Sass and vanilla JavaScript, WCAG 2.1 AA
+								audited, deployed on Netlify, with live structured data on every page. The portfolio is
+								also the proof.
+							</p>
+							<div class="proj__chips"><span>Sass</span><span>JavaScript</span><span>Netlify</span><span>JSON-LD</span></div>
+							<p class="proj__links">
+								<a href="https://github.com/nick-poole/.dev" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!--==================== THE INSIDE PART ====================-->
+			<section class="section container">
+				<h2 class="section__title-2"><span>The Inside Part.</span></h2>
+				<div class="inside">
+					<div>
+						<h3><i class="ri-plug-line" aria-hidden="true"></i>Integrations</h3>
+						<p>
+							Third-party APIs (WMATA, REST Countries), payments (Zeffy), booking (Acuity), and form
+							services (Formspree, EmailJS). Websites that do things, not just say things.
+						</p>
+					</div>
+					<div>
+						<h3><i class="ri-global-line" aria-hidden="true"></i>Infrastructure</h3>
+						<p>
+							Domain registration, DNS, SSL, and email security records: SPF, DKIM, DMARC. The layer
+							most developers outsource, handled in-house.
+						</p>
+					</div>
+					<div>
+						<h3><i class="ri-wheelchair-line" aria-hidden="true"></i>Accessibility</h3>
+						<p>
+							WCAG 2.1 AA and Section 508 validated with WAVE, NVDA, and LambdaTest. Keyboard navigation
+							and screen readers tested by hand, not assumed.
+						</p>
+					</div>
+					<div>
+						<h3><i class="ri-git-branch-line" aria-hidden="true"></i>In the Open</h3>
+						<p>Source code public on GitHub. Every project here can be read, not just admired.</p>
+					</div>
+				</div>
+			</section>
+
+			<!--==================== VISIBLE SCHEMA ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>This Page Describes Itself.</span></h2>
+				<div class="schema">
+					<div class="schema__border" aria-hidden="true"></div>
+					<div class="schema__content">
+						<div class="schema__head">
+							<span>application/ld+json · live in this page's source</span>
+							<i class="ri-braces-line" aria-hidden="true"></i>
+						</div>
+						<pre>{
+  <span class="k">"@type"</span>: <span class="v">"CollectionPage"</span>,
+  <span class="k">"mainEntity"</span>: {
+    <span class="k">"@type"</span>: <span class="v">"ItemList"</span>,
+    <span class="k">"itemListElement"</span>: [
+      <span class="v">"Next Metro"</span>,
+      <span class="v">"Haitian Sensation Mission"</span>,
+      <span class="v">"New Harlem Renaissance"</span>,
+      <span class="v">"Revolt Urban Farms"</span>,
+      <span class="v">"Al-Hakeem's Tonsorial"</span> ]
+  }
+}</pre>
+					</div>
+				</div>
+				<p class="schema__caption">
+					This portfolio is enumerated as structured data. Machines get the same list you do.
+					<b>Even the gallery is machine-readable.</b>
+				</p>
+			</section>
+
+			<!--==================== CLOSING ====================-->
+			<section class="section container closing">
+				<h2 class="section__title-2"><span>Built It. Now Rank It.</span></h2>
+				<a class="button" href="/expertise/seo/">
+					See the SEO Side <i class="ri-arrow-right-line" aria-hidden="true"></i>
+				</a>
+				<a class="button__ghost" href="/resume/">View Resume</a>
+			</section>
+		</main>
+
+		<!--==================== FOOTER ====================-->
+		<footer class="footer">
+			<div class="footer__container container grid">
+				<ul class="footer__links">
+					<li><a href="/" class="footer__link">Home</a></li>
+					<li><a href="/expertise/seo/" class="footer__link">SEO</a></li>
+					<li><a href="/portfolio/" class="footer__link">Portfolio</a></li>
+					<li><a href="/credentials/" class="footer__link">Credentials</a></li>
+					<li><a href="/resume/" class="footer__link">Resume</a></li>
+				</ul>
+				<span class="footer__copy">
+					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
+				</span>
+			</div>
+		</footer>
+
+		<!--========== SCROLL UP ==========-->
+		<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+			<i class="ri-arrow-up-double-fill"></i>
+		</a>
+
+		<!--=============== SCROLLREVEAL ===============-->
+		<script src="/js/scrollreveal.min.js" defer></script>
+		<!--=============== MAIN JS ===============-->
+		<script src="/js/main.js"></script>
+	</body>
+</html>

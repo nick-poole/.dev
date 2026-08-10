@@ -9,18 +9,19 @@
 	&__links {
 		display: flex;
 		justify-content: center;
-		column-gap: 2rem;
+		flex-wrap: wrap;
+		gap: 0.75rem 2rem;
 	}
 	&__link {
 		color: var(--white-color);
 		transition: color 0.4s;
 
 		&:hover {
-			color: var(--text-color-light);
+			color: hsl(0, 0%, 64%); /* footer is black in both themes — keep hover light */
 		}
 	}
 	&__copy {
-		color: var(--text-color-light);
+		color: hsl(0, 0%, 64%); /* footer is black in both themes — keep copy light */
 		font-size: var(--small-font-size);
 		text-align: center;
 

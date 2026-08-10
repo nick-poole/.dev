@@ -1,47 +1,71 @@
-# .dev
+# nickpoole.dev
 
-## nickpoole.dev (Rebuild)
-
-The official rebuild of my personal portfolio site.
+The personal site of **Nick Poole — SEO Specialist** (Baltimore, MD), with a
+web development and IT foundation. It doubles as supplemental material for a
+job search: the link sits on the resume, and every page answers one of three
+questions — what does he know, what can he do, and why is he in a separate
+category from other candidates.
 
 ## Overview
 
-This project is a complete redesign and rebuild of [nickpoole.dev](https://nickpoole.dev), focused on accessibility (WCAG 2.1 AA), clean semantics, and showcasing my work in web design, development, and creative strategy.
+A hand-built, multi-page static site focused on accessibility (WCAG 2.1 AA),
+clean semantics, and a design system carried consistently across every page.
+Its signature is a **visible-schema motif**: each content page pairs real
+JSON-LD in the `<head>` with an on-page styled excerpt of that same data, so
+the structured data is legible to both people and machines.
 
 Built with:
 
-- HTML
-- Sass (SCSS)
-- JavaScript
-- Cypress for testing
-- [Optional] Node.js for dev tooling
+- HTML (static pages in `public/`)
+- Sass / SCSS (compiled to `public/css/styles.css`)
+- Vanilla JavaScript (theme toggle, mobile nav)
+- Deployed on Netlify (Forms + redirects)
 
-Deployed via Netlify.
+## Information architecture
+
+| Route              | Page                                                        |
+| ------------------ | ----------------------------------------------------------- |
+| `/`                | Home — hub hero, routing cards, statement, schema, contact  |
+| `/expertise/seo/`  | SEO expertise — diagnosis, the build, governance, method    |
+| `/portfolio/`      | Portfolio — shipped work, the ownership stack               |
+| `/credentials/`    | Credentials — degrees & certs, what each one trained        |
+| `/resume/`         | On-domain resume (print-friendly)                           |
+| `/thank-you.html`  | Post-contact-form confirmation (excluded from indexing)     |
+
+Nav: Home · SEO · Portfolio · Credentials · Resume · Contact.
+
+## Design system
+
+- Tokens in `src/scss/config/_variables.scss`; light/dark themes in
+  `src/scss/theme/_theme.scss` (`body.dark-theme`), persisted via localStorage.
+- Accent split: `--first-color` for decorative borders/blocks, `--accent-text`
+  for accessible accent **text**. Section titles carry the offset accent block.
+- Signature patterns: offset-border cards, the schema panel, chapter rows, and
+  the letter/icon tiles — all built on the same tokens.
+
+## Build & run
+
+```bash
+npm install
+npm run sass   # watch src/scss/styles.scss -> public/css/styles.css
+```
+
+Serve `public/` with any static server for local preview.
 
 ## Philosophy
 
 “Make it resonate. Then refine.”
 
-## Features (Planned or In Progress)
+## Status
 
-- [x] Clean semantic HTML
-- [x] Light/Dark mode toggle
-- [x] Accessibility audit and fixes
-- [x] Lighthouse optimization
-- [x] Adjust color palette
-- [x] Curate icons/images
-- [x] Deploy on Netlify
-- [x] Import an update resume link to flowCV
-- [x] Image compression
-- [x] Portfolio/project grid
-- [x] Contact form with spam protection
-- [x] Dedicated `/thank-you.html` page after form submission
-- [x] Copy Curation
-- [x] Configure redirects
-- [x] Add sitemap
-- [x] Deploy to domain URL
-- [ ] Integrate Cypress Testing
-- [ ] Easter egg: `/everyone-starts-somewhere.html`
+- [x] Multi-page rebuild around the SEO-specialist identity
+- [x] Light/Dark mode with persistence
+- [x] Accessibility pass (WCAG 2.1 AA, 44px tap targets, heading order)
+- [x] Visible-schema motif + validated JSON-LD on every content page
+- [x] On-domain resume (print stylesheet) replacing the external PDF link
+- [x] Netlify contact form with honeypot + `/thank-you.html`
+- [x] Sitemap, canonicals, robots.txt, branded OG card
+- [ ] Consulting flip (parked): hero swap + CTA change when ready
 
 ## Commit Log
 

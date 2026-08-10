@@ -1,0 +1,33 @@
+/*============= MINIMUM TAP TARGETS (WCAG 2.5.5 — 44x44) =============*/
+/* Loaded LAST so these win over component + breakpoint defaults.
+   Standalone interactive controls only. Inline links inside a sentence
+   (breadcrumbs, schema captions, resume bullet links) stay inline per
+   the WCAG "inline" exception. */
+
+.nav__link,
+.footer__link,
+.proj__links a,
+.r-meta a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+}
+
+.home__social-link,
+.home-hero__social a,
+.contact__social-link,
+.change-theme,
+.nav__toggle,
+.nav__close,
+.scrollup {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+}
+
+.button,
+.button__ghost {
+	min-height: 44px;
+}

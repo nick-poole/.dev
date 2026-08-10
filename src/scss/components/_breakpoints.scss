@@ -133,7 +133,8 @@
 		}
 		&__list {
 			flex-direction: row;
-			column-gap: 4rem;
+			column-gap: 2.25rem; /* tightened for the 6-link multi-page nav */
+			align-items: center;
 		}
 		&__menu {
 			margin-left: auto;
@@ -415,7 +416,7 @@
 		}
 		&__data {
 			width: 392px;
-			height: 375px;
+			min-height: 375px;
 			padding: 4.5rem 3.5rem 3.5rem;
 			margin: 7.5rem 0 0 8rem;
 			border-bottom: 6px solid var(--first-color);
