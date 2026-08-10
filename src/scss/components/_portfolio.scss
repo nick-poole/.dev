@@ -12,7 +12,7 @@
 }
 .layer {
 	font-family: var(--mono-font);
-	font-size: 0.68rem;
+	font-size: 0.75rem;
 	color: hsl(0, 0%, 92%);
 	border: 2px solid hsl(0, 0%, 30%);
 	background: hsl(0, 0%, 14%);
@@ -38,8 +38,22 @@
 	text-align: left;
 	padding: 2rem 1.4rem 1.75rem;
 
+	/* Screenshot bleeds to the card-content edges, under the black border */
+	&__thumb {
+		margin: -2rem -1.4rem 1.2rem;
+
+		& img {
+			width: 100%;
+			aspect-ratio: 3 / 2;
+			object-fit: cover;
+			object-position: top;
+			display: block;
+			border-bottom: 4px solid var(--first-color);
+		}
+	}
+
 	&__tag {
-		font-size: 0.64rem;
+		font-size: 0.71rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent-text);
@@ -50,7 +64,7 @@
 		margin: 0.35rem 0 0.15rem;
 	}
 	&__dates {
-		font-size: 0.7rem;
+		font-size: 0.77rem;
 		color: var(--text-color-light);
 		margin-bottom: 0.8rem;
 	}
@@ -66,7 +80,7 @@
 
 		& span {
 			font-family: var(--mono-font);
-			font-size: 0.62rem;
+			font-size: 0.69rem;
 			border: 1px solid var(--black-color-light);
 			padding: 0.15rem 0.5rem;
 			color: var(--text-color);
@@ -75,7 +89,7 @@
 	&__links {
 		display: flex;
 		gap: 1.1rem;
-		font-size: 0.72rem;
+		font-size: 0.79rem;
 		font-weight: 600;
 
 		& a {
@@ -101,7 +115,7 @@
 	padding-top: 1rem;
 
 	& h4 {
-		font-size: 0.72rem;
+		font-size: 0.79rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent-text);

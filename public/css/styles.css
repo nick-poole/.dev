@@ -26,9 +26,9 @@
   --h1-font-size: 1.75rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.8rem;
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
@@ -44,9 +44,9 @@
     --h1-font-size: 3rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
+    --normal-font-size: 1.0625rem;
+    --small-font-size: 0.9375rem;
+    --smaller-font-size: 0.85rem;
   }
 }
 
@@ -64,6 +64,7 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  line-height: 1.6;
   background-color: var(--body-color);
   color: var(--text-color);
   -webkit-transition: background-color 0.4s;
@@ -90,6 +91,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -1163,7 +1165,8 @@ body.dark-theme {
 .footer__links {
   display: flex;
   justify-content: center;
-  column-gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
 }
 .footer__link {
   color: var(--white-color);
@@ -1288,7 +1291,7 @@ body.dark-theme {
 
 /* ── Breadcrumb ── */
 .breadcrumb {
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-color-light);
@@ -1345,7 +1348,7 @@ body.dark-theme {
 }
 .chapter__tag {
   display: block;
-  font-size: 0.66rem;
+  font-size: 0.73rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-color-light);
@@ -1356,7 +1359,7 @@ body.dark-theme {
   margin-bottom: 0.35rem;
 }
 .chapter .meta {
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1390,7 +1393,7 @@ body.dark-theme {
   margin-top: 1.2rem;
 }
 .split h4 {
-  font-size: 0.7rem;
+  font-size: 0.77rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1558,7 +1561,7 @@ body.dark-theme {
   line-height: 1;
 }
 .tile span {
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-color);
@@ -1663,7 +1666,7 @@ body.dark-theme {
   text-decoration: underline;
   text-underline-offset: 3px;
   margin-top: 1rem;
-  font-size: 0.74rem;
+  font-size: 0.81rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1691,7 +1694,7 @@ body.dark-theme {
 }
 .schema__content pre {
   font-family: var(--mono-font);
-  font-size: 0.74rem;
+  font-size: 0.81rem;
   line-height: 1.75;
   color: hsl(0, 0%, 72%);
   padding: 1.1rem 1rem;
@@ -1710,7 +1713,7 @@ body.dark-theme {
   padding: 0.55rem 1rem;
   border-bottom: 1px solid hsl(0, 0%, 18%);
   font-family: var(--mono-font);
-  font-size: 0.66rem;
+  font-size: 0.73rem;
   color: hsl(0, 0%, 55%);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1738,6 +1741,18 @@ body.dark-theme {
 .resume-wrap {
   max-width: 860px;
   margin-inline: auto;
+}
+
+/* Role line under the name in the hero */
+.r-role {
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-top: 0.4rem;
+}
+
+.page-hero .r-role {
+  color: hsl(0, 0%, 90%);
 }
 
 .r-entry {
@@ -1853,7 +1868,7 @@ body.dark-theme {
   line-height: 1.1;
 }
 .hl span {
-  font-size: 0.7rem;
+  font-size: 0.77rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-color);
@@ -1875,10 +1890,13 @@ body.dark-theme {
   align-items: baseline;
 }
 .skills-row h4 {
-  font-size: 0.7rem;
+  font-size: 0.77rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
+}
+.skills-row h4 i {
+  margin-right: 0.4rem;
 }
 
 @media screen and (max-width: 640px) {
@@ -1957,7 +1975,7 @@ body.dark-theme {
 
 .layer {
   font-family: var(--mono-font);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   color: hsl(0, 0%, 92%);
   border: 2px solid hsl(0, 0%, 30%);
   background: hsl(0, 0%, 14%);
@@ -1982,9 +2000,21 @@ body.dark-theme {
 .proj {
   text-align: left;
   padding: 2rem 1.4rem 1.75rem;
+  /* Screenshot bleeds to the card-content edges, under the black border */
+}
+.proj__thumb {
+  margin: -2rem -1.4rem 1.2rem;
+}
+.proj__thumb img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-bottom: 4px solid var(--first-color);
 }
 .proj__tag {
-  font-size: 0.64rem;
+  font-size: 0.71rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1995,7 +2025,7 @@ body.dark-theme {
   margin: 0.35rem 0 0.15rem;
 }
 .proj__dates {
-  font-size: 0.7rem;
+  font-size: 0.77rem;
   color: var(--text-color-light);
   margin-bottom: 0.8rem;
 }
@@ -2011,7 +2041,7 @@ body.dark-theme {
 }
 .proj__chips span {
   font-family: var(--mono-font);
-  font-size: 0.62rem;
+  font-size: 0.69rem;
   border: 1px solid var(--black-color-light);
   padding: 0.15rem 0.5rem;
   color: var(--text-color);
@@ -2019,7 +2049,7 @@ body.dark-theme {
 .proj__links {
   display: flex;
   gap: 1.1rem;
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   font-weight: 600;
 }
 .proj__links a {
@@ -2042,7 +2072,7 @@ body.dark-theme {
   padding-top: 1rem;
 }
 .inside h4 {
-  font-size: 0.72rem;
+  font-size: 0.79rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
