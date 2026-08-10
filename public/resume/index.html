@@ -36,7 +36,7 @@
 				"@type": "ProfilePage",
 				"name": "Resume | Nick Poole",
 				"url": "https://nickpoole.dev/resume/",
-				"about": {
+				"mainEntity": {
 					"@type": "Person",
 					"name": "Nick Poole",
 					"jobTitle": "SEO and Web Content Specialist",
@@ -50,6 +50,18 @@
 						"addressCountry": "US"
 					}
 				}
+			}
+		</script>
+
+		<!--=============== BREADCRUMB ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nickpoole.dev/" },
+					{ "@type": "ListItem", "position": 2, "name": "Resume", "item": "https://nickpoole.dev/resume/" }
+				]
 			}
 		</script>
 
@@ -336,23 +348,23 @@
 				<h2 class="section__title-1"><span>Working Stack.</span></h2>
 				<div class="skills-rows">
 					<div class="skills-row">
-						<h4><i class="ri-line-chart-line" aria-hidden="true"></i>SEO Platforms</h4>
+						<h3><i class="ri-line-chart-line" aria-hidden="true"></i>SEO Platforms</h3>
 						<p>BrightEdge (incl. AI Catalyst &amp; Data Cube X) · Conductor · Siteimprove · Ahrefs · SEMrush · Google Search Console</p>
 					</div>
 					<div class="skills-row">
-						<h4><i class="ri-bar-chart-box-line" aria-hidden="true"></i>Analytics</h4>
+						<h3><i class="ri-bar-chart-box-line" aria-hidden="true"></i>Analytics</h3>
 						<p>GA4 · GTM · Google Trends · Coveo search analytics</p>
 					</div>
 					<div class="skills-row">
-						<h4><i class="ri-layout-2-line" aria-hidden="true"></i>CMS &amp; Content</h4>
+						<h3><i class="ri-layout-2-line" aria-hidden="true"></i>CMS &amp; Content</h3>
 						<p>Sitecore XM Cloud · WordPress · Drupal · OpenText TeamSite · inRiver PIM · Jasper · Salesforce Marketing Cloud</p>
 					</div>
 					<div class="skills-row">
-						<h4><i class="ri-code-s-slash-line" aria-hidden="true"></i>Code</h4>
+						<h3><i class="ri-code-s-slash-line" aria-hidden="true"></i>Code</h3>
 						<p>HTML · CSS/Sass · JavaScript · Python · Node · Git</p>
 					</div>
 					<div class="skills-row">
-						<h4><i class="ri-shield-check-line" aria-hidden="true"></i>Standards</h4>
+						<h3><i class="ri-shield-check-line" aria-hidden="true"></i>Standards</h3>
 						<p>WCAG 2.1 AA · Section 508 · Schema.org / JSON-LD · hreflang · Core Web Vitals</p>
 					</div>
 				</div>
@@ -368,9 +380,9 @@
 							<span>application/ld+json · live in this page's source</span>
 							<i class="ri-braces-line" aria-hidden="true"></i>
 						</div>
-						<pre aria-label="This page's structured data">{
+						<pre>{
   <span class="k">"@type"</span>: <span class="v">"ProfilePage"</span>,
-  <span class="k">"about"</span>: {
+  <span class="k">"mainEntity"</span>: {
     <span class="k">"@type"</span>: <span class="v">"Person"</span>,
     <span class="k">"name"</span>: <span class="v">"Nick Poole"</span>,
     <span class="k">"jobTitle"</span>: <span class="v">"SEO and Web Content Specialist"</span>,

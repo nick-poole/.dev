@@ -6,7 +6,7 @@
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Nick Poole" />
 		<link rel="canonical" href="https://nickpoole.dev/portfolio/" />
-		<title>Portfolio | Nick Poole | SEO Specialist &amp; Developer | Baltimore, MD</title>
+		<title>Portfolio | Nick Poole | Baltimore, MD</title>
 		<meta
 			name="description"
 			content="Web development portfolio of Nick Poole. Nonprofit sites, web apps, and brand sites, plus the infrastructure underneath: APIs, payments, booking, DNS, and accessibility." />
@@ -47,6 +47,18 @@
 						{ "@type": "ListItem", "position": 5, "item": { "@type": "WebSite", "name": "Al-Hakeem's Tonsorial", "url": "https://alhakeems.com/" } }
 					]
 				}
+			}
+		</script>
+
+		<!--=============== BREADCRUMB ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nickpoole.dev/" },
+					{ "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://nickpoole.dev/portfolio/" }
+				]
 			}
 		</script>
 
@@ -171,7 +183,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/nm-card-640x425.jpg" alt="Next Metro web app showing live DC Metro arrival times" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/nextmetro.png" alt="Next Metro web app showing live DC Metro arrival times" loading="lazy" /></div>
 								<span class="proj__tag">Web App · Live Data</span>
 							<h3>Next Metro</h3>
 							<p class="proj__dates">nextmetro.live</p>
@@ -332,28 +344,28 @@
 				<h2 class="section__title-2"><span>The Inside Part.</span></h2>
 				<div class="inside">
 					<div>
-						<h4><i class="ri-plug-line" aria-hidden="true"></i>Integrations</h4>
+						<h3><i class="ri-plug-line" aria-hidden="true"></i>Integrations</h3>
 						<p>
 							Third-party APIs (WMATA, REST Countries), payments (Zeffy), booking (Acuity), and form
 							services (Formspree, EmailJS). Websites that do things, not just say things.
 						</p>
 					</div>
 					<div>
-						<h4><i class="ri-global-line" aria-hidden="true"></i>Infrastructure</h4>
+						<h3><i class="ri-global-line" aria-hidden="true"></i>Infrastructure</h3>
 						<p>
 							Domain registration, DNS, SSL, and email security records: SPF, DKIM, DMARC. The layer
 							most developers outsource, handled in-house.
 						</p>
 					</div>
 					<div>
-						<h4><i class="ri-wheelchair-line" aria-hidden="true"></i>Accessibility</h4>
+						<h3><i class="ri-wheelchair-line" aria-hidden="true"></i>Accessibility</h3>
 						<p>
 							WCAG 2.1 AA and Section 508 validated with WAVE, NVDA, and LambdaTest. Keyboard navigation
 							and screen readers tested by hand, not assumed.
 						</p>
 					</div>
 					<div>
-						<h4><i class="ri-git-branch-line" aria-hidden="true"></i>In the Open</h4>
+						<h3><i class="ri-git-branch-line" aria-hidden="true"></i>In the Open</h3>
 						<p>Source code public on GitHub. Every project here can be read, not just admired.</p>
 					</div>
 				</div>
@@ -369,7 +381,7 @@
 							<span>application/ld+json · live in this page's source</span>
 							<i class="ri-braces-line" aria-hidden="true"></i>
 						</div>
-						<pre aria-label="This page's structured data">{
+						<pre>{
   <span class="k">"@type"</span>: <span class="v">"CollectionPage"</span>,
   <span class="k">"mainEntity"</span>: {
     <span class="k">"@type"</span>: <span class="v">"ItemList"</span>,

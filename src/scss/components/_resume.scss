@@ -153,11 +153,12 @@
 	font-size: var(--small-font-size);
 	align-items: baseline;
 
-	& h4 {
+	& h3 {
 		font-size: 0.77rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--accent-text);
+		font-weight: var(--font-semi-bold);
 
 		& i {
 			margin-right: 0.4rem;
