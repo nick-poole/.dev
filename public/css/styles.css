@@ -1466,6 +1466,29 @@ body.dark-theme {
   color: var(--white-color);
 }
 
+/* Routing-card variant: whole card is a link via a stretched anchor */
+.card--link .card__content {
+  padding-bottom: 2.4rem;
+}
+.card--link:focus-within .card__border {
+  transform: translate(0.75rem, 0.75rem);
+}
+
+.card__go {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 1rem;
+  color: var(--accent-text);
+  font-size: 1.1rem;
+  z-index: 6;
+}
+
+.card__stretch {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+}
+
 /* ── Chips (certs / badges) ── */
 .chips {
   display: flex;
@@ -1562,6 +1585,91 @@ body.dark-theme {
     grid-template-columns: 1fr;
   }
 }
+/*=============== HOMEPAGE HUB (v2) ===============*/
+/* Centered text hero (no banner image — that's the subpages' .page-hero) */
+.home-hero {
+  padding-block: calc(var(--header-height) + 3.5rem) 1rem;
+  text-align: center;
+}
+.home-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  letter-spacing: -0.02em;
+}
+.home-hero__tag {
+  margin-top: 0.6rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+}
+.home-hero .lede {
+  max-width: 62ch;
+  margin: 1.5rem auto 0;
+}
+.home-hero__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.home-hero__social a {
+  font-size: 1.4rem;
+  color: var(--title-color);
+  transition: color 0.3s;
+}
+.home-hero__social a:hover {
+  color: var(--accent-text);
+}
+.home-hero__cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+/* Pull-quote statement band */
+.statement {
+  text-align: center;
+}
+.statement a {
+  display: inline-block;
+}
+.statement blockquote {
+  font-family: var(--heading-font);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+  font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.statement blockquote::after {
+  content: "";
+  width: 44px;
+  height: 30px;
+  background-color: var(--first-color-soft);
+  position: absolute;
+  top: -6px;
+  right: -10px;
+}
+.statement blockquote span {
+  position: relative;
+  z-index: 5;
+}
+.statement .from {
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  font-weight: var(--font-semi-bold);
+}
+
 /*=============== VISIBLE SCHEMA PANEL (site signature) ===============*/
 /* Panel is intentionally dark in BOTH themes; its colors are pinned. */
 .schema {
@@ -2375,6 +2483,7 @@ body.dark-theme {
 }
 
 .home__social-link,
+.home-hero__social a,
 .contact__social-link,
 .change-theme,
 .nav__toggle,

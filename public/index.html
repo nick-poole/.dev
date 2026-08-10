@@ -78,9 +78,6 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer" />
 
-		<!--=============== BOXICONS ===============-->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-
 		<!--=============== CSS ===============-->
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
@@ -163,648 +160,131 @@
 
 		<!--==================== MAIN ====================-->
 		<main class="main" id="main-content">
-			<!--==================== HOME ====================-->
-			<section class="home section" id="home">
-				<div class="home__container container grid">
-					<h1 class="home__name">Nick Poole</h1>
+			<!--==================== HERO ====================-->
+			<section class="home-hero container" id="home">
+				<h1>Nick Poole</h1>
+				<p class="home-hero__tag">SEO Specialist <span class="accent">·</span> Baltimore, MD</p>
+				<p class="lede">
+					I'm an SEO Specialist with a web development and IT foundation. SEO is equal parts technical
+					and non-technical, and I work both sides: <b>the code under the hood, and the strategy on top
+					of it.</b> Platforms, SERP analysis, share of voice, and content that holds up.
+				</p>
+				<div class="home-hero__social">
+					<a
+						href="https://www.linkedin.com/in/napoole"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Nick's LinkedIn profile"
+						title="Nick's LinkedIn profile">
+						<i class="ri-linkedin-box-line" aria-hidden="true"></i>
+					</a>
+					<a
+						href="https://github.com/nick-poole"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Nick's GitHub"
+						title="Nick's GitHub">
+						<i class="ri-github-fill" aria-hidden="true"></i>
+					</a>
+				</div>
+				<div class="home-hero__cta">
+					<a class="button" href="/resume/">
+						View Resume <i class="ri-arrow-right-line" aria-hidden="true"></i>
+					</a>
+					<a class="button__ghost" href="/expertise/seo/">See What I Do</a>
+				</div>
 
-					<div class="home__profile">
-						<div class="home__image">
-							<img
-								src="images/nick-poole-headshot-1.webp"
-								alt="Nick Poole, web developer, standing on a rooftop with the Baltimore skyline behind him"
-								class="home__img" />
-							<div class="home__shadow" aria-hidden="true"></div>
-
-							<img src="images/curved-arrow.svg" alt="" aria-hidden="true" class="home__arrow" />
-							<img src="images/random-lines.svg" alt="" aria-hidden="true" class="home__line" />
-
-							<div class="geometric-box" aria-hidden="true"></div>
-						</div>
-
-						<div class="home__social">
-							<a
-								href="https://www.linkedin.com/in/napoole"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="home__social-link"
-								aria-label="View Nick's LinkedIn page"
-								title="View Nick's LinkedIn page">
-								<i class="ri-linkedin-box-line"></i>
-							</a>
-							<a
-								href="https://github.com/nick-poole"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="home__social-link"
-								aria-label="View Nick's Github"
-								title="View Nick's Github">
-								<i class="ri-github-fill"></i>
-							</a>
-							<a
-								href="https://buymeacoffee.com/nickpoole"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="home__social-link"
-								aria-label="Buy Me a Coffee"
-								title="Buy Me a Coffee">
-								<i class="ri-cup-line"></i>
-							</a>
-						</div>
+				<div class="highlights" role="list" aria-label="Career highlights">
+					<div class="hl" role="listitem">
+						<div class="hl__border" aria-hidden="true"></div>
+						<div class="hl__content"><b>223</b><span>SKUs of copy authored</span></div>
 					</div>
-
-					<div class="home__info">
-						<p class="home__description">
-							<b>Baltimore-based SEO Specialist</b>
-							<br />
-							I'm an SEO specialist who builds — enterprise search strategy, technical SEO, and AI search
-							visibility, grounded in a web development and IT foundation. I make sure sites are fast,
-							accessible, and legible to the machines that rank them, then earn the presence that follows.
-							Because you can't market your way out of bad tech.
-						</p>
-
-						<a href="#about" class="home__scroll" aria-label="Scroll down to the about section">
-							<div class="home__scroll-box">
-								<i class="ri-arrow-down-double-line"></i>
-							</div>
-
-							<span class="home__scroll-text">Scroll Down</span>
-						</a>
+					<div class="hl" role="listitem">
+						<div class="hl__border" aria-hidden="true"></div>
+						<div class="hl__content"><b>80+</b><span>Enterprise sites governed</span></div>
+					</div>
+					<div class="hl" role="listitem">
+						<div class="hl__border" aria-hidden="true"></div>
+						<div class="hl__content"><b>6</b><span>Product launches supported</span></div>
+					</div>
+					<div class="hl" role="listitem">
+						<div class="hl__border" aria-hidden="true"></div>
+						<div class="hl__content"><b>7</b><span>Sites built and shipped solo</span></div>
 					</div>
 				</div>
 			</section>
 
-			<!--==================== ABOUT ====================-->
-			<section class="about section" id="about">
-				<div class="about__container container grid">
-					<h2 class="section__title-1">
-						<span>About Me.</span>
-					</h2>
-
-					<div class="about__profile">
-						<div class="about__image">
-							<img src="images/franco-gancis.webp" alt="image" class="about__img" />
-							<!-- <img src="images/safar-safarov.webp" alt="image" class="about__img" /> -->
-
-							<div class="about__shadow" aria-hidden="true"></div>
-
-							<div class="geometric-box" aria-hidden="true"></div>
-							<img src="images/random-lines.svg" alt="" aria-hidden="true" class="about__line" />
-							<div class="about__box"></div>
-						</div>
-					</div>
-
-					<div class="about__info">
-						<p class="about__description">
-							I’m an SEO specialist with a builder’s foundation—I curate and build with intention,
-							grounded in accessibility, clean code, and a system I’ve spent years shaping. The search
-							strategy is sharper because I understand the stack underneath it, and ideas
-							<b class="accent">resonate</b>
-							when the tech gets out of their way.
-							<br />
-							<br />
-							The stack evolves, but here’s what I’m working with right now&mdash;and where the heavy
-							lifting happens.
-						</p>
-
-						<ul class="about__stack-grid">
-							<li class="about__tech">
-								<i class="bx bxl-html5" aria-hidden="true"></i>
-								<span>HTML5</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-css3" aria-hidden="true"></i>
-								<span>CSS3</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-javascript" aria-hidden="true"></i>
-								<span>JavaScript</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-react" aria-hidden="true"></i>
-								<span>React</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-nodejs" aria-hidden="true"></i>
-								<span>Node.js</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-sass" aria-hidden="true"></i>
-								<span>Sass</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-tailwind-css" aria-hidden="true"></i>
-								<span>Tailwind</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-bootstrap" aria-hidden="true"></i>
-								<span>Bootstrap</span>
-							</li>
-							<li class="about__tech">
-								<i class="bx bxl-figma" aria-hidden="true"></i>
-								<span>Figma</span>
-							</li>
-
-							<li class="about__tech">
-								<i class="bx bxl-wordpress" aria-hidden="true"></i>
-								<span>Wordpress</span>
-							</li>
-
-							<li class="about__tech">
-								<i class="bx bxl-php" aria-hidden="true"></i>
-								<span>PHP</span>
-							</li>
-
-							<li class="about__tech">
-								<i class="bx bxl-mongodb" aria-hidden="true"></i>
-								<span>MongoDB</span>
-							</li>
-
-							<li class="about__tech">
-								<i class="bx bxl-git" aria-hidden="true"></i>
-								<span>Git</span>
-							</li>
-
-							<li class="about__tech">
-								<i class="bx bxl-tux" aria-hidden="true"></i>
-								<span>Linux</span>
-							</li>
-
-							<!--
-
-							<li class="about__tech">
-								<i class="bx" aria-hidden="true"></i>
-								<span>Tech</span>
-							</li>
-
-							-->
-						</ul>
-
-						<div class="about__contact">
-							<div class="about__buttons">
-								<a
-									href="/resume/"
-									title="View Nick's Resume"
-									aria-label="View Nick's Resume"
-									class="button">
-									<i class="ri-file-list-3-line" aria-hidden="true"></i>
-									View Resume
-								</a>
+			<!--==================== ARSENAL ====================-->
+			<section class="section container" id="arsenal">
+				<h2 class="section__title-1"><span>Arsenal.</span></h2>
+				<div class="cards-grid">
+					<article class="card card--link">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-line-chart-line" aria-hidden="true"></i>
 							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!--==================== SERVICES ====================-->
-			<section class="services section">
-				<h2 class="section__title-2">
-					<span>Arsenal.</span>
-				</h2>
-
-				<div class="services__container container grid">
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
-								<i class="ri-search-eye-line" aria-hidden="true"></i>
-							</div>
-
-							<h3 class="services__title">SEO Strategy</h3>
-
-							<p class="services__description">
-								Technical SEO, AI search visibility, and intent architecture. I diagnose why pages don’t
-								rank and encode search into the build — not bolt it on after launch.
-							</p>
+							<h3 class="card__title">SEO Strategy</h3>
+							<p class="card__desc">Enterprise search programs: intent architecture, AI search visibility, share of voice, migrations, and the tech debt that has to come first.</p>
+							<a class="card__stretch" href="/expertise/seo/" aria-label="Read about Nick's SEO expertise"></a>
+							<i class="card__go ri-arrow-right-line" aria-hidden="true"></i>
 						</div>
 					</article>
-
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
-								<!-- <i class="ri-layout-4-line" aria-hidden="true"></i> -->
-								<i class="ri-pages-line" aria-hidden="true"></i>
+					<article class="card card--link">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-code-s-slash-line" aria-hidden="true"></i>
 							</div>
-
-							<h3 class="services__title">Web Development</h3>
-
-							<p class="services__description">
-								Mobile-first, responsive, accessible sites built with modern best practices — semantic
-								HTML, clean code, and structured data that machines can actually
-								<b class="accent">resonate</b>
-								with and read.
-							</p>
+							<h3 class="card__title">Web Development</h3>
+							<p class="card__desc">Hand-built, accessible, WCAG 2.1 AA sites. Seven shipped solo, from the DNS records to the rendered DOM. I know websites inside and out.</p>
+							<a class="card__stretch" href="/portfolio/" aria-label="View Nick's portfolio"></a>
+							<i class="card__go ri-arrow-right-line" aria-hidden="true"></i>
 						</div>
 					</article>
-
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
+					<article class="card card--link">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
 								<i class="ri-shield-keyhole-line" aria-hidden="true"></i>
 							</div>
-
-							<h3 class="services__title">Technical Foundation</h3>
-
-							<p class="services__description">
-								The layer under the site: DNS, SSL, email security, and server behavior. CompTIA-certified
-								depth means I trace problems to their real cause, not just the symptom.
-							</p>
+							<h3 class="card__title">Technical Foundation</h3>
+							<p class="card__desc">CompTIA A+, Network+, and Security+ under a Georgetown intelligence degree. The training behind the judgment.</p>
+							<a class="card__stretch" href="/credentials/" aria-label="See Nick's credentials"></a>
+							<i class="card__go ri-arrow-right-line" aria-hidden="true"></i>
 						</div>
 					</article>
+				</div>
+				<div class="chips" role="list" aria-label="Working stack" style="margin-top: 2.5rem">
+					<span class="chip" role="listitem">HTML5</span>
+					<span class="chip" role="listitem">CSS3</span>
+					<span class="chip" role="listitem">JavaScript</span>
+					<span class="chip" role="listitem">React</span>
+					<span class="chip" role="listitem">Sass</span>
+					<span class="chip" role="listitem">WordPress</span>
+					<span class="chip" role="listitem">Sitecore</span>
+					<span class="chip" role="listitem">BrightEdge</span>
+					<span class="chip" role="listitem">Ahrefs</span>
+					<span class="chip" role="listitem">GA4</span>
+					<span class="chip" role="listitem">Git</span>
+					<span class="chip" role="listitem">Linux</span>
 				</div>
 			</section>
 
-			<!--==================== PROJECTS ====================-->
-			<section class="projects section" id="projects">
-				<h2 class="section__title-1">
-					<span>Portfolio.</span>
-				</h2>
-
-				<div class="projects__container container grid">
-					<!--======== PREGNANCY CF BCBS ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/pregnancy-journey-640x425.png"
-								alt="CareFirst Pregnancy Journey guide homepage"
-								class="projects__img" />
-
-							<a
-								href="https://www.carefirst.com/pregnancy"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit carefirst.com/pregnancy"
-								aria-label="Visit carefirst.com/pregnancy">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">CareFirst BCBS</h4>
-							<h3 class="projects__title">Your Guide to A Healthy Pregnancy and Newborn</h3>
-
-							<p class="projects__description">
-								I partnered across UX, Copy, and Brand teams to develop CareFirst’s Pregnancy Journey,
-								an accessible, multipage guide supporting members from conception to postpartum.
-							</p>
-						</div>
-
-						<span>Enterprise</span>
-					</article>
-
-					<!--======== BH&A CF BCBS ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/bha-card-640x425.jpg"
-								alt="CareFirst Behavioral Health &amp; Addiction landing page"
-								class="projects__img" />
-
-							<a
-								href="https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit carefirst.com"
-								aria-label="Visit carefirst.com">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">CareFirst BCBS</h4>
-							<h3 class="projects__title">Behavioral Health &amp; Addiction</h3>
-
-							<p class="projects__description">
-								I led the development and delivery of CareFirst’s mental health landing page, ensuring
-								an accessible, SEO-optimized user experience aligned with enterprise goals.
-							</p>
-						</div>
-
-						<span>Enterprise</span>
-					</article>
-					<!--======== Supporting You Through Changes CF BCBS ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/sytc-card-2-640x425.jpg"
-								alt="CareFirst Supporting You Through Changes resource page"
-								class="projects__img" />
-
-							<a
-								href="https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit carefirst.com/fedhmo"
-								aria-label="Visit carefirst.com/fedhmo">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">CareFirst BCBS</h4>
-							<h3 class="projects__title">Supporting You Through Changes</h3>
-
-							<p class="projects__description">
-								I handled the full development and implementation, adapting provided copy into a
-								responsive, accessible layout that integrates seamlessly with the broader site
-								structure.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<span>Enterprise</span>
-						</div>
-					</article>
-					<!--======== AL-HAKEEM's TONSORIAL ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/aht-card-640x425.jpg"
-								alt="Al-Hakeem's Tonsorial barbershop website homepage"
-								class="projects__img" />
-
-							<a
-								href="https://alhakeems.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit Al-Hakeem's Tonsorial"
-								aria-label="Visit Al-Hakeem's Tonsorial">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">Barbershop Website</h4>
-							<h3 class="projects__title">Al-Hakeem's Tonsorial</h3>
-
-							<p class="projects__description">
-								I crafted a responsive, accessible barbershop website for Al-Hakeem’s Tonsorial in
-								Owings Mills, blending timeless craftsmanship with modern web design and local SEO
-								optimization.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/nick-poole/cliftonbey"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-fill" aria-hidden="true"></i>
-								View Repo
-							</a>
-						</div>
-					</article>
-					<!--======== NEXTMETRO ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/nextmetro.png"
-								alt="Next Metro transit web app showing Washington DC Metro arrivals"
-								class="projects__img" />
-
-							<a
-								href="https://nextmetro.live"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								aria-label="Visit Next Metro dot live">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">Web App</h4>
-							<h3 class="projects__title">Next Metro</h3>
-
-							<p class="projects__description">
-								I engineered Next Metro, a custom web app powered by the WMATA API, providing Washington
-								DC-area riders with fast, accurate Metro arrival times in a sleek, mobile-first
-								interface.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/nick-poole/nextmetro"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-fill" aria-hidden="true"></i>
-								View Repo
-							</a>
-						</div>
-					</article>
-
-					<!--======== HAITIAN SENSATION ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/hsm-card-640x425.jpg"
-								alt="Haitian Sensation Mission nonprofit website homepage"
-								class="projects__img" />
-
-							<a
-								href="https://haitiansensationmission.org/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit haitiansensationmission.org"
-								aria-label="Visit Haitian Sensation Mission dot org">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">Non Profit</h4>
-							<h3 class="projects__title">Haitian Sensation Mission</h3>
-
-							<p class="projects__description">
-								I developed a custom nonprofit website for Haitian Sensation Mission, integrating
-								donation tools, curated article content, and scalable Sass-powered CSS for a fast,
-								responsive experience.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/nick-poole/hsmission"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-fill" aria-hidden="true"></i>
-								View Repo
-							</a>
-						</div>
-					</article>
-
-					<!--======== NEW HARLEM RENAISSANCE ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/nhr-card-640-425.jpg"
-								alt="New Harlem Renaissance barbershop website homepage in Northeast Baltimore"
-								class="projects__img" />
-
-							<a
-								href="https://newharlemrenaissance.com/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit newharlemrenaissance.com"
-								aria-label="Visit New Harlem Renaissance dot com">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">Barbershop Website</h4>
-							<h3 class="projects__title">New Harlem Renaissance</h3>
-
-							<p class="projects__description">
-								I created a vibrant, modern website for New Harlem Renaissance in Northeast Baltimore,
-								showcasing their mission to revive Black barbershop culture through accessible,
-								mobile-first design.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/nick-poole/harlemren"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-fill" aria-hidden="true"></i>
-								View Repo
-							</a>
-						</div>
-					</article>
-
-					<!--======== REVOLT URBAN FARMS ========-->
-					<article class="projects__card">
-						<div class="projects__image">
-							<img
-								src="images/ruf-card-640x425.jpg"
-								alt="Revolt Urban Farms nonprofit website homepage"
-								class="projects__img" />
-
-							<a
-								href="https://revolturbanfarms.org/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__button button"
-								title="Visit revolturbanfarms.org"
-								aria-label="Visit Revolt Urban Farms dot org">
-								<i class="ri-external-link-line"></i>
-							</a>
-						</div>
-
-						<div class="projects__content">
-							<h4 class="projects__subtitle">Non Profit</h4>
-							<h3 class="projects__title">Revolt Urban Farms</h3>
-
-							<p class="projects__description">
-								I designed a mission-driven nonprofit website, amplifying their urban agriculture and
-								community impact with clean, SEO-friendly design and optimized performance.
-							</p>
-						</div>
-
-						<div class="projects__buttons">
-							<a
-								href="https://github.com/nick-poole/revolturbanfarms"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="projects__link">
-								<i class="ri-github-fill" aria-hidden="true"></i>
-								View Repo
-							</a>
-						</div>
-					</article>
-				</div>
-			</section>
-
-			<!--==================== CERTS ====================-->
-			<section class="services section">
-				<h2 class="section__title-2">
-					<span>Certifications.</span>
-				</h2>
-
-				<div class="services__container container grid">
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
-
-								<i class="ri-macbook-line" aria-hidden="true"></i>
-							</div>
-
-							<h3 class="services__title">CompTIA A+</h3>
-							<p class="services__description">
-								Expert troubleshooting and deep system knowledge lets me spot and resolve performance
-								issues most developers miss — ensuring smooth, efficient web applications that
-								<b class="accent">resonate</b>
-								with users.
-							</p>
-						</div>
-					</article>
-
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
-								<i class="ri-router-line" aria-hidden="true"></i>
-							</div>
-
-							<h3 class="services__title">CompTIA Net+</h3>
-							<p class="services__description">
-								Strong grasp of network architecture and protocols lets me design web solutions that
-								stay reliably connected, scale smoothly, and integrate across complex systems.
-							</p>
-						</div>
-					</article>
-
-					<article class="services__card">
-						<div class="services__border"></div>
-
-						<div class="services__content">
-							<div class="services__icon">
-								<div class="services__box" aria-hidden="true"></div>
-								<i class="ri-git-repository-private-line" aria-hidden="true"></i>
-							</div>
-
-							<h3 class="services__title">CompTIA Security+</h3>
-							<p class="services__description">
-								Advanced understanding of security best practices enables me to bake protection into
-								every stage of development — guarding user data, preventing breaches, and keeping
-								applications resilient.
-							</p>
-						</div>
-					</article>
-				</div>
+			<!--==================== STATEMENT ====================-->
+			<section class="section container statement">
+				<a href="/expertise/seo/" aria-label="Read Nick's SEO philosophy">
+					<blockquote><span>&ldquo;You can&rsquo;t market yourself out of bad tech.&rdquo;</span></blockquote>
+					<p class="from">Read the full argument <i class="ri-arrow-right-line" aria-hidden="true"></i></p>
+				</a>
 			</section>
 
 			<!--==================== VISIBLE SCHEMA ====================-->
 			<section class="section container">
-				<h2 class="section__title-1">
-					<span>This Page Describes Itself.</span>
-				</h2>
-
+				<h2 class="section__title-2"><span>This Page Describes Itself.</span></h2>
 				<div class="schema">
 					<div class="schema__border" aria-hidden="true"></div>
 					<div class="schema__content">
@@ -816,18 +296,18 @@
   <span class="k">"@type"</span>: <span class="v">"Person"</span>,
   <span class="k">"name"</span>: <span class="v">"Nick Poole"</span>,
   <span class="k">"jobTitle"</span>: <span class="v">"SEO Specialist"</span>,
+  <span class="k">"addressLocality"</span>: <span class="v">"Baltimore, MD"</span>,
   <span class="k">"knowsAbout"</span>: [
     <span class="v">"Technical SEO"</span>,
     <span class="v">"AI Search Visibility"</span>,
-    <span class="v">"Enterprise Site Migrations"</span>,
-    <span class="v">"Structured Data"</span>,
-    <span class="v">"Web Development"</span> ]
+    <span class="v">"Web Development"</span>,
+    <span class="v">"Accessibility"</span> ]
 }</pre>
 					</div>
 				</div>
 				<p class="schema__caption">
-					The same entity data goes to people and machines alike — jobTitle, expertise, and all.
-					<b>Even the homepage is machine-readable.</b>
+					Live structured data in this page's source — the exact entity record search and answer
+					engines read. <b>Every page on this site carries its own.</b>
 				</p>
 			</section>
 
@@ -1016,12 +496,6 @@
 
 		<!--=============== SCROLLREVEAL ===============-->
 		<script src="js/scrollreveal.min.js" defer></script>
-
-		<!--=============== BOXICONS ===============-->
-		<script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
-
-		<!--=============== EMAIL JS ===============-->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 
 		<!--=============== MAIN JS ===============-->
 		<script src="js/main.js"></script>

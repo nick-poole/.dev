@@ -258,6 +258,29 @@
 	color: var(--white-color);
 }
 
+/* Routing-card variant: whole card is a link via a stretched anchor */
+.card--link {
+	& .card__content {
+		padding-bottom: 2.4rem;
+	}
+	&:focus-within .card__border {
+		transform: translate(0.75rem, 0.75rem);
+	}
+}
+.card__go {
+	position: absolute;
+	bottom: 0.9rem;
+	right: 1rem;
+	color: var(--accent-text);
+	font-size: 1.1rem;
+	z-index: 6;
+}
+.card__stretch {
+	position: absolute;
+	inset: 0;
+	z-index: 7;
+}
+
 /* ── Chips (certs / badges) ── */
 .chips {
 	display: flex;
