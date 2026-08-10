@@ -17,6 +17,7 @@
 		position: relative;
 		font-size: var(--h1-font-size);
 		width: max-content;
+		max-width: 100%; /* prevent long titles overflowing on narrow screens */
 		margin: 0.75rem auto 2rem;
 
 		& span {

@@ -81,7 +81,7 @@
 		transition: border 0.4s, background-color 0.4s;
 
 		&::placeholder {
-			color: var(--text-color-light);
+			color: hsl(0, 0%, 64%); /* input sits on black in both themes */
 			transition: opacity 0.4s;
 		}
 		&:focus {
@@ -95,7 +95,7 @@
 		position: absolute;
 		top: 8px;
 		left: 10px;
-		color: var(--text-color-light);
+		color: hsl(0, 0%, 64%); /* label sits on black in both themes */
 		font-size: var(--small-font-size);
 		font-weight: var(--font-medium);
 		background-color: var(--black-color);
@@ -145,7 +145,7 @@
 			row-gap: 1.5rem;
 		}
 		&-description-1 {
-			color: var(--text-color-light);
+			color: hsl(0, 0%, 64%); /* social block sits on hsl(0,0%,10%) */
 			font-size: var(--small-font-size);
 			margin-bottom: 0.5rem;
 		}

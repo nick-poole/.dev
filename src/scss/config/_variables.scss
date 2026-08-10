@@ -1,18 +1,20 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 /*=============== VARIABLES CSS ===============*/
 :root {
 	--header-height: 3.5rem;
 
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
-	--first-color: hsl(14, 98%, 50%);
+	--first-color: hsl(14, 98%, 50%); /* decorative accent: borders, blocks, backgrounds */
+	--accent-text: hsl(14, 95%, 36%); /* accessible accent for TEXT (light theme) */
+	--first-color-soft: hsla(14, 98%, 50%, 0.2);
 	--black-color: hsl(0, 0%, 0%);
 	--black-color-light: hsl(0, 0%, 40%);
 	--white-color: hsl(0, 0%, 95%);
 	--title-color: hsl(0, 0%, 0%);
 	--text-color: hsl(0, 0%, 35%);
-	--text-color-light: hsl(0, 0%, 64%);
+	--text-color-light: hsl(0, 0%, 38%); /* muted text on light bg — AA fix (4.6:1) */
 	--body-color: hsl(0, 0%, 87%);
 	--container-color: hsl(0, 0%, 83%);
 
@@ -20,6 +22,7 @@
 	/*.5rem = 8px | 1rem = 16px ...*/
 	--heading-font: 'Bai Jamjuree', Roboto, 'Helvetica Neue', sans-serif;
 	--body-font: 'Bai Jamjuree', 'Helvetica Neue', sans-serif;
+	--mono-font: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
 
 	--biggest-font-size: 2.5rem;
 	--h1-font-size: 1.75rem;

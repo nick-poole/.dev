@@ -1,0 +1,117 @@
+/*=============== PORTFOLIO PAGE ===============*/
+
+/* Layer strip (Domain › Hosting › Code › …) */
+.layers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	margin: 2rem auto 0;
+	max-width: 780px;
+}
+.layer {
+	font-family: var(--mono-font);
+	font-size: 0.68rem;
+	color: hsl(0, 0%, 92%);
+	border: 2px solid hsl(0, 0%, 30%);
+	background: hsl(0, 0%, 14%);
+	padding: 0.35rem 0.7rem;
+
+	&--sep {
+		border: none;
+		background: none;
+		color: hsl(14, 98%, 60%);
+		font-weight: 700;
+		padding: 0;
+	}
+}
+
+/* Project cards (built on the .card language) */
+.projgrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	gap: 2rem;
+	padding-top: 1rem;
+}
+.proj {
+	text-align: left;
+	padding: 2rem 1.4rem 1.75rem;
+
+	&__tag {
+		font-size: 0.64rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent-text);
+		font-weight: 600;
+	}
+	& h3 {
+		font-size: var(--h3-font-size);
+		margin: 0.35rem 0 0.15rem;
+	}
+	&__dates {
+		font-size: 0.7rem;
+		color: var(--text-color-light);
+		margin-bottom: 0.8rem;
+	}
+	& p.proves {
+		font-size: var(--small-font-size);
+		min-height: 4.2em;
+	}
+	&__chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: 0.9rem 0 1rem;
+
+		& span {
+			font-family: var(--mono-font);
+			font-size: 0.62rem;
+			border: 1px solid var(--black-color-light);
+			padding: 0.15rem 0.5rem;
+			color: var(--text-color);
+		}
+	}
+	&__links {
+		display: flex;
+		gap: 1.1rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+
+		& a {
+			color: var(--accent-text);
+			display: inline-flex;
+			align-items: center;
+			gap: 0.3rem;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* Capability blocks — "The Inside Part." */
+.inside {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.75rem;
+	max-width: 900px;
+	margin-inline: auto;
+	padding-top: 1rem;
+
+	& h4 {
+		font-size: 0.72rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent-text);
+		margin-bottom: 0.5rem;
+
+		& i {
+			margin-right: 0.35rem;
+		}
+	}
+	& p {
+		font-size: var(--small-font-size);
+	}
+}

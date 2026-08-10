@@ -4,47 +4,41 @@
   <!-- Homepage -->
   <url>
     <loc>https://nickpoole.dev/</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>1.00</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Section anchors -->
+  <!-- SEO Expertise -->
   <url>
-    <loc>https://nickpoole.dev/#about</loc>
+    <loc>https://nickpoole.dev/expertise/seo/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Portfolio -->
+  <url>
+    <loc>https://nickpoole.dev/portfolio/</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Credentials -->
   <url>
-    <loc>https://nickpoole.dev/#projects</loc>
+    <loc>https://nickpoole.dev/credentials/</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Resume -->
   <url>
-    <loc>https://nickpoole.dev/#contact</loc>
-    <priority>0.80</priority>
+    <loc>https://nickpoole.dev/resume/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.90</priority>
     <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- Thank You page -->
-  <url>
-    <loc>https://nickpoole.dev/thank-you.html</loc>
-    <priority>0.70</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <!-- Redirect paths -->
-  <url>
-    <loc>https://nickpoole.dev/resume</loc>
-    <priority>0.70</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://nickpoole.dev/legacy</loc>
-    <priority>0.60</priority>
-    <changefreq>yearly</changefreq>
   </url>
 
 </urlset>

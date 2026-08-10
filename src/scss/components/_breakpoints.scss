@@ -133,7 +133,8 @@
 		}
 		&__list {
 			flex-direction: row;
-			column-gap: 4rem;
+			column-gap: 2.25rem; /* tightened for the 6-link multi-page nav */
+			align-items: center;
 		}
 		&__menu {
 			margin-left: auto;

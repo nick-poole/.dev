@@ -119,7 +119,7 @@
 	}
 	&__link {
 		position: relative;
-		color: var(--text-color-light);
+		color: hsl(0, 0%, 64%); /* fixed light grey: mobile menu sits on a dark overlay in both themes */
 		font-size: var(--h3-font-size);
 		font-weight: var(--font-semi-bold);
 		transition: color 0.3s;
