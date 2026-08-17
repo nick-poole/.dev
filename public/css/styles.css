@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+/* Loaded via <link rel="preconnect"> + <link rel="stylesheet"> in each page's
+   <head>, not @import — an @import here serialises CSS -> fonts.css -> woff2
+   and delays first paint. Only the two families actually used are requested. */
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -19,7 +21,7 @@
   --container-color: hsl(0, 0%, 83%);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --heading-font: "Bai Jamjuree", Roboto, "Helvetica Neue", sans-serif;
+  --heading-font: "Bai Jamjuree", "Helvetica Neue", sans-serif;
   --body-font: "Bai Jamjuree", "Helvetica Neue", sans-serif;
   --mono-font: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
   --biggest-font-size: 2.5rem;
@@ -27,8 +29,12 @@
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
   --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.8rem;
+  --small-font-size: 0.9375rem;
+  --smaller-font-size: 0.875rem;
+  /* Micro labels: uppercase tags, chips, and eyebrows. Tokenised so the
+     "small text" scale can be tuned in one place instead of per component. */
+  --micro-font-size: 0.8rem;
+  --micro-font-size-lg: 0.85rem;
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
@@ -45,8 +51,10 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1.0625rem;
-    --small-font-size: 0.9375rem;
-    --smaller-font-size: 0.85rem;
+    --small-font-size: 1rem;
+    --smaller-font-size: 0.9375rem;
+    --micro-font-size: 0.85rem;
+    --micro-font-size-lg: 0.9rem;
   }
 }
 
@@ -67,10 +75,6 @@ body {
   line-height: 1.6;
   background-color: var(--body-color);
   color: var(--text-color);
-  -webkit-transition: background-color 0.4s;
-  -moz-transition: background-color 0.4s;
-  -ms-transition: background-color 0.4s;
-  -o-transition: background-color 0.4s;
   transition: background-color 0.4s;
 }
 
@@ -120,17 +124,19 @@ img {
 
 .change-theme {
   font-size: 1.75rem;
+  line-height: 1;
   color: var(--title-color);
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  -webkit-transition: color 2.9s ease-in-out;
-  -moz-transition: color 2.9s ease-in-out;
-  -ms-transition: color 2.9s ease-in-out;
-  -o-transition: color 2.9s ease-in-out;
-  transition: color 2.9s ease-in-out;
+  transition: color 0.4s ease-in-out;
 }
 
 /*========== Variables Dark theme ==========*/
-body.dark-theme {
+/* Set on <html> (not <body>) so the inline pre-paint script in each page's
+   <head> can apply it before first paint — no light flash for dark-mode users. */
+.dark-theme {
   --first-color: hsl(14, 80%, 50%);
   --accent-text: hsl(14, 85%, 58%); /* accessible accent text on dark bg */
   --first-color-soft: hsla(14, 70%, 50%, 0.2);
@@ -256,7 +262,7 @@ body.dark-theme {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -293,7 +299,7 @@ body.dark-theme {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -375,9 +381,11 @@ body.dark-theme {
 }
 .nav__toggle {
   font-size: 1.75rem;
+  line-height: 1;
+  border: none;
   cursor: pointer;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1149.98px) {
   .nav__menu {
     position: fixed;
     top: -150%;
@@ -388,7 +396,12 @@ body.dark-theme {
     text-align: center;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    transition: top 0.4s;
+    /* visibility keeps the off-screen menu out of the tab order —
+       without it the six links stay keyboard-reachable while closed.
+       Delayed on close so the slide-up finishes, instant on open (see
+       .show-menu) so focus can move into the panel right away. */
+    visibility: hidden;
+    transition: top 0.4s, visibility 0s 0.4s;
   }
 }
 .nav__title, .nav__name, .nav__close {
@@ -450,14 +463,19 @@ body.dark-theme {
 .nav__close {
   position: absolute;
   font-size: 1.5rem;
+  line-height: 1;
   top: 1rem;
   right: 1.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
 /* Show menu */
 .show-menu {
   top: 0;
+  visibility: visible;
+  transition: top 0.4s, visibility 0s;
 }
 
 /* Add shadow header */
@@ -646,6 +664,9 @@ body.dark-theme {
 }
 .contact__button {
   background-color: var(--first-color);
+  /* White on the orange only reaches 3.2:1 — black clears AA at 5.9:1,
+     and matches the .button:hover treatment. */
+  color: hsl(0, 0%, 0%);
   cursor: pointer;
 }
 .contact__input:focus::placeholder {
@@ -690,7 +711,7 @@ body.dark-theme {
   background-color: var(--black-color-light);
   padding: 6px;
   color: var(--white-color);
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   display: grid;
   place-items: center;
   transition: background-color 0.3s;
@@ -791,13 +812,13 @@ body.dark-theme {
   rotate: 30deg;
 }
 @media screen and (max-width: 768px) {
-  .thank-you .thank-you__title {
+  .thank-you__title {
     font-size: 2rem;
   }
-  .thank-you .thank-you__description {
+  .thank-you__description {
     font-size: 1rem;
   }
-  .thank-you .thank-you__icon {
+  .thank-you__icon {
     width: 60px;
     height: 60px;
     font-size: 2rem;
@@ -941,7 +962,7 @@ body.dark-theme {
 
 /* ── Breadcrumb ── */
 .breadcrumb {
-  font-size: 0.79rem;
+  font-size: var(--micro-font-size-lg);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-color-light);
@@ -958,6 +979,17 @@ body.dark-theme {
 }
 .lede b {
   background: linear-gradient(90deg, hsla(14, 98%, 50%, 0.3), hsla(14, 98%, 50%, 0));
+  color: var(--title-color);
+}
+
+/* Intro paragraph sitting between a section title and its grid */
+.section__lead {
+  text-align: center;
+  margin-bottom: 2.25rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+.section__lead b {
   color: var(--title-color);
 }
 
@@ -981,7 +1013,11 @@ body.dark-theme {
 
 .chapter {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  /* The rail must fit the longest __tag on one line at --micro-font-size,
+     uppercase and tracked. "INFRASTRUCTURE" is the current ceiling; a longer
+     label needs this widened, not the tag shrunk. The right column takes
+     minmax(0, 1fr) so long headings wrap instead of forcing the rail narrower. */
+  grid-template-columns: 158px minmax(0, 1fr);
   gap: 1.75rem;
   padding: 2.25rem 0;
   border-top: 3px solid var(--container-color);
@@ -998,18 +1034,20 @@ body.dark-theme {
 }
 .chapter__tag {
   display: block;
-  font-size: 0.73rem;
-  letter-spacing: 0.12em;
+  font-size: var(--micro-font-size);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-color-light);
   margin-top: 0.4rem;
+  /* backstop: wrap inside the rail rather than run into the heading */
+  overflow-wrap: break-word;
 }
 .chapter h3 {
   font-size: var(--h2-font-size);
   margin-bottom: 0.35rem;
 }
 .chapter .meta {
-  font-size: 0.79rem;
+  font-size: var(--micro-font-size-lg);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1043,7 +1081,7 @@ body.dark-theme {
   margin-top: 1.2rem;
 }
 .split h4 {
-  font-size: 0.77rem;
+  font-size: var(--micro-font-size-lg);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1180,7 +1218,10 @@ body.dark-theme {
 
 .tile {
   position: relative;
-  width: 92px;
+  /* Sized to hold the longest label ("INTELLIGENCE") on one line inside the
+     square, with the borders and padding accounted for. */
+  width: 140px;
+  flex: 0 0 auto;
 }
 .tile__border {
   position: absolute;
@@ -1198,12 +1239,19 @@ body.dark-theme {
   aspect-ratio: 1;
   border: 4px solid var(--black-color);
   background: var(--body-color);
+  padding-inline: 0.65rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem;
+  gap: 0.45rem;
+  text-align: center;
   transition: background-color 0.4s, border 0.4s;
+}
+.tile__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--accent-text);
 }
 .tile b {
   font-size: 1.6rem;
@@ -1211,10 +1259,12 @@ body.dark-theme {
   line-height: 1;
 }
 .tile span {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
+  font-size: var(--micro-font-size);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
   text-transform: uppercase;
   color: var(--text-color);
+  text-wrap: balance;
 }
 
 /* ── Closing CTA block ── */
@@ -1286,7 +1336,7 @@ body.dark-theme {
   margin-top: 1.5rem;
 }
 .home-hero__social a {
-  font-size: 1.4rem;
+  font-size: 1.65rem;
   color: var(--title-color);
   transition: color 0.3s;
 }
@@ -1337,7 +1387,7 @@ body.dark-theme {
   text-decoration: underline;
   text-underline-offset: 3px;
   margin-top: 1rem;
-  font-size: 0.81rem;
+  font-size: var(--micro-font-size-lg);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1365,7 +1415,7 @@ body.dark-theme {
 }
 .schema__content pre {
   font-family: var(--mono-font);
-  font-size: 0.81rem;
+  font-size: var(--micro-font-size-lg);
   line-height: 1.75;
   color: hsl(0, 0%, 72%);
   padding: 1.1rem 1rem;
@@ -1384,7 +1434,7 @@ body.dark-theme {
   padding: 0.55rem 1rem;
   border-bottom: 1px solid hsl(0, 0%, 18%);
   font-family: var(--mono-font);
-  font-size: 0.73rem;
+  font-size: var(--micro-font-size);
   color: hsl(0, 0%, 55%);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1480,14 +1530,23 @@ body.dark-theme {
 .r-meta {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  align-items: center; /* keeps the 44px LinkedIn target on the same centre line as the location */
+  gap: 0.25rem 1.5rem;
   flex-wrap: wrap;
   font-size: var(--small-font-size);
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+  /* Each item is its own centred flex line, so a taller tap target inside
+     one of them can't drop that item's text below its neighbour's. */
+}
+.r-meta > span, .r-meta a {
+  display: inline-flex;
+  align-items: center;
 }
 .r-meta span i {
+  font-size: 1.3em;
+  line-height: 1;
   color: var(--accent-text);
-  margin-right: 0.3rem;
+  margin-right: 0.4rem;
 }
 
 .r-mini {
@@ -1539,7 +1598,7 @@ body.dark-theme {
   line-height: 1.1;
 }
 .hl span {
-  font-size: 0.77rem;
+  font-size: var(--micro-font-size);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-color);
@@ -1561,7 +1620,7 @@ body.dark-theme {
   align-items: baseline;
 }
 .skills-row h3 {
-  font-size: 0.77rem;
+  font-size: var(--micro-font-size-lg);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1647,7 +1706,7 @@ body.dark-theme {
 
 .layer {
   font-family: var(--mono-font);
-  font-size: 0.75rem;
+  font-size: var(--micro-font-size);
   color: hsl(0, 0%, 92%);
   border: 2px solid hsl(0, 0%, 30%);
   background: hsl(0, 0%, 14%);
@@ -1672,6 +1731,11 @@ body.dark-theme {
 .proj {
   text-align: left;
   padding: 2rem 1.4rem 1.75rem;
+  /* Column layout so the "Live Site / Repo" row can be pinned to the card
+     floor — otherwise rows of cards with different copy lengths end up with
+     their links at four different heights. */
+  display: flex;
+  flex-direction: column;
   /* Screenshot bleeds to the card-content edges, under the black border */
 }
 .proj__thumb {
@@ -1686,7 +1750,7 @@ body.dark-theme {
   border-bottom: 4px solid var(--first-color);
 }
 .proj__tag {
-  font-size: 0.71rem;
+  font-size: var(--micro-font-size);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -1697,13 +1761,12 @@ body.dark-theme {
   margin: 0.35rem 0 0.15rem;
 }
 .proj__dates {
-  font-size: 0.77rem;
+  font-size: var(--micro-font-size-lg);
   color: var(--text-color-light);
   margin-bottom: 0.8rem;
 }
 .proj p.proves {
   font-size: var(--small-font-size);
-  min-height: 4.2em;
 }
 .proj__chips {
   display: flex;
@@ -1713,15 +1776,17 @@ body.dark-theme {
 }
 .proj__chips span {
   font-family: var(--mono-font);
-  font-size: 0.69rem;
+  font-size: var(--micro-font-size);
   border: 1px solid var(--black-color-light);
   padding: 0.15rem 0.5rem;
   color: var(--text-color);
 }
 .proj__links {
   display: flex;
-  gap: 1.1rem;
-  font-size: 0.79rem;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+  margin-top: auto;
+  font-size: var(--micro-font-size-lg);
   font-weight: 600;
 }
 .proj__links a {
@@ -1744,7 +1809,7 @@ body.dark-theme {
   padding-top: 1rem;
 }
 .inside h3 {
-  font-size: 0.79rem;
+  font-size: var(--micro-font-size-lg);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-text);
@@ -2188,8 +2253,6 @@ body.dark-theme {
 .home-hero__social a,
 .contact__social-link,
 .change-theme,
-.nav__toggle,
-.nav__close,
 .scrollup {
   display: inline-flex;
   align-items: center;
@@ -2198,6 +2261,24 @@ body.dark-theme {
   min-height: 44px;
 }
 
+/* Mobile nav controls. Sized here, but NOT given a `display` value at this
+   level: the desktop breakpoint hides them with `display: none`, and this
+   file loads last, so an unconditional `display: inline-flex` here would
+   win and leave the hamburger + close X visible on desktop. */
+.nav__toggle,
+.nav__close {
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media screen and (max-width: 1149.98px) {
+  .nav__toggle,
+  .nav__close {
+    display: inline-flex;
+  }
+}
 .button,
 .button__ghost {
   min-height: 44px;

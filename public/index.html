@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
 		<link rel="canonical" href="https://nickpoole.dev/" />
 		<title>Nick Poole | SEO Specialist | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="Nick Poole is an SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, AI search visibility, and accessible builds." />
+			content="SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, AI search visibility, and accessible builds." />
 		<!--=============== OPEN GRAPH ===============-->
 		<meta property="og:title" content="Nick Poole | SEO Specialist | Baltimore, MD" />
 		<meta
@@ -18,6 +19,10 @@
 		<meta property="og:url" content="https://nickpoole.dev/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
 		<!--=============== TWITTER CARD ===============-->
@@ -26,6 +31,8 @@
 		<meta
 			name="twitter:description"
 			content="SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, AI search visibility, and accessible builds." />
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
 
 		<!--=============== STRUCTURED DATA ===============-->
 		<script type="application/ld+json">
@@ -35,6 +42,7 @@
 				"name": "Nick Poole",
 				"url": "https://nickpoole.dev/",
 				"jobTitle": "SEO Specialist",
+				"image": "https://nickpoole.dev/images/nick-poole-headshot-1.webp",
 				"description": "SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, and AI search visibility.",
 				"address": {
 					"@type": "PostalAddress",
@@ -61,7 +69,6 @@
 				"sameAs": ["https://www.linkedin.com/in/napoole", "https://github.com/nick-poole"]
 			}
 		</script>
-		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
 
 		<!--=============== FAVICON ===============-->
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -71,6 +78,22 @@
 		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
 		<link rel="manifest" href="/site.webmanifest" />
 
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
+
 		<!--=============== REMIXICONS ===============-->
 		<link
 			rel="stylesheet"
@@ -79,7 +102,7 @@
 			referrerpolicy="no-referrer" />
 
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 	</head>
 	<body>
 		<div id="top"></div>
@@ -90,7 +113,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -129,31 +152,32 @@
 					</ul>
 
 					<!-- Close button -->
-					<div class="nav__close" id="nav-close" role="button" tabindex="0" aria-label="Close menu">
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
 						<i class="ri-close-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 
 				<div class="nav__buttons">
 					<!-- Toggle Dark Mode -->
-					<i
-						class="ri-moon-line change-theme"
+					<button
+						type="button"
+						class="change-theme"
 						id="theme-button"
-						role="button"
-						tabindex="0"
 						aria-label="Toggle dark mode"
-						aria-pressed="false"></i>
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
 
 					<!-- Toggle menu button -->
-					<div
+					<button
+						type="button"
 						class="nav__toggle"
 						id="nav-toggle"
-						role="button"
-						tabindex="0"
-						aria-label="Open navigation menu">
-						<!-- <i class="ri-menu-4-line" aria-hidden="true"></i> -->
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
 						<i class="ri-menu-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 			</nav>
 		</header>
@@ -165,10 +189,11 @@
 				<div class="home-hero__photo">
 					<div class="home-hero__photo-border" aria-hidden="true"></div>
 					<img
-						src="images/nick-poole-headshot-1.webp"
+						src="/images/nick-poole-headshot-1.webp"
 						alt="Nick Poole, SEO Specialist, on a Baltimore rooftop"
 						width="200"
 						height="200"
+						fetchpriority="high"
 						class="home-hero__img" />
 				</div>
 				<h1>Nick Poole</h1>
@@ -264,12 +289,12 @@
 			</section>
 
 			<!--==================== STATEMENT ====================-->
-			<section class="section container statement">
+			<div class="section container statement">
 				<a href="/expertise/seo/" aria-label="Read Nick's SEO philosophy">
 					<blockquote><span>&ldquo;You can&rsquo;t market yourself out of bad tech.&rdquo;</span></blockquote>
 					<p class="from">Read the full argument <i class="ri-arrow-right-line" aria-hidden="true"></i></p>
 				</a>
-			</section>
+			</div>
 
 			<!--==================== VISIBLE SCHEMA ====================-->
 			<section class="section container">
@@ -281,7 +306,7 @@
 							<span>application/ld+json · live in this page's source</span>
 							<i class="ri-braces-line" aria-hidden="true"></i>
 						</div>
-						<pre>{
+						<pre tabindex="0" role="region" aria-label="Person structured data for this page">{
   <span class="k">"@type"</span>: <span class="v">"Person"</span>,
   <span class="k">"name"</span>: <span class="v">"Nick Poole"</span>,
   <span class="k">"jobTitle"</span>: <span class="v">"SEO Specialist"</span>,
@@ -349,8 +374,7 @@
 										class="contact__input"
 										id="name"
 										required
-										placeholder="Name"
-										aria-required="true" />
+										placeholder="Name" />
 									<label for="name" class="contact__label">Name</label>
 								</div>
 
@@ -361,8 +385,7 @@
 										class="contact__input"
 										id="email"
 										required
-										placeholder="Email"
-										aria-required="true" />
+										placeholder="Email" />
 									<label for="email" class="contact__label">Email</label>
 								</div>
 							</div>
@@ -374,8 +397,7 @@
 									class="contact__input"
 									id="subject"
 									required
-									placeholder="Subject"
-									aria-required="true" />
+									placeholder="Subject" />
 								<label for="subject" class="contact__label">Subject</label>
 							</div>
 
@@ -385,8 +407,7 @@
 									class="contact__input"
 									id="message"
 									required
-									placeholder="Message"
-									aria-required="true"></textarea>
+									placeholder="Message"></textarea>
 								<label for="message" class="contact__label">Message</label>
 							</div>
 
@@ -400,7 +421,7 @@
 						</form>
 					</div>
 					<div class="contact__social">
-						<img src="images/curved-arrow.svg" alt="" aria-hidden="true" class="contact__social-arrow" />
+						<img src="/images/curved-arrow.svg" alt="" aria-hidden="true" class="contact__social-arrow" />
 
 						<div class="contact__social-data">
 							<div class="contact__social-links">
@@ -465,22 +486,21 @@
 
 				<span class="footer__copy">
 					2026 &#169;
-					<a href="#">nickpoole.dev</a>
+					<a href="/">nickpoole.dev</a>
 					All Rights Reserved
 				</span>
 			</div>
+
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
 		</footer>
 
-		<!--========== SCROLL UP ==========-->
-		<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-			<!-- <i class="ri-arrow-up-s-line"></i> -->
-			<i class="ri-arrow-up-double-fill"></i>
-		</a>
-
 		<!--=============== SCROLLREVEAL ===============-->
-		<script src="js/scrollreveal.min.js" defer></script>
+		<script src="/js/scrollreveal.min.js" defer></script>
 
 		<!--=============== MAIN JS ===============-->
-		<script src="js/main.js"></script>
+		<script src="/js/main.js"></script>
 	</body>
 </html>

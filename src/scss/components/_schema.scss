@@ -19,7 +19,7 @@
 
 		& pre {
 			font-family: var(--mono-font);
-			font-size: 0.81rem;
+			font-size: var(--micro-font-size-lg);
 			line-height: 1.75;
 			color: hsl(0, 0%, 72%);
 			padding: 1.1rem 1rem;
@@ -39,7 +39,7 @@
 		padding: 0.55rem 1rem;
 		border-bottom: 1px solid hsl(0, 0%, 18%);
 		font-family: var(--mono-font);
-		font-size: 0.73rem;
+		font-size: var(--micro-font-size);
 		color: hsl(0, 0%, 55%);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;

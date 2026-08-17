@@ -18,18 +18,19 @@
 
 .change-theme {
 	font-size: 1.75rem;
+	line-height: 1;
 	color: var(--title-color);
+	background: none;
+	border: none;
+	padding: 0;
 	cursor: pointer;
-
-	-webkit-transition: color 2.9s ease-in-out;
-	-moz-transition: color 2.9s ease-in-out;
-	-ms-transition: color 2.9s ease-in-out;
-	-o-transition: color 2.9s ease-in-out;
-	transition: color 2.9s ease-in-out;
+	transition: color 0.4s ease-in-out;
 }
 
 /*========== Variables Dark theme ==========*/
-body.dark-theme {
+/* Set on <html> (not <body>) so the inline pre-paint script in each page's
+   <head> can apply it before first paint — no light flash for dark-mode users. */
+.dark-theme {
 	--first-color: hsl(14, 80%, 50%);
 	--accent-text: hsl(14, 85%, 58%); /* accessible accent text on dark bg */
 	--first-color-soft: hsla(14, 70%, 50%, 0.2);

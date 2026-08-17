@@ -48,7 +48,7 @@
 		margin-top: 1.5rem;
 
 		& a {
-			font-size: 1.4rem;
+			font-size: 1.65rem;
 			color: var(--title-color);
 			transition: color 0.3s;
 
@@ -103,7 +103,7 @@
 		text-decoration: underline;
 		text-underline-offset: 3px;
 		margin-top: 1rem;
-		font-size: 0.81rem;
+		font-size: var(--micro-font-size-lg);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--accent-text);

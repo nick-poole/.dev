@@ -72,14 +72,24 @@
 .r-meta {
 	display: flex;
 	justify-content: center;
-	gap: 1.25rem;
+	align-items: center; /* keeps the 44px LinkedIn target on the same centre line as the location */
+	gap: 0.25rem 1.5rem;
 	flex-wrap: wrap;
 	font-size: var(--small-font-size);
-	margin-top: 1rem;
+	margin-top: 0.75rem;
 
+	/* Each item is its own centred flex line, so a taller tap target inside
+	   one of them can't drop that item's text below its neighbour's. */
+	& > span,
+	& a {
+		display: inline-flex;
+		align-items: center;
+	}
 	& span i {
+		font-size: 1.3em;
+		line-height: 1;
 		color: var(--accent-text);
-		margin-right: 0.3rem;
+		margin-right: 0.4rem;
 	}
 }
 
@@ -132,7 +142,7 @@
 		line-height: 1.1;
 	}
 	& span {
-		font-size: 0.77rem;
+		font-size: var(--micro-font-size);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--text-color);
@@ -154,7 +164,7 @@
 	align-items: baseline;
 
 	& h3 {
-		font-size: 0.77rem;
+		font-size: var(--micro-font-size-lg);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--accent-text);

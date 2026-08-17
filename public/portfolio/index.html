@@ -5,20 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
 		<link rel="canonical" href="https://nickpoole.dev/portfolio/" />
 		<title>Portfolio | Nick Poole | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="Web development portfolio of Nick Poole. Nonprofit sites, web apps, and brand sites, plus the infrastructure underneath: APIs, payments, booking, DNS, and accessibility." />
+			content="Portfolio of Nick Poole: nonprofit sites, web apps, and brand sites built solo, plus enterprise healthcare pages shipped at CareFirst BlueCross BlueShield." />
 
 		<!--=============== OPEN GRAPH ===============-->
 		<meta property="og:title" content="Portfolio | Nick Poole | Baltimore, MD" />
 		<meta
 			property="og:description"
-			content="Sites I designed, built, and shipped myself, plus the layers you don't see: domain, DNS, code, integrations, and the search signals underneath." />
+			content="Sites I designed, built, and shipped solo, enterprise healthcare pages shipped at CareFirst, and the layers you don't see: DNS, code, integrations, and search." />
 		<meta property="og:url" content="https://nickpoole.dev/portfolio/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
 		<!--=============== TWITTER CARD ===============-->
@@ -26,8 +31,9 @@
 		<meta name="twitter:title" content="Portfolio | Nick Poole | Baltimore, MD" />
 		<meta
 			name="twitter:description"
-			content="Sites I designed, built, and shipped myself, plus the layers you don't see: domain, DNS, code, integrations, and the search signals underneath." />
+			content="Sites I designed, built, and shipped solo, enterprise healthcare pages shipped at CareFirst, and the layers you don't see: DNS, code, integrations, and search." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
 
 		<!--=============== STRUCTURED DATA ===============-->
 		<script type="application/ld+json">
@@ -44,7 +50,14 @@
 						{ "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Haitian Sensation Mission", "url": "https://haitiansensationmission.org/" } },
 						{ "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "name": "New Harlem Renaissance", "url": "https://newharlemrenaissance.com/" } },
 						{ "@type": "ListItem", "position": 4, "item": { "@type": "WebSite", "name": "Revolt Urban Farms", "url": "https://revolturbanfarms.org/" } },
-						{ "@type": "ListItem", "position": 5, "item": { "@type": "WebSite", "name": "Al-Hakeem's Tonsorial", "url": "https://alhakeems.com/" } }
+						{ "@type": "ListItem", "position": 5, "item": { "@type": "WebSite", "name": "Al-Hakeem's Tonsorial", "url": "https://alhakeems.com/" } },
+						{ "@type": "ListItem", "position": 6, "item": { "@type": "WebSite", "name": "Savanna Altenor, LCSW-C", "url": "https://savannaaltenor.com/" } },
+						{ "@type": "ListItem", "position": 7, "item": { "@type": "WebPage", "name": "CareFirst: Your Guide to a Healthy Pregnancy", "url": "https://www.carefirst.com/pregnancy/" } },
+						{ "@type": "ListItem", "position": 8, "item": { "@type": "WebPage", "name": "CareFirst: Behavioral Health & Addiction", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page" } },
+						{ "@type": "ListItem", "position": 9, "item": { "@type": "WebPage", "name": "CareFirst: Substance Use", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/substance-abuse-recovery.page" } },
+						{ "@type": "ListItem", "position": 10, "item": { "@type": "WebPage", "name": "CareFirst: Intensive Outpatient Programs", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/intensive-outpatient-programs.page" } },
+						{ "@type": "ListItem", "position": 11, "item": { "@type": "WebPage", "name": "CareFirst: Using Your HSA or FSA", "url": "https://member.carefirst.com/members/health-wellness/family-health/pregnancy/hsa-fsa.page" } },
+						{ "@type": "ListItem", "position": 12, "item": { "@type": "WebPage", "name": "CareFirst: Supporting You Through Changes", "url": "https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html" } }
 					]
 				}
 			}
@@ -69,6 +82,22 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
 		<link rel="manifest" href="/site.webmanifest" />
+
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
 
 		<!--=============== REMIXICONS ===============-->
 		<link
@@ -113,28 +142,30 @@
 						</li>
 					</ul>
 
-					<div class="nav__close" id="nav-close" role="button" tabindex="0" aria-label="Close menu">
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
 						<i class="ri-close-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 
 				<div class="nav__buttons">
-					<i
-						class="ri-moon-line change-theme"
+					<button
+						type="button"
+						class="change-theme"
 						id="theme-button"
-						role="button"
-						tabindex="0"
 						aria-label="Toggle dark mode"
-						aria-pressed="false"></i>
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
 
-					<div
+					<button
+						type="button"
 						class="nav__toggle"
 						id="nav-toggle"
-						role="button"
-						tabindex="0"
-						aria-label="Open navigation menu">
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
 						<i class="ri-menu-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 			</nav>
 		</header>
@@ -145,17 +176,20 @@
 			<section class="page-hero" style="--hero-pos: 50% 50%; --hero-overlay: 0.85">
 				<img
 					class="page-hero__img"
-					src="/images/heros/website-code-on-laptop.jpg"
+					src="/images/heros/website-code-on-laptop-1920.webp"
 					alt=""
-					aria-hidden="true"
-					onerror="this.remove()" />
+					width="1920"
+					height="1282"
+					fetchpriority="high"
+					decoding="async"
+					aria-hidden="true" />
 				<div class="page-hero__overlay" aria-hidden="true"></div>
 				<div class="container page-hero__inner">
 					<p class="breadcrumb"><a href="/">Home</a> / Portfolio</p>
 					<h1>I know websites inside and out.</h1>
 					<p class="lede">
-						Every site here I designed, built, and shipped myself. Not just the pages you see, but the
-						layers you don't:
+						Sites I designed, built, and shipped solo, and pages I shipped inside a 3.5M-member health
+						plan. Not just what you see, but the layers you don't:
 						<b>the domain, the DNS, the code, the integrations, and the search signals underneath.</b>
 					</p>
 					<div class="layers" role="list" aria-label="Layers of a website I have owned">
@@ -183,7 +217,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/nextmetro.png" alt="Next Metro web app showing live DC Metro arrival times" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/nextmetro.png" alt="Next Metro web app showing live DC Metro arrival times" width="937" height="615" loading="lazy" /></div>
 								<span class="proj__tag">Web App · Live Data</span>
 							<h3>Next Metro</h3>
 							<p class="proj__dates">nextmetro.live</p>
@@ -206,7 +240,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/hsm-card-640x425.jpg" alt="Haitian Sensation Mission nonprofit website homepage" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/hsm-card-640x425.jpg" alt="Haitian Sensation Mission nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Nonprofit · Donations</span>
 							<h3>Haitian Sensation Mission</h3>
 							<p class="proj__dates">2023 · Digital Project Engineer</p>
@@ -229,7 +263,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/nhr-card-640-425.jpg" alt="New Harlem Renaissance barber brand website homepage" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/nhr-card-640-425.jpg" alt="New Harlem Renaissance barber brand website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Brand Site · Booking</span>
 							<h3>New Harlem Renaissance</h3>
 							<p class="proj__dates">2022 – 2023</p>
@@ -253,7 +287,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/ruf-card-640x425.jpg" alt="Revolt Urban Farms nonprofit website homepage" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/ruf-card-640x425.jpg" alt="Revolt Urban Farms nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Nonprofit · Outreach</span>
 							<h3>Revolt Urban Farms</h3>
 							<p class="proj__dates">2021 – 2022</p>
@@ -277,7 +311,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/aht-card-640x425.jpg" alt="Al-Hakeem's Tonsorial barbershop website homepage" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/aht-card-640x425.jpg" alt="Al-Hakeem's Tonsorial barbershop website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Local Business · Local SEO</span>
 							<h3>Al-Hakeem's Tonsorial</h3>
 							<p class="proj__dates">Owings Mills, MD</p>
@@ -300,19 +334,67 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<span class="proj__tag">Consulting · Healthcare</span>
-							<h3>Therapist Platform</h3>
-							<p class="proj__dates">2023 · Private engagement</p>
+							<div class="proj__thumb">
+								<img
+									src="/images/savanna-altenor-640x425.jpg"
+									alt="Savanna Altenor therapy practice website homepage"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Healthcare · Private Practice</span>
+							<h3>Savanna Altenor, LCSW-C</h3>
+							<p class="proj__dates">2023 · Baltimore, MD</p>
 							<p class="proves">
-								Dual-purpose site pairing a professional showcase with a crisis-resource guide for
-								Baltimore City residents. Proves I can distill sensitive healthcare topics into clear,
-								usable content.
+								Practice site for a licensed therapist, pairing a clinical showcase with a vetted
+								crisis-resource directory: 988, SAMHSA, domestic violence, and legal aid. Proves I can
+								handle sensitive healthcare content and make it easy to act on.
 							</p>
-							<div class="proj__chips"><span>HTML</span><span>CSS</span><span>Maps API</span><span>Content</span></div>
+							<div class="proj__chips"><span>HTML</span><span>CSS</span><span>Content</span><span>Local SEO</span></div>
 							<p class="proj__links">
-								<span style="color: var(--text-color-light); font-weight: 400">
-									Client engagement · no public link
-								</span>
+								<a href="https://savannaaltenor.com/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!--==================== ENTERPRISE HEALTHCARE ====================-->
+			<section class="section container">
+				<h2 class="section__title-2"><span>Enterprise Healthcare.</span></h2>
+				<p class="prose section__lead">
+					Member-facing pages I built and shipped at
+					<b>CareFirst BlueCross BlueShield</b> (via TalTeam), a regulated health plan serving 3.5M+
+					members. Same craft as the work above, run through legal, brand, and HIPAA review, on an
+					enterprise CMS, at enterprise scale.
+				</p>
+				<div class="projgrid">
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/pregnancy-journey-640x425.png"
+									alt="CareFirst pregnancy journey guide with a step-by-step timeline"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Member Guide · Multipage</span>
+							<h3>Your Guide to a Healthy Pregnancy</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
+							<p class="proves">
+								A multipage journey guide supporting members from conception through postpartum, built
+								with UX, Copy, and Brand. Proves I can carry a long-form content system across a
+								regulated review cycle without losing the thread.
+							</p>
+							<div class="proj__chips"><span>TeamSite</span><span>Content</span><span>SEO</span><span>WCAG 2.1 AA</span></div>
+							<p class="proj__links">
+								<a href="https://www.carefirst.com/pregnancy/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
 							</p>
 						</div>
 					</article>
@@ -320,18 +402,150 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<span class="proj__tag">This Site</span>
-							<h3>nickpoole.dev</h3>
-							<p class="proj__dates">2021 – Present · Rebuilt 2025</p>
+							<div class="proj__thumb">
+								<img
+									src="/images/bha-card-640x425.jpg"
+									alt="CareFirst Behavioral Health and Addiction landing page"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Landing Page · Behavioral Health</span>
+							<h3>Behavioral Health &amp; Addiction</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
 							<p class="proves">
-								The site you're reading. Hand-built with Sass and vanilla JavaScript, WCAG 2.1 AA
-								audited, deployed on Netlify, with live structured data on every page. The portfolio is
-								also the proof.
+								The entry point for members seeking mental health and substance use care. Led
+								development and delivery end to end: accessible, search-optimized, and written to get a
+								person to the right next step fast.
 							</p>
-							<div class="proj__chips"><span>Sass</span><span>JavaScript</span><span>Netlify</span><span>JSON-LD</span></div>
+							<div class="proj__chips"><span>TeamSite</span><span>On-page SEO</span><span>A11y</span></div>
 							<p class="proj__links">
-								<a href="https://github.com/nick-poole/.dev" target="_blank" rel="noopener noreferrer">
-									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								<a
+									href="https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page"
+									target="_blank"
+									rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/sa-card-640x425.jpg"
+									alt="CareFirst Substance Use resource page with support contact options"
+									width="640"
+									height="395"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Resource Page · Substance Use</span>
+							<h3>Substance Use</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
+							<p class="proves">
+								Care-navigation content for members and their families, structured around what someone
+								in crisis actually needs first: who to call, what happens next, how long it takes.
+							</p>
+							<div class="proj__chips"><span>TeamSite</span><span>Content</span><span>Internal Linking</span></div>
+							<p class="proj__links">
+								<a
+									href="https://member.carefirst.com/members/health-wellness/behavioral-health/substance-abuse-recovery.page"
+									target="_blank"
+									rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/iop-card-640x425.jpg"
+									alt="CareFirst Intensive Outpatient Programs page listing participating provider centers"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Provider Directory · Benefits</span>
+							<h3>Intensive Outpatient Programs</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
+							<p class="proves">
+								Cost-share waiver program page with a structured directory of participating treatment
+								centers. Proves I can turn a benefits document into a scannable, accessible interface.
+							</p>
+							<div class="proj__chips"><span>TeamSite</span><span>Structured Content</span><span>A11y</span></div>
+							<p class="proj__links">
+								<a
+									href="https://member.carefirst.com/members/health-wellness/behavioral-health/intensive-outpatient-programs.page"
+									target="_blank"
+									rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/hsa-fsa-640x425.png"
+									alt="CareFirst HSA and FSA eligible expenses page with contribution limit tables"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Benefits Explainer · Tables</span>
+							<h3>Using Your HSA or FSA</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
+							<p class="proves">
+								Eligible-expense guidance and annual contribution limits, organized into scannable
+								categories and accessible data tables. Dense compliance detail, made usable.
+							</p>
+							<div class="proj__chips"><span>TeamSite</span><span>Data Tables</span><span>Content</span></div>
+							<p class="proj__links">
+								<a
+									href="https://member.carefirst.com/members/health-wellness/family-health/pregnancy/hsa-fsa.page"
+									target="_blank"
+									rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/sytc-card-2-640x425.jpg"
+									alt="CareFirst Supporting You Through Changes resource page for federal members"
+									width="640"
+									height="385"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Federal Portal · Resources</span>
+							<h3>Supporting You Through Changes</h3>
+							<p class="proj__dates">CareFirst BlueCross BlueShield</p>
+							<p class="proves">
+								Transition resources for federal members leaving government service. Full development
+								and implementation: supplied copy adapted into a responsive, accessible layout that
+								slots into the wider portal.
+							</p>
+							<div class="proj__chips"><span>TeamSite</span><span>Responsive</span><span>A11y</span></div>
+							<p class="proj__links">
+								<a
+									href="https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html"
+									target="_blank"
+									rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
 								</a>
 							</p>
 						</div>
@@ -381,7 +595,7 @@
 							<span>application/ld+json · live in this page's source</span>
 							<i class="ri-braces-line" aria-hidden="true"></i>
 						</div>
-						<pre>{
+						<pre tabindex="0" role="region" aria-label="CollectionPage structured data for this page">{
   <span class="k">"@type"</span>: <span class="v">"CollectionPage"</span>,
   <span class="k">"mainEntity"</span>: {
     <span class="k">"@type"</span>: <span class="v">"ItemList"</span>,
@@ -390,7 +604,9 @@
       <span class="v">"Haitian Sensation Mission"</span>,
       <span class="v">"New Harlem Renaissance"</span>,
       <span class="v">"Revolt Urban Farms"</span>,
-      <span class="v">"Al-Hakeem's Tonsorial"</span> ]
+      <span class="v">"Al-Hakeem's Tonsorial"</span>,
+      <span class="v">"Savanna Altenor, LCSW-C"</span>,
+      <span class="v">"CareFirst BlueCross BlueShield"</span> &hellip; ]
   }
 }</pre>
 					</div>
@@ -425,12 +641,12 @@
 					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
 				</span>
 			</div>
-		</footer>
 
-		<!--========== SCROLL UP ==========-->
-		<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-			<i class="ri-arrow-up-double-fill"></i>
-		</a>
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
+		</footer>
 
 		<!--=============== SCROLLREVEAL ===============-->
 		<script src="/js/scrollreveal.min.js" defer></script>

@@ -1,4 +1,9 @@
 User-agent: *
-Disallow: /thank-you.html
+Allow: /
+
+# /thank-you.html is kept out of the index with an on-page
+# <meta name="robots" content="noindex, nofollow"> rather than a Disallow.
+# Disallowing it would stop crawlers reading the noindex at all, which is how
+# blocked URLs still end up in results as bare links.
 
 Sitemap: https://nickpoole.dev/sitemap.xml

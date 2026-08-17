@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex, nofollow" />
 		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
 		<link rel="canonical" href="https://nickpoole.dev/thank-you.html" />
 		<title>Thanks for Reaching Out | Nick Poole</title>
 		<meta
@@ -19,6 +20,10 @@
 		<meta property="og:url" content="https://nickpoole.dev/thank-you.html" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
 		<!-- Twitter Card -->
@@ -28,6 +33,7 @@
 			name="twitter:description"
 			content="Thanks for getting in touch. I’ll follow up soon. Feel free to browse more projects while you're here." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
 
 		<!--=============== FAVICON ===============-->
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -37,6 +43,22 @@
 		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
 		<link rel="manifest" href="/site.webmanifest" />
 
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
+
 		<!--=============== REMIXICONS ===============-->
 		<link
 			rel="stylesheet"
@@ -45,7 +67,7 @@
 			referrerpolicy="no-referrer" />
 
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 	</head>
 	<body>
 		<div id="top"></div>
@@ -56,7 +78,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -95,30 +117,32 @@
 					</ul>
 
 					<!-- Close button -->
-					<div class="nav__close" id="nav-close" role="button" tabindex="0" aria-label="Close menu">
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
 						<i class="ri-close-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 
 				<div class="nav__buttons">
 					<!-- Toggle Dark Mode -->
-					<i
-						class="ri-moon-line change-theme"
+					<button
+						type="button"
+						class="change-theme"
 						id="theme-button"
-						role="button"
-						tabindex="0"
 						aria-label="Toggle dark mode"
-						aria-pressed="false"></i>
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
 
 					<!-- Toggle menu button -->
-					<div
+					<button
+						type="button"
 						class="nav__toggle"
 						id="nav-toggle"
-						role="button"
-						tabindex="0"
-						aria-label="Open navigation menu">
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
 						<i class="ri-menu-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 			</nav>
 		</header>
@@ -184,17 +208,17 @@
 					All Rights Reserved
 				</span>
 			</div>
+
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
 		</footer>
 
-		<!--========== SCROLL UP ==========-->
-		<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-			<i class="ri-arrow-up-double-fill"></i>
-		</a>
-
 		<!--=============== SCROLLREVEAL ===============-->
-		<script src="js/scrollreveal.min.js" defer></script>
+		<script src="/js/scrollreveal.min.js" defer></script>
 
 		<!--=============== MAIN JS ===============-->
-		<script src="js/main.js"></script>
+		<script src="/js/main.js"></script>
 	</body>
 </html>

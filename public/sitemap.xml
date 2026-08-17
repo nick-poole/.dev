@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://nickpoole.dev/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>1.00</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -12,7 +12,7 @@
   <!-- SEO Expertise -->
   <url>
     <loc>https://nickpoole.dev/expertise/seo/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.90</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -20,7 +20,7 @@
   <!-- Portfolio -->
   <url>
     <loc>https://nickpoole.dev/portfolio/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -28,7 +28,7 @@
   <!-- Credentials -->
   <url>
     <loc>https://nickpoole.dev/credentials/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -36,7 +36,7 @@
   <!-- Resume -->
   <url>
     <loc>https://nickpoole.dev/resume/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.90</priority>
     <changefreq>monthly</changefreq>
   </url>
