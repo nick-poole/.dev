@@ -1,5 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+/* Loaded via <link rel="preconnect"> + <link rel="stylesheet"> in each page's
+   <head>, not @import — an @import here serialises CSS -> fonts.css -> woff2
+   and delays first paint. Only the two families actually used are requested. */
 /*=============== VARIABLES CSS ===============*/
 :root {
 	--header-height: 3.5rem;
@@ -20,7 +22,7 @@
 
 	/*========== Font and typography ==========*/
 	/*.5rem = 8px | 1rem = 16px ...*/
-	--heading-font: 'Bai Jamjuree', Roboto, 'Helvetica Neue', sans-serif;
+	--heading-font: 'Bai Jamjuree', 'Helvetica Neue', sans-serif;
 	--body-font: 'Bai Jamjuree', 'Helvetica Neue', sans-serif;
 	--mono-font: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
 
@@ -29,8 +31,12 @@
 	--h2-font-size: 1.25rem;
 	--h3-font-size: 1.125rem;
 	--normal-font-size: 1rem;
-	--small-font-size: 0.875rem;
-	--smaller-font-size: 0.8rem;
+	--small-font-size: 0.9375rem;
+	--smaller-font-size: 0.875rem;
+	/* Micro labels: uppercase tags, chips, and eyebrows. Tokenised so the
+	   "small text" scale can be tuned in one place instead of per component. */
+	--micro-font-size: 0.8rem;
+	--micro-font-size-lg: 0.85rem;
 
 	// Responsive typography
 	@media screen and (min-width: 1150px) {
@@ -39,8 +45,10 @@
 		--h2-font-size: 1.5rem;
 		--h3-font-size: 1.25rem;
 		--normal-font-size: 1.0625rem;
-		--small-font-size: 0.9375rem;
-		--smaller-font-size: 0.85rem;
+		--small-font-size: 1rem;
+		--smaller-font-size: 0.9375rem;
+		--micro-font-size: 0.85rem;
+		--micro-font-size-lg: 0.9rem;
 	}
 
 	/*========== Font weight ==========*/

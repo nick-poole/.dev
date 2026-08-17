@@ -116,6 +116,9 @@
 	}
 	&__button {
 		background-color: var(--first-color);
+		/* White on the orange only reaches 3.2:1 — black clears AA at 5.9:1,
+		   and matches the .button:hover treatment. */
+		color: hsl(0, 0%, 0%);
 		cursor: pointer;
 	}
 	// Opaque placeholder
@@ -163,7 +166,7 @@
 			background-color: var(--black-color-light);
 			padding: 6px;
 			color: var(--white-color);
-			font-size: 1.25rem;
+			font-size: 1.45rem;
 			display: grid;
 			place-items: center;
 			transition: background-color 0.3s;
@@ -277,20 +280,18 @@
 
 	/* Mobile responsiveness */
 	@media screen and (max-width: 768px) {
-		.thank-you {
-			&__title {
-				font-size: 2rem;
-			}
+		&__title {
+			font-size: 2rem;
+		}
 
-			&__description {
-				font-size: 1rem;
-			}
+		&__description {
+			font-size: 1rem;
+		}
 
-			&__icon {
-				width: 60px;
-				height: 60px;
-				font-size: 2rem;
-			}
+		&__icon {
+			width: 60px;
+			height: 60px;
+			font-size: 2rem;
 		}
 	}
 }

@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
 		<link rel="canonical" href="https://nickpoole.dev/expertise/seo/" />
 		<title>SEO Expertise | Nick Poole | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="Enterprise SEO from Nick Poole. Technical SEO, AI search visibility, replatform migrations, and intent architecture, grounded in a web development and IT foundation." />
+			content="Enterprise SEO from Nick Poole: technical SEO, AI search visibility, replatform migrations, and intent architecture, grounded in a web dev and IT foundation." />
 
 		<!--=============== OPEN GRAPH ===============-->
 		<meta property="og:title" content="SEO Expertise | Nick Poole | Baltimore, MD" />
@@ -19,6 +20,10 @@
 		<meta property="og:url" content="https://nickpoole.dev/expertise/seo/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
 		<!--=============== TWITTER CARD ===============-->
@@ -28,6 +33,7 @@
 			name="twitter:description"
 			content="Technical SEO and AI search visibility from a specialist who reads the source code. Diagnosis, enterprise migrations, and search at the decision table." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD" />
 
 		<!--=============== STRUCTURED DATA ===============-->
 		<script type="application/ld+json">
@@ -78,6 +84,22 @@
 		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
 		<link rel="manifest" href="/site.webmanifest" />
 
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
+
 		<!--=============== REMIXICONS ===============-->
 		<link
 			rel="stylesheet"
@@ -121,28 +143,30 @@
 						</li>
 					</ul>
 
-					<div class="nav__close" id="nav-close" role="button" tabindex="0" aria-label="Close menu">
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
 						<i class="ri-close-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 
 				<div class="nav__buttons">
-					<i
-						class="ri-moon-line change-theme"
+					<button
+						type="button"
+						class="change-theme"
 						id="theme-button"
-						role="button"
-						tabindex="0"
 						aria-label="Toggle dark mode"
-						aria-pressed="false"></i>
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
 
-					<div
+					<button
+						type="button"
 						class="nav__toggle"
 						id="nav-toggle"
-						role="button"
-						tabindex="0"
-						aria-label="Open navigation menu">
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
 						<i class="ri-menu-line" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 			</nav>
 		</header>
@@ -153,10 +177,13 @@
 			<section class="page-hero" style="--hero-pos: 50% 40%; --hero-overlay: 0.85">
 				<img
 					class="page-hero__img"
-					src="/images/heros/next-metro-gsc-performance.png"
+					src="/images/heros/next-metro-gsc-performance-1920.webp"
 					alt=""
-					aria-hidden="true"
-					onerror="this.remove()" />
+					width="1824"
+					height="663"
+					fetchpriority="high"
+					decoding="async"
+					aria-hidden="true" />
 				<div class="page-hero__overlay" aria-hidden="true"></div>
 				<div class="container page-hero__inner">
 					<p class="breadcrumb"><a href="/">Home</a> / Expertise / SEO</p>
@@ -363,7 +390,7 @@
 							<span>application/ld+json · live in this page's source</span>
 							<i class="ri-braces-line" aria-hidden="true"></i>
 						</div>
-						<pre>{
+						<pre tabindex="0" role="region" aria-label="Structured data excerpt for this page">{
   <span class="k">"@type"</span>: <span class="v">"WebPage"</span>,
   <span class="k">"about"</span>: {
     <span class="k">"@type"</span>: <span class="v">"Person"</span>,
@@ -501,12 +528,12 @@
 					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
 				</span>
 			</div>
-		</footer>
 
-		<!--========== SCROLL UP ==========-->
-		<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-			<i class="ri-arrow-up-double-fill"></i>
-		</a>
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
+		</footer>
 
 		<!--=============== SCROLLREVEAL ===============-->
 		<script src="/js/scrollreveal.min.js" defer></script>

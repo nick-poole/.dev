@@ -12,7 +12,7 @@
 }
 .layer {
 	font-family: var(--mono-font);
-	font-size: 0.75rem;
+	font-size: var(--micro-font-size);
 	color: hsl(0, 0%, 92%);
 	border: 2px solid hsl(0, 0%, 30%);
 	background: hsl(0, 0%, 14%);
@@ -37,6 +37,11 @@
 .proj {
 	text-align: left;
 	padding: 2rem 1.4rem 1.75rem;
+	/* Column layout so the "Live Site / Repo" row can be pinned to the card
+	   floor — otherwise rows of cards with different copy lengths end up with
+	   their links at four different heights. */
+	display: flex;
+	flex-direction: column;
 
 	/* Screenshot bleeds to the card-content edges, under the black border */
 	&__thumb {
@@ -53,7 +58,7 @@
 	}
 
 	&__tag {
-		font-size: 0.71rem;
+		font-size: var(--micro-font-size);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent-text);
@@ -64,13 +69,12 @@
 		margin: 0.35rem 0 0.15rem;
 	}
 	&__dates {
-		font-size: 0.77rem;
+		font-size: var(--micro-font-size-lg);
 		color: var(--text-color-light);
 		margin-bottom: 0.8rem;
 	}
 	& p.proves {
 		font-size: var(--small-font-size);
-		min-height: 4.2em;
 	}
 	&__chips {
 		display: flex;
@@ -80,7 +84,7 @@
 
 		& span {
 			font-family: var(--mono-font);
-			font-size: 0.69rem;
+			font-size: var(--micro-font-size);
 			border: 1px solid var(--black-color-light);
 			padding: 0.15rem 0.5rem;
 			color: var(--text-color);
@@ -88,8 +92,10 @@
 	}
 	&__links {
 		display: flex;
-		gap: 1.1rem;
-		font-size: 0.79rem;
+		flex-wrap: wrap;
+		gap: 0 1.1rem;
+		margin-top: auto;
+		font-size: var(--micro-font-size-lg);
 		font-weight: 600;
 
 		& a {
@@ -115,7 +121,7 @@
 	padding-top: 1rem;
 
 	& h3 {
-		font-size: 0.79rem;
+		font-size: var(--micro-font-size-lg);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent-text);

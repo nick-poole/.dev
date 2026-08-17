@@ -75,7 +75,7 @@
 
 /* ── Breadcrumb ── */
 .breadcrumb {
-	font-size: 0.79rem;
+	font-size: var(--micro-font-size-lg);
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	color: var(--text-color-light);
@@ -93,6 +93,18 @@
 
 	& b {
 		background: linear-gradient(90deg, hsla(14, 98%, 50%, 0.3), hsla(14, 98%, 50%, 0));
+		color: var(--title-color);
+	}
+}
+
+/* Intro paragraph sitting between a section title and its grid */
+.section__lead {
+	text-align: center;
+	margin-bottom: 2.25rem;
+	font-size: var(--small-font-size);
+	color: var(--text-color);
+
+	& b {
 		color: var(--title-color);
 	}
 }
@@ -134,7 +146,7 @@
 	}
 	&__tag {
 		display: block;
-		font-size: 0.73rem;
+		font-size: var(--micro-font-size);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--text-color-light);
@@ -145,7 +157,7 @@
 		margin-bottom: 0.35rem;
 	}
 	& .meta {
-		font-size: 0.79rem;
+		font-size: var(--micro-font-size-lg);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--accent-text);
@@ -180,7 +192,7 @@
 	margin-top: 1.2rem;
 
 	& h4 {
-		font-size: 0.77rem;
+		font-size: var(--micro-font-size-lg);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--accent-text);
@@ -349,7 +361,7 @@
 		line-height: 1;
 	}
 	& span {
-		font-size: 0.65rem;
+		font-size: var(--micro-font-size);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--text-color);

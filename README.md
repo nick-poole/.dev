@@ -69,6 +69,21 @@ Serve `public/` with any static server for local preview.
 
 ## Commit Log
 
+[8/17/26]
+
+- **feat: adds Enterprise Healthcare row (CareFirst) and links the therapist site**
+
+- **fix: hides the nav close X on desktop; aligns the resume meta line**
+
+- **chore: a11y, SEO, semantic HTML, and W3C validation pass**
+  - axe-core clean (WCAG 2.1 A/AA + best-practice) across 6 pages × 2 themes × 2 viewports
+  - W3C Nu HTML + Jigsaw CSS validators: 0 errors, 0 warnings
+  - Nav controls rebuilt as real `<button>`s with `aria-expanded`, Escape-to-close, focus return
+  - Closed mobile menu removed from the tab order; scrollable schema panels made keyboard reachable
+  - Theme class moved to `<html>` and applied pre-paint (no light flash for dark-mode users)
+  - Hero imagery re-encoded to WebP (12.4 MB → 594 KB); unused Google Fonts families dropped
+  - Type scale raised; micro sizes tokenised as `--micro-font-size` / `--micro-font-size-lg`
+
 [10/1/25]
 
 - **refactor: Removes CFBCBS**
