@@ -129,7 +129,11 @@
 }
 .chapter {
 	display: grid;
-	grid-template-columns: 110px 1fr;
+	/* The rail must fit the longest __tag on one line at --micro-font-size,
+	   uppercase and tracked. "INFRASTRUCTURE" is the current ceiling; a longer
+	   label needs this widened, not the tag shrunk. The right column takes
+	   minmax(0, 1fr) so long headings wrap instead of forcing the rail narrower. */
+	grid-template-columns: 158px minmax(0, 1fr);
 	gap: 1.75rem;
 	padding: 2.25rem 0;
 	border-top: 3px solid var(--container-color);
@@ -147,10 +151,12 @@
 	&__tag {
 		display: block;
 		font-size: var(--micro-font-size);
-		letter-spacing: 0.12em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--text-color-light);
 		margin-top: 0.4rem;
+		/* backstop: wrap inside the rail rather than run into the heading */
+		overflow-wrap: break-word;
 	}
 	& h3 {
 		font-size: var(--h2-font-size);
@@ -330,7 +336,10 @@
 }
 .tile {
 	position: relative;
-	width: 92px;
+	/* Sized to hold the longest label ("INTELLIGENCE") on one line inside the
+	   square, with the borders and padding accounted for. */
+	width: 140px;
+	flex: 0 0 auto;
 
 	&__border {
 		position: absolute;
@@ -348,12 +357,19 @@
 		aspect-ratio: 1;
 		border: 4px solid var(--black-color);
 		background: var(--body-color);
+		padding-inline: 0.65rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 0.15rem;
+		gap: 0.45rem;
+		text-align: center;
 		transition: background-color 0.4s, border 0.4s;
+	}
+	&__icon {
+		font-size: 1.5rem;
+		line-height: 1;
+		color: var(--accent-text);
 	}
 	& b {
 		font-size: 1.6rem;
@@ -362,9 +378,11 @@
 	}
 	& span {
 		font-size: var(--micro-font-size);
-		letter-spacing: 0.1em;
+		letter-spacing: 0.06em;
+		line-height: 1.3;
 		text-transform: uppercase;
 		color: var(--text-color);
+		text-wrap: balance;
 	}
 }
 
