@@ -200,7 +200,6 @@
 					</p>
 					<ul>
 						<li>Lighthouse scores, all four categories</li>
-						<li>Approved copy for the llms.txt argument card</li>
 						<li>The per-image size budget, which does not match the files in the repo</li>
 					</ul>
 				</div>
@@ -623,34 +622,31 @@
 						<span class="filecard__path">The argument</span>
 						<h3>The honest case for llms.txt</h3>
 						<p>
-							The evidence is not on its side.
-							<a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener noreferrer">Ahrefs
-							looked at 137,000 sites in June 2026</a> and found 97% of llms.txt files never get
-							requested at all.
+							llms.txt is a September 2024 proposal by Jeremy Howard of Answer.AI: a Markdown file at
+							the domain root pointing language models at your most important content. As of 2026 it has
+							no standards-body backing and no confirmed consumer among the major AI providers. Google's
+							documentation says it has no effect on Search or AI Overviews, and John Mueller has
+							compared it to the keywords meta tag. The data agrees with him.
 							<a href="https://seranking.com/blog/llms-txt/" target="_blank" rel="noopener noreferrer">SE
-							Ranking looked at nearly 300,000 domains in November 2025</a> and found no correlation
-							between having the file and getting cited. No major model provider has committed to
-							reading it.
+							Ranking's 300,000-domain study</a> found no correlation between the file and AI citations,
+							and
+							<a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener noreferrer">Ahrefs'
+							log analysis</a> found 97 percent of deployed files were never requested by anyone at all.
 						</p>
 						<p>
-							SE Ranking still landed on adding it: their own conclusion was that the file is a
-							low-effort way to be prepared, even though they could not measure any citation effect.
+							And yet. The Chrome team shipped an experimental Lighthouse audit that checks for the
+							file, on the theory that browsing agents may use it to navigate sites more cheaply. Even
+							SE Ranking, whose own study found zero effect, concluded it is a low-effort way to prepare
+							for whatever AI indexing becomes. Both positions are currently true, and nobody controls
+							whether agents start reading the file, including the companies saying it doesn't matter.
 						</p>
 						<p>
-							So the file is here anyway, for two reasons. It costs one file and no runtime, and the
-							downside of being early to a standard that does not land is smaller than the downside of
-							being late to one that does. And writing it forced the question the rest of this site is
-							built around: if a model had one page to read about me, what would it need to be true?
-							<b>That is a useful question even if nothing ever fetches the answer.</b>
+							Mine costs nothing to carry, took twenty minutes to write, and stays accurate because it
+							describes a site I control. The real value was never the file. It is the conversation an
+							organization has while deciding whether to ship one: what do we want machines to know
+							about us, and who owns that answer? Have that conversation now, whatever you decide about
+							the file.
 						</p>
-						<div class="pending" role="note">
-							<span class="pending__flag">PENDING: Nick</span>
-							Replace this card's body with the approved copy from the colophon mockup. Both citations
-							above are now linked and their findings verified against the published articles, but this
-							wording is a stand-in written without sight of your draft. The approved version carries
-							the Lighthouse contradiction, the point that nobody controls whether agents start reading
-							the file, and the org-conversation close. None of those are here.
-						</div>
 					</div>
 				</div>
 			</section>
