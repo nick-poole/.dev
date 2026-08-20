@@ -74,7 +74,12 @@
 		width: 100%;
 		height: 100%;
 		background-color: var(--black-color);
-		border: 3px solid var(--black-color-light);
+		/* The field boundary is the only thing marking where an empty input is,
+		   so it has to clear 3:1 (WCAG 1.4.11) against the panel behind it. The
+		   old --black-color-light fell to 1.95:1 once the dark theme moved the
+		   panel to hsl(0, 0%, 12%). 45% grey holds 4.4:1 on the light-theme black
+		   form and 3.5:1 on the dark-theme panel, so one value covers both. */
+		border: 3px solid hsl(0, 0%, 45%);
 		color: var(--white-color);
 		padding: 0.5rem 1rem;
 		font-weight: var(--font-medium);
@@ -147,41 +152,11 @@
 			flex-direction: column;
 			row-gap: 1.5rem;
 		}
-		&-description-1 {
-			color: hsl(0, 0%, 64%); /* social block sits on hsl(0,0%,10%) */
-			font-size: var(--small-font-size);
-			margin-bottom: 0.5rem;
-		}
-		&-description-2 {
-			color: var(--white-color);
-			font-size: var(--small-font-size);
-			font-weight: var(--font-semi-bold);
-		}
 		&-links {
 			display: flex;
 			justify-content: center;
 			column-gap: 0.75rem;
 		}
-		&-link {
-			background-color: var(--black-color-light);
-			padding: 6px;
-			color: var(--white-color);
-			font-size: 1.45rem;
-			display: grid;
-			place-items: center;
-			transition: background-color 0.3s;
-
-			&:hover {
-				background-color: var(--first-color);
-			}
-		}
-	}
-	&__message {
-		color: var(--white-color);
-		font-size: var(--small-font-size);
-		position: absolute;
-		bottom: -1.6rem;
-		left: 0;
 	}
 }
 
@@ -251,7 +226,7 @@
 		transform: translateY(-2px);
 	}
 
-	&__button i {
+	&__button .icon {
 		font-size: 1.25rem;
 	}
 

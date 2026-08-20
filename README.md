@@ -17,8 +17,10 @@ the structured data is legible to both people and machines.
 Built with:
 
 - HTML (static pages in `public/`)
-- Sass / SCSS (compiled to `public/css/styles.css`)
-- Vanilla JavaScript (theme toggle, mobile nav)
+- Sass / SCSS (compiled and minified to `public/css/styles.css`)
+- Vanilla JavaScript (theme toggle, mobile nav, two IntersectionObservers)
+- Self-hosted fonts in `public/fonts/`, and Remixicon paths inlined per page as
+  an SVG `<symbol>` sprite — **no third-party runtime requests at all**
 - Deployed on Netlify (redirects in `public/_redirects`, headers in
   `public/_headers`); the contact form posts to FormSubmit
 
@@ -59,14 +61,17 @@ nav deliberately stays at five destinations.
 
 ```bash
 npm install
-npm run sass   # watch src/scss/styles.scss -> public/css/styles.css
+npm run sass    # watch src/scss/styles.scss -> public/css/styles.css
+npm run build   # one-shot compile
 ```
+
+Both scripts emit compressed CSS, so the committed stylesheet is the same
+whichever one produced it. The readable version is the Sass under `src/scss`.
 
 Serve `public/` with any static server for local preview.
 
 There is no server-side build. Sass compiles locally, `public/css/styles.css`
 is committed, and Netlify publishes `public/` exactly as it lands in the repo.
-The only npm script is the Sass watcher.
 
 ## Images
 
@@ -75,8 +80,10 @@ The only npm script is the Sass watcher.
   not every platform scraper renders WebP.
 - Budget: **60 KB for a card, 250 KB for a full-bleed hero.** Nothing
   referenced on the site is over it. Cards currently land between 18 and 52 KB.
-- Originals are kept alongside the exports as masters. The file referenced by a
-  page is always the sized-to-slot version, not the master.
+- `public/` holds only what a page actually references. Masters and superseded
+  JPG/PNG versions are not shipped; git history is the archive.
+- The hero headshot ships at two widths (200 and 400) behind `srcset`, because
+  it renders at 200 CSS px and only a 2x screen needs the larger file.
 
 ## Machine-readable files
 
@@ -86,7 +93,7 @@ The only npm script is the Sass watcher.
 | `public/sitemap.xml`  | The seven indexable routes with `lastmod`                |
 | `public/llms.txt`     | Markdown brief for language models                       |
 | `public/_redirects`   | Netlify redirects                                        |
-| `public/_headers`     | Pins `/llms.txt` to `text/plain`                         |
+| `public/_headers`     | Pins `/llms.txt` to `text/plain`; year-long font cache    |
 
 `/thank-you.html` is kept out of the index with an on-page `noindex` rather than
 a `Disallow`, so crawlers can actually read the directive.
@@ -108,7 +115,6 @@ a `Disallow`, so crawlers can actually read the directive.
 - [x] Colophon and accessibility statement, plus `llms.txt`
 - [x] Image pipeline: every content image WebP and sized to its slot
 - [ ] Lighthouse scores published in the colophon Audit section
-- [ ] Seventh OG card for `/accessibility/`
 - [ ] Consulting flip (parked): hero swap + CTA change when ready
 
 ## Audit status
@@ -119,7 +125,7 @@ Last full sweep: **20 August 2026**, against the working tree.
 | ---------------------------------- | --------------------------------------- |
 | W3C Nu HTML validator, 8 pages     | 0 errors, 0 warnings                    |
 | W3C Jigsaw CSS validator           | 0 errors                                |
-| axe-core WCAG 2.1 A/AA, 7 pages x 2 themes | 0 violations                    |
+| axe-core WCAG 2.1 A/AA, 8 pages x 2 themes | 0 violations                    |
 | Titles / descriptions / canonicals | unique, self-referencing, in range      |
 | Open Graph + Twitter, all pages    | complete                                |
 | Entity graph `@id` references      | no dangling refs, no type conflicts     |
@@ -127,11 +133,38 @@ Last full sweep: **20 August 2026**, against the working tree.
 | Internal links and in-page anchors | all resolve                             |
 | External links                     | all `target="_blank"` + `rel="noopener noreferrer"` |
 
-The CSS validator reports 34 warnings; all are inherent (CSS custom properties
+The CSS validator reports 32 warnings; all are inherent (CSS custom properties
 cannot be statically checked, and the vendor-prefixed scrollbar and autofill
 rules are deliberate).
 
 ## Commit Log
+
+[8/20/26 latest]
+
+- **perf: drop every third-party request; a11y, W3C, and lean-out sweep**
+  - Google Fonts and the Remixicon CDN are gone. Both families are self-hosted
+    latin subsets in `public/fonts/`; the 42 icons in use are inlined per page
+    as an SVG `<symbol>` sprite. Removes two render-blocking stylesheets
+    (~1,810 ms of critical path) and a 174 KB icon webfont
+  - ScrollReveal (16.6 KB, on every page, animating three elements on one)
+    replaced by an IntersectionObserver reveal; scroll-spy moved off
+    `offsetTop`/`offsetHeight`, which was the flagged forced reflow
+  - CSS minified: 61 KB -> 39 KB on disk, 14.4 KB -> 7.6 KB gzipped
+  - Dead CSS removed: the `home__*`, `about__*`, `services__*`, `projects__*`
+    template leftovers, plus `.highlights`/`.hl`, `.visually-hidden`,
+    `.font-heading`, `.d-none`/`.d-block`, and a `.this-class-does-nothing`
+  - 42 unreferenced images deleted: 25 MB -> 1.4 MB in `public/images`
+  - Trailing slashes stripped from 259 void-element start tags
+  - Contact input borders were 1.95:1 against the dark-theme panel; now 3.48:1
+    dark and 4.43:1 light, clearing WCAG 1.4.11
+  - Honeypot given a real `<label>`; hero CTA repointed so the SEO card is no
+    longer an adjacent duplicate link; `width`/`height` on the last two images
+  - Interlinking: portfolio, credentials, and the accessibility statement all
+    gained contextual inbound links instead of footer-only routes
+  - Resume `.resume-wrap` overrode the container gutter — body copy ran to both
+    screen edges on mobile
+  - Seventh OG card wired up for `/accessibility/`; the Rich Results tile on the
+    colophon now says why an empty report is the correct result
 
 [8/20/26 later]
 

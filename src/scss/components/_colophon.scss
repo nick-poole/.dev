@@ -26,15 +26,6 @@
 	font-size: var(--small-font-size);
 	color: var(--text-color);
 
-	&--inline {
-		display: inline;
-		padding: 0.15rem 0.4rem;
-		margin: 0;
-	}
-	/* .card__content centers its text; a paragraph of flag copy needs to read left */
-	.card & {
-		text-align: left;
-	}
 	&__flag {
 		display: inline-block;
 		font-family: var(--mono-font);
@@ -44,10 +35,6 @@
 		font-weight: var(--font-bold);
 		color: var(--accent-text);
 		margin-right: 0.5rem;
-	}
-	& a {
-		color: var(--accent-text);
-		text-decoration: underline;
 	}
 }
 
@@ -62,7 +49,7 @@
 		font-size: var(--h3-font-size);
 		margin-bottom: 0.5rem;
 
-		& i {
+		& .icon {
 			color: var(--accent-text);
 			margin-right: 0.4rem;
 		}
@@ -88,7 +75,7 @@
 	font-weight: var(--font-semi-bold);
 	color: var(--accent-text);
 
-	& i {
+	& .icon {
 		margin-left: 0.25rem;
 	}
 	&:hover {
@@ -397,6 +384,12 @@
 			text-decoration: underline;
 		}
 	}
+	/* For the one tool on this list whose "correct" answer is an empty report */
+	& .audit__note {
+		font-size: var(--smaller-font-size);
+		color: var(--text-color);
+		margin-top: 0.4rem;
+	}
 }
 
 /* ── Accessibility statement: labelled fact rows ── */
@@ -490,7 +483,7 @@
 	&__head {
 		border-bottom: 1px solid hsl(0, 0%, 18%);
 
-		& i {
+		& .icon {
 			color: hsl(14, 98%, 55%);
 			font-size: 0.95rem;
 		}

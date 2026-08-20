@@ -32,31 +32,21 @@ document.addEventListener('keydown', (e) => {
 /* Any nav link dismisses the mobile menu */
 document.querySelectorAll('.nav__link').forEach((link) => link.addEventListener('click', () => closeMenu()));
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /*=============== SCROLL-DRIVEN UI ===============*/
-/* One passive listener, batched into a single rAF, instead of three
-   independent handlers doing layout reads on every scroll event. */
+/* One passive listener batched into a single rAF. It only reads window.scrollY:
+   no element geometry is touched here, so toggling these classes cannot force a
+   synchronous layout the way reading offsetTop mid-scroll did. */
 const header = document.getElementById('header');
 const scrollUpBtn = document.getElementById('scroll-up');
-const sections = document.querySelectorAll('section[id]');
 
 let ticking = false;
 
 const onScroll = () => {
 	const y = window.scrollY;
-
 	if (header) header.classList.toggle('shadow-header', y >= 50);
 	if (scrollUpBtn) scrollUpBtn.classList.toggle('show-scroll', y >= 350);
-
-	sections.forEach((current) => {
-		const sectionId = current.getAttribute('id');
-		// Not every section has a matching nav link (multi-page nav) — guard against null
-		const link = document.querySelector('.nav__menu a[href*="' + sectionId + '"]');
-		if (!link) return;
-
-		const top = current.offsetTop - 58;
-		link.classList.toggle('active-link', y > top && y <= top + current.offsetHeight);
-	});
-
 	ticking = false;
 };
 
@@ -71,6 +61,30 @@ window.addEventListener(
 );
 onScroll();
 
+/*=============== SCROLL SPY ===============*/
+/* The browser reports which section is under the header for us. The old version
+   read offsetTop and offsetHeight for every section on every scroll frame, which
+   is what PageSpeed was flagging as a forced reflow. */
+const sectionLinks = new Map();
+document.querySelectorAll('section[id]').forEach((section) => {
+	const link = document.querySelector('.nav__menu a[href="#' + section.id + '"]');
+	if (link) sectionLinks.set(section, link);
+});
+
+if (sectionLinks.size && 'IntersectionObserver' in window) {
+	const spy = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				const link = sectionLinks.get(entry.target);
+				if (link) link.classList.toggle('active-link', entry.isIntersecting);
+			});
+		},
+		/* Active band: just under the fixed header, down to 30% of the viewport */
+		{ rootMargin: '-58px 0px -70% 0px' }
+	);
+	sectionLinks.forEach((_link, section) => spy.observe(section));
+}
+
 /*=============== DARK / LIGHT THEME ===============*/
 /* The class lives on <html> so the inline script in each page's <head> can
    apply it before first paint. This block only handles the toggle. */
@@ -82,22 +96,13 @@ const syncThemeButton = (isDark) => {
 	if (!themeButton) return;
 	themeButton.setAttribute('aria-pressed', String(isDark));
 	themeButton.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-	const icon = themeButton.querySelector('i');
-	if (icon) {
-		icon.classList.toggle('ri-sun-line', isDark);
-		icon.classList.toggle('ri-moon-line', !isDark);
-	}
-};
-
-const toggleLogos = (isDark) => {
-	document.querySelectorAll('.logo-light').forEach((el) => el.classList.toggle('visible', !isDark));
-	document.querySelectorAll('.logo-dark').forEach((el) => el.classList.toggle('visible', isDark));
+	const icon = themeButton.querySelector('use');
+	if (icon) icon.setAttribute('href', isDark ? '#i-sun-line' : '#i-moon-line');
 };
 
 const applyTheme = (isDark) => {
 	themeRoot.classList.toggle(darkTheme, isDark);
 	syncThemeButton(isDark);
-	toggleLogos(isDark);
 };
 
 applyTheme(themeRoot.classList.contains(darkTheme));
@@ -114,24 +119,25 @@ if (themeButton) {
 	});
 }
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-/* Skipped for users who have asked for reduced motion */
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/*=============== ENTRANCE REVEAL ===============*/
+/* Was ScrollReveal, a 16.6 KB dependency animating three elements on one page.
+   Skipped for users who have asked for reduced motion. */
+const revealTargets = document.querySelectorAll('.reveal');
 
-if (typeof ScrollReveal !== 'undefined' && !prefersReducedMotion) {
-	const sr = ScrollReveal({
-		origin: 'top',
-		distance: '60px',
-		duration: 2500,
-		delay: 400,
-	});
-
-	sr.reveal(`.home__profile, .about__image, .contact__mail`, { origin: 'right' });
-	sr.reveal(
-		`.home__name, .home__info,
-            .about__container .section__title-1, .about__info,
-            .contact__social, .contact__data`,
-		{ origin: 'left' }
-	);
-	sr.reveal(`.services__card, .projects__card`, { interval: 100 });
+if (revealTargets.length) {
+	if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+		revealTargets.forEach((el) => el.classList.add('is-visible'));
+	} else {
+		const reveal = new IntersectionObserver(
+			(entries, observer) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) return;
+					entry.target.classList.add('is-visible');
+					observer.unobserve(entry.target);
+				});
+			},
+			{ rootMargin: '0px 0px -12% 0px' }
+		);
+		revealTargets.forEach((el) => reveal.observe(el));
+	}
 }

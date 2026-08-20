@@ -4,3 +4,9 @@
 /llms.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
+
+# Self-hosted fonts. The filename pins the family, weight, and subset, so the
+# bytes behind a given path never change — a year-long immutable cache is safe,
+# and a repeat visitor never re-requests them.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
