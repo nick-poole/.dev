@@ -184,16 +184,24 @@
 			</section>
 
 			<!--==================== WHAT I KNOW ====================-->
-			<!-- TODO(nick): consolidate hero/What I Know duplication. The hero lede and the
-			     first paragraph below make the same point in nearly the same words. Rewrite
-			     is pending and lands in the copy pass, not here. -->
 			<section class="section container">
 				<h2 class="section__title-1"><span>What I Know.</span></h2>
 				<div class="prose">
 					<p>
-						Priority one is technical debt. If your site is missing meta tags, skipping heading levels,
-						or hiding content behind JavaScript, the copy describing your business or products is window
-						dressing. Machines can't rank what they can't parse. People won't wait for what won't load.
+						The first hour with any site works the way an ER works: before a doctor ever sees you, a
+						nurse checks your vitals. I check Core Web Vitals. Lighthouse, CrUX field data, WAVE, and the
+						site on an actual phone, not to fix anything yet, but to learn what Googlebot learns on its
+						first pass. That hour answers a question no rankings report can: is this website serious?
+					</p>
+					<p>
+						An unserious site isn't built for mobile, where most of the world actually browses. It's
+						bloated, slow, and shifting while it loads, and users leave before it settles, a pattern
+						search engines see too. Then accessibility, the single strongest signal of intentionality a
+						site gives off, because a site that gets screen readers right almost always gets UX right
+						everywhere else. Then authority: the backlink profile is a gut check on how much the rest of
+						the web trusts the domain, and how steep the climb to ranking will be. Then the platform,
+						because the path forward on hand-written HTML and the path forward on a React frontend are
+						different animals.
 					</p>
 					<p>
 						From there, the work has an order. Fix cannibalization so your own pages stop competing with
@@ -201,6 +209,16 @@
 						expertise you can prove. Create and grow share of voice around it. Interlink pages so
 						authority flows where it should. Keep sitemaps organized and current so crawlers always have
 						a clean map.
+					</p>
+					<p>
+						Last, the content audit, which is where the work turns into fun. I get to learn a new
+						industry from scratch: the business, its objectives, and the competitive landscape, and while
+						I learn it I keep a running list of every question I had and how I wish someone had taught me
+						the space. Those notes become the content clusters. The goal is E-E-A-T you can prove: be the
+						site that takes the time to educate, freely, adjacent to the incentive to purchase rather
+						than gated behind it, because nobody trusts a source that paywalls the basics. From there
+						it's structure: how this domain captures share of voice, whether that's glossaries, free
+						tools, or the knowledge nobody else in the industry bothered to write down.
 					</p>
 				</div>
 			</section>
@@ -217,15 +235,17 @@
 						<div>
 							<h3>The clicks that vanished without a ranking loss</h3>
 							<p>
-								At a national building-products brand, organic clicks were falling year over year while
-								impressions held flat and average position <b>improved</b>. The "Great Decoupling"
-								signature the industry was still learning to name. The playbook said "ranking problem."
-								The evidence said AI Overviews were intercepting queries and answering them above the
-								links.
+								Across search, organic clicks have been decoupling from impressions: impressions hold,
+								average position holds or improves, and clicks thin out anyway. The industry took a
+								while to agree on a name for it. When that signature appeared in a national
+								building-products category, the standard playbook said ranking problem. The evidence
+								said something else: AI Overviews were intercepting queries and answering them above
+								the links.
 							</p>
 							<p>
-								I presented the diagnosis to leadership and rebuilt measurement around answer-engine
-								visibility, standing up generative prompt groups tracking brand mentions, citations,
+								I ranked the competing explanations against the data the way an analyst ranks
+								hypotheses, presented the diagnosis to leadership, and rebuilt measurement around
+								answer-engine visibility: generative prompt groups tracking brand mentions, citations,
 								and share of voice in ChatGPT and Google AI Overviews across every product category,
 								with pre-launch AI answer baselines logged to define displacement targets.
 							</p>
@@ -269,10 +289,11 @@
 						<div>
 							<h3>QA the way a crawler reads it</h3>
 							<p>
-								As a technical SEO, I catch things most SEOs don't even understand. While others write
-								and rewrite the copy on a page trying to change its rankings, I look under the hood to
-								make sure Google would even bother rewarding it. Fundamentally incorrect code caps a page
-								no matter how good the words are.
+								Content and code are never in sync by accident. Getting them in sync is intentional
+								work, and it is work most audits skip. While others write and rewrite the copy on a
+								page trying to move its rankings, I read the DOM underneath it, because what good are
+								words if search engines can't see them? Incorrect code caps a page no matter how good
+								the words are.
 							</p>
 							<p>
 								Running pre-launch UAT for the relaunch, that meant testing the site the way machines
@@ -288,8 +309,17 @@
 								as structured tickets framed as implementation requests, holding launch standards while
 								keeping the agency partnership productive.
 							</p>
+							<p>
+								Another: a careers page comp came through with a beautiful creative line as its H1. It
+								read great and told search engines nothing. The fix kept both jobs intact. "Careers"
+								became the H1 that machines and job seekers actually search for, and the creative line
+								found a proper home in a blockquote midway down the page. Nothing was lost. Everything
+								became findable.
+							</p>
 							<p class="chapter__result">
-								Equal parts technical and strategic means someone on the team reads the source.
+								Designers optimize for feeling. Developers optimize for efficiency. I translate between
+								them for the audience neither is thinking about: the machines deciding whether anyone
+								finds the page.
 							</p>
 						</div>
 					</div>
