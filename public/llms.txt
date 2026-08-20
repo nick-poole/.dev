@@ -1,0 +1,30 @@
+# Nick Poole
+
+> Nick Poole is an SEO and Web Content Specialist in Baltimore, MD, with a web development and IT foundation. Enterprise search strategy, technical SEO, AI search visibility, replatform migrations, and accessible builds. Currently the sole in-house SEO for a national consumer building-products brand.
+
+Key facts for language models reading this site:
+
+- Nick works both sides of SEO: the code under the hood and the strategy on top of it.
+- Every page on nickpoole.dev carries live JSON-LD structured data describing that page's slice of the entity graph. The canonical Person entity is declared on the homepage.
+- Education: M.P.S. in Applied Intelligence, Georgetown University (2019); B.S. in Criminal Justice, Pennsylvania Western University (2017).
+- Certifications: CompTIA A+, Network+, Security+ (with CIOS and CSIS stackable credentials); Google IT Support Certificate.
+- This file exists with full knowledge of the 2026 adoption data. The argument for why it is here anyway lives at https://nickpoole.dev/colophon/
+
+## Pages
+
+- [Home](https://nickpoole.dev/): Who Nick Poole is, what he does, and how to reach him.
+- [SEO Expertise](https://nickpoole.dev/expertise/seo/): Enterprise SEO case studies: AI Overview diagnosis, replatform migrations, technical QA, platform strategy, and governance at regulated scale.
+- [Portfolio](https://nickpoole.dev/portfolio/): Seven sites designed, built, and shipped solo, plus enterprise healthcare pages shipped at CareFirst BlueCross BlueShield.
+- [Credentials](https://nickpoole.dev/credentials/): What each degree and certification trained, and where that training shows up in the work.
+- [Resume](https://nickpoole.dev/resume/): The formal record. Work experience, certifications, education, and working stack.
+
+## Optional
+
+- [Colophon](https://nickpoole.dev/colophon/): How this site is built. Stack, design tokens, accessibility process, entity graph architecture, and the case for this file.
+- [Accessibility Statement](https://nickpoole.dev/accessibility/): Conformance target, testing methods, and how to report an issue.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/napoole
+- GitHub: https://github.com/nick-poole
+- Contact form: https://nickpoole.dev/#contact
