@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="en-US">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Nick Poole" />
-		<meta name="theme-color" content="#de3d05" />
-		<link rel="canonical" href="https://nickpoole.dev/resume/" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index, follow">
+		<meta name="author" content="Nick Poole">
+		<meta name="theme-color" content="#de3d05">
+		<link rel="canonical" href="https://nickpoole.dev/resume/">
 		<title>Resume | Nick Poole | SEO Specialist | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="The resume of Nick Poole, SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility." />
+			content="The resume of Nick Poole, SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility.">
 
 		<!--=============== OPEN GRAPH ===============-->
-		<meta property="og:title" content="Resume | Nick Poole | SEO Specialist | Baltimore, MD" />
+		<meta property="og:title" content="Resume | Nick Poole | SEO Specialist | Baltimore, MD">
 		<meta
 			property="og:description"
-			content="SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility." />
-		<meta property="og:url" content="https://nickpoole.dev/resume/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-resume.png" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Nick Poole, resume, with the page's ProfilePage structured data." />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="Nick Poole" />
+			content="SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility.">
+		<meta property="og:url" content="https://nickpoole.dev/resume/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-resume.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:image:alt" content="Nick Poole, resume, with the page's ProfilePage structured data.">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Nick Poole">
 
 		<!--=============== TWITTER CARD ===============-->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Resume | Nick Poole | SEO Specialist | Baltimore, MD" />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Resume | Nick Poole | SEO Specialist | Baltimore, MD">
 		<meta
 			name="twitter:description"
-			content="SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility." />
-		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-resume.png" />
-		<meta name="twitter:image:alt" content="Nick Poole, resume, with the page's ProfilePage structured data." />
+			content="SEO and Web Content Specialist in Baltimore, MD. Enterprise search strategy, replatform SEO, and AI search visibility.">
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-resume.png">
+		<meta name="twitter:image:alt" content="Nick Poole, resume, with the page's ProfilePage structured data.">
 
 		<!--=============== STRUCTURED DATA ===============-->
 		<!-- mainEntity is the canonical Person by @id. worksFor is declared here because
@@ -68,22 +68,23 @@
 		</script>
 
 		<!--=============== FAVICON ===============-->
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<meta name="apple-mobile-web-app-title" content="nickpoole.dev">
+		<link rel="manifest" href="/site.webmanifest">
 
 		<!--=============== FONTS ===============-->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+		<!-- Self-hosted latin subsets. Nothing third-party in the critical path: no
+		     DNS, TLS, and stylesheet round trip to Google before the text can paint.
+		     The two faces above the fold are preloaded; the rest load on demand. -->
+		<link rel="preload" href="/fonts/bai-jamjuree-400.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/fonts/bai-jamjuree-700.woff2" as="font" type="font/woff2" crossorigin>
 
-		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<!--=============== PRE-PAINT (dark theme + JS flag, before first paint) ===============-->
 		<script>
+			document.documentElement.classList.add('js');
 			try {
 				if (localStorage.getItem('selected-theme') === 'dark') {
 					document.documentElement.classList.add('dark-theme');
@@ -91,17 +92,14 @@
 			} catch (e) {}
 		</script>
 
-		<!--=============== REMIXICONS ===============-->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer" />
-
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
+		<!--=============== ICON SPRITE ===============-->
+		<!-- Remixicon paths, inlined. Only the icons this page uses, so there is no
+		     icon-font request and no unused glyphs on the wire. -->
+		<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="i-arrow-right-line" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></symbol><symbol id="i-arrow-up-double-fill" viewBox="0 0 24 24"><path d="M12 4.83582L5.79291 11.0429L7.20712 12.4571L12 7.66424L16.7929 12.4571L18.2071 11.0429L12 4.83582ZM12 10.4857L5.79291 16.6928L7.20712 18.107L12 13.3141L16.7929 18.107L18.2071 16.6928L12 10.4857Z"/></symbol><symbol id="i-bar-chart-box-line" viewBox="0 0 24 24"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM4 5V19H20V5H4ZM7 13H9V17H7V13ZM11 7H13V17H11V7ZM15 10H17V17H15V10Z"/></symbol><symbol id="i-braces-line" viewBox="0 0 24 24"><path d="M4 18V14.3C4 13.4716 3.32843 12.8 2.5 12.8H2V11.2H2.5C3.32843 11.2 4 10.5284 4 9.7V6C4 4.34315 5.34315 3 7 3H8V5H7C6.44772 5 6 5.44772 6 6V10.1C6 10.9858 5.42408 11.7372 4.62623 12C5.42408 12.2628 6 13.0142 6 13.9V18C6 18.5523 6.44772 19 7 19H8V21H7C5.34315 21 4 19.6569 4 18ZM20 14.3V18C20 19.6569 18.6569 21 17 21H16V19H17C17.5523 19 18 18.5523 18 18V13.9C18 13.0142 18.5759 12.2628 19.3738 12C18.5759 11.7372 18 10.9858 18 10.1V6C18 5.44772 17.5523 5 17 5H16V3H17C18.6569 3 20 4.34315 20 6V9.7C20 10.5284 20.6716 11.2 21.5 11.2H22V12.8H21.5C20.6716 12.8 20 13.4716 20 14.3Z"/></symbol><symbol id="i-close-line" viewBox="0 0 24 24"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"/></symbol><symbol id="i-code-s-slash-line" viewBox="0 0 24 24"><path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z"/></symbol><symbol id="i-layout-2-line" viewBox="0 0 24 24"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V20ZM11 5H5V19H11V5ZM19 13H13V19H19V13ZM19 5H13V11H19V5Z"/></symbol><symbol id="i-line-chart-line" viewBox="0 0 24 24"><path d="M5 3V19H21V21H3V3H5ZM20.2929 6.29289L21.7071 7.70711L16 13.4142L13 10.415L8.70711 14.7071L7.29289 13.2929L13 7.58579L16 10.585L20.2929 6.29289Z"/></symbol><symbol id="i-linkedin-box-line" viewBox="0 0 24 24"><path d="M4.00098 3H20.001C20.5533 3 21.001 3.44772 21.001 4V20C21.001 20.5523 20.5533 21 20.001 21H4.00098C3.44869 21 3.00098 20.5523 3.00098 20V4C3.00098 3.44772 3.44869 3 4.00098 3ZM5.00098 5V19H19.001V5H5.00098ZM7.50098 9C6.67255 9 6.00098 8.32843 6.00098 7.5C6.00098 6.67157 6.67255 6 7.50098 6C8.3294 6 9.00098 6.67157 9.00098 7.5C9.00098 8.32843 8.3294 9 7.50098 9ZM6.50098 10H8.50098V17.5H6.50098V10ZM12.001 10.4295C12.5854 9.86534 13.2665 9.5 14.001 9.5C16.072 9.5 17.501 11.1789 17.501 13.25V17.5H15.501V13.25C15.501 12.2835 14.7175 11.5 13.751 11.5C12.7845 11.5 12.001 12.2835 12.001 13.25V17.5H10.001V10H12.001V10.4295Z"/></symbol><symbol id="i-map-pin-line" viewBox="0 0 24 24"><path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13ZM12 15C9.79086 15 8 13.2091 8 11C8 8.79086 9.79086 7 12 7C14.2091 7 16 8.79086 16 11C16 13.2091 14.2091 15 12 15Z"/></symbol><symbol id="i-menu-line" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"/></symbol><symbol id="i-moon-line" viewBox="0 0 24 24"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"/></symbol><symbol id="i-shield-check-line" viewBox="0 0 24 24"><path d="M12 1L20.2169 2.82598C20.6745 2.92766 21 3.33347 21 3.80217V13.7889C21 15.795 19.9974 17.6684 18.3282 18.7812L12 23L5.6718 18.7812C4.00261 17.6684 3 15.795 3 13.7889V3.80217C3 3.33347 3.32553 2.92766 3.78307 2.82598L12 1ZM12 3.04879L5 4.60434V13.7889C5 15.1263 5.6684 16.3752 6.7812 17.1171L12 20.5963L17.2188 17.1171C18.3316 16.3752 19 15.1263 19 13.7889V4.60434L12 3.04879ZM16.4524 8.22183L17.8666 9.63604L11.5026 16L7.25999 11.7574L8.67421 10.3431L11.5019 13.1709L16.4524 8.22183Z"/></symbol><symbol id="i-sun-line" viewBox="0 0 24 24"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/></symbol></svg>
 		<div id="top"></div>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -110,7 +108,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" width="150" height="150" class="nav__logo-tag">
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -135,7 +133,7 @@
 					</ul>
 
 					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
-						<i class="ri-close-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-close-line"></use></svg>
 					</button>
 				</div>
 
@@ -146,7 +144,7 @@
 						id="theme-button"
 						aria-label="Toggle dark mode"
 						aria-pressed="false">
-						<i class="ri-moon-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-moon-line"></use></svg>
 					</button>
 
 					<button
@@ -156,7 +154,7 @@
 						aria-label="Open navigation menu"
 						aria-expanded="false"
 						aria-controls="nav-menu">
-						<i class="ri-menu-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-menu-line"></use></svg>
 					</button>
 				</div>
 			</nav>
@@ -174,14 +172,14 @@
 					height="1280"
 					fetchpriority="high"
 					decoding="async"
-					aria-hidden="true" />
+					aria-hidden="true">
 				<div class="page-hero__overlay" aria-hidden="true"></div>
 				<div class="container page-hero__inner">
 					<p class="breadcrumb"><a href="/">Home</a> / Resume</p>
 					<h1>Nicholas Poole</h1>
 					<p class="r-role">SEO &amp; Web Content Specialist</p>
 					<div class="r-meta">
-						<span><i class="ri-map-pin-line" aria-hidden="true"></i>Baltimore, MD</span>
+						<span><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-map-pin-line"></use></svg>Baltimore, MD</span>
 						<span>
 							<a
 								href="https://www.linkedin.com/in/napoole"
@@ -189,7 +187,7 @@
 								rel="noopener noreferrer"
 								aria-label="Nick's LinkedIn profile"
 								title="Nick's LinkedIn profile">
-								<i class="ri-linkedin-box-line" aria-hidden="true"></i>/in/napoole
+								<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-linkedin-box-line"></use></svg>/in/napoole
 							</a>
 						</span>
 					</div>
@@ -297,7 +295,7 @@
 						Web Developer / Digital Consultant
 						<span style="color: var(--text-color-light); font-weight: 400">· December 2021 – Present</span>
 					</h3>
-					<p class="org">nickpoole.dev · Baltimore, MD</p>
+					<p class="org"><a href="/portfolio/">nickpoole.dev</a> · Baltimore, MD</p>
 					<p class="r-context">
 						<b>Ongoing independent practice.</b> Design, build, deployment, and search strategy for
 						nonprofits, healthcare and therapy practices, and small businesses.
@@ -371,23 +369,23 @@
 				<h2 class="section__title-1"><span>Working Stack.</span></h2>
 				<div class="skills-rows">
 					<div class="skills-row">
-						<h3><i class="ri-line-chart-line" aria-hidden="true"></i>SEO Platforms</h3>
+						<h3><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-line-chart-line"></use></svg>SEO Platforms</h3>
 						<p>BrightEdge (incl. AI Catalyst &amp; Data Cube X) · Conductor · Siteimprove · Ahrefs · SEMrush · Google Search Console</p>
 					</div>
 					<div class="skills-row">
-						<h3><i class="ri-bar-chart-box-line" aria-hidden="true"></i>Analytics</h3>
+						<h3><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-bar-chart-box-line"></use></svg>Analytics</h3>
 						<p>GA4 · GTM · Google Trends · Coveo search analytics</p>
 					</div>
 					<div class="skills-row">
-						<h3><i class="ri-layout-2-line" aria-hidden="true"></i>CMS &amp; Content</h3>
+						<h3><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-layout-2-line"></use></svg>CMS &amp; Content</h3>
 						<p>Sitecore XM Cloud · WordPress · Drupal · OpenText TeamSite · inRiver PIM · Jasper · Salesforce Marketing Cloud</p>
 					</div>
 					<div class="skills-row">
-						<h3><i class="ri-code-s-slash-line" aria-hidden="true"></i>Code</h3>
+						<h3><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-code-s-slash-line"></use></svg>Code</h3>
 						<p>HTML · CSS/Sass · JavaScript · Python · Node · Git</p>
 					</div>
 					<div class="skills-row">
-						<h3><i class="ri-shield-check-line" aria-hidden="true"></i>Standards</h3>
+						<h3><svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-shield-check-line"></use></svg>Standards</h3>
 						<p>WCAG 2.1 AA · Section 508 · Schema.org / JSON-LD · hreflang · Core Web Vitals</p>
 					</div>
 				</div>
@@ -401,7 +399,7 @@
 					<div class="schema__content">
 						<div class="schema__head">
 							<span>application/ld+json · live in this page's source</span>
-							<i class="ri-braces-line" aria-hidden="true"></i>
+							<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-braces-line"></use></svg>
 						</div>
 						<pre tabindex="0" role="region" aria-label="Structured data excerpt for this page">{
   <span class="k">"@type"</span>: <span class="v">"ProfilePage"</span>,
@@ -418,7 +416,7 @@
 					The one page on this site where the employer is named in the schema, because it mirrors the
 					public record. It still resolves to the same <span class="mono">@id</span> as every other page.
 					<b>Even the resume is machine-readable.</b>
-					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-right-line"></use></svg></a>
 				</p>
 			</section>
 
@@ -426,9 +424,10 @@
 			<section class="section container closing">
 				<h2 class="section__title-1"><span>Beyond the Bullets.</span></h2>
 				<a class="button" href="/expertise/seo/">
-					What the Work Looks Like <i class="ri-arrow-right-line" aria-hidden="true"></i>
+					What the Work Looks Like <svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-right-line"></use></svg>
 				</a>
 				<a class="button__ghost" href="/credentials/">What the Credentials Mean</a>
+				<a class="button__ghost" href="/portfolio/">The Sites Themselves</a>
 			</section>
 		</main>
 
@@ -451,12 +450,10 @@
 
 			<!--========== SCROLL UP ==========-->
 			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+				<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-up-double-fill"></use></svg>
 			</a>
 		</footer>
 
-		<!--=============== SCROLLREVEAL ===============-->
-		<script src="/js/scrollreveal.min.js" defer></script>
 		<!--=============== MAIN JS ===============-->
 		<script src="/js/main.js"></script>
 	</body>

@@ -1,10 +1,4 @@
 /*=============== UTILITY ===============*/
-.font-heading {
-	font-family: var(--heading-font);
-	font-weight: var(--font-semi-bold); // or bold if needed
-	letter-spacing: -0.02em;
-}
-
 .accent {
 	color: var(--accent-text);
 }
@@ -65,17 +59,8 @@
 	& .section__title-2::after {
 		background-color: hsla(14, 70%, 50%, 0.2);
 	}
-	& :is(.home__arrow, .home__line, .about__line) {
-		filter: none;
-	}
-	& .home__description b {
-		background: linear-gradient(90deg, hsla(14, 80%, 50%, 0.3), hsla(14, 80%, 50%, 0));
-	}
-	& :is(.button__ghost, .services__icon i) {
+	& .button__ghost {
 		color: var(--white-color);
-	}
-	& .projects__card:hover {
-		background-color: var(--body-color);
 	}
 	& :is(.contact__mail, .contact__input, .contact__label) {
 		background-color: var(--container-color);

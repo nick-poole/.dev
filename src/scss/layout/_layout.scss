@@ -59,13 +59,7 @@
 }
 
 .main {
-	overflow: hidden; /* For animation ScrollReveal */
-}
-.d-none {
-	display: none;
-}
-.d-block {
-	display: block;
+	overflow: hidden; /* clips the reveal transforms so they cannot widen the page */
 }
 .sr-only {
 	position: absolute;

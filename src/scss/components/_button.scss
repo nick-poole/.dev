@@ -14,7 +14,7 @@
 	font-weight: var(--font-medium);
 	transition: background-color 0.4s;
 
-	& i {
+	& .icon {
 		font-size: 1.25rem;
 	}
 	&:hover {
@@ -27,9 +27,6 @@
 		padding: 0.5rem;
 		transition: border 0.4s, color 0.4s;
 
-		& i {
-			font-size: 1.25rem;
-		}
 		&:hover {
 			border: 3px solid var(--first-color);
 			color: var(--accent-text);

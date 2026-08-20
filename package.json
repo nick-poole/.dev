@@ -3,6 +3,7 @@
     "sass": "^1.86.3"
   },
   "scripts": {
-    "sass": "echo 'Watching SASS Files' && sass src/scss/styles.scss public/css/styles.css --watch"
+    "sass": "echo 'Watching SASS Files' && sass src/scss/styles.scss public/css/styles.css --watch --style=compressed --no-source-map",
+    "build": "sass src/scss/styles.scss public/css/styles.css --style=compressed --no-source-map"
   }
 }

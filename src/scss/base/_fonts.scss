@@ -1,0 +1,51 @@
+/*=============== FONTS ===============*/
+/* Self-hosted latin subsets, pulled from the Google Fonts CDN once and committed
+   to /public/fonts. Both families are SIL Open Font License, so hosting them here
+   is allowed — and it keeps fonts.googleapis.com out of the critical request
+   chain entirely. font-display: swap so text is readable during the swap period.
+
+   Bai Jamjuree ships as four static weights; JetBrains Mono is a single variable
+   file, so 400 and 500 point at the same woff2 and the browser instances it. */
+
+@font-face {
+	font-family: 'Bai Jamjuree';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/bai-jamjuree-400.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Bai Jamjuree';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/bai-jamjuree-500.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Bai Jamjuree';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('/fonts/bai-jamjuree-600.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Bai Jamjuree';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/bai-jamjuree-700.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/jetbrains-mono-var.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/jetbrains-mono-var.woff2') format('woff2');
+}

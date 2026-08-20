@@ -36,3 +36,25 @@
 .show-scroll {
 	bottom: 3rem;
 }
+
+/*=============== ENTRANCE REVEAL ===============*/
+/* Replaces the ScrollReveal library (16.6 KB on every page) for the three
+   elements that actually used it. The hidden state is scoped to .js, set by the
+   pre-paint script in each page's head, so the content is visible when
+   JavaScript never runs — and it is skipped entirely for reduced motion. */
+@media screen and (prefers-reduced-motion: no-preference) {
+	.js .reveal {
+		opacity: 0;
+		transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	}
+	.js .reveal--left {
+		transform: translateX(-60px);
+	}
+	.js .reveal--right {
+		transform: translateX(60px);
+	}
+	.js .reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+}

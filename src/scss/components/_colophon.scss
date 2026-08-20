@@ -12,74 +12,6 @@
 	overflow-wrap: anywhere;
 }
 
-/* ── Visible PENDING markers ──
-   Content Nick owns. Deliberately loud so a block can never ship unnoticed,
-   and so nothing on the page is invented to fill the gap. */
-.pending {
-	display: block;
-	/* Border-only, no tint: a --first-color-soft wash over the page darkens the
-	   surface enough to drop --text-color and --accent-text under 4.5:1. */
-	border: 3px dashed var(--first-color);
-	background: var(--body-color);
-	padding: 0.9rem 1rem;
-	margin: 1rem 0;
-	font-size: var(--small-font-size);
-	color: var(--text-color);
-
-	&--inline {
-		display: inline;
-		padding: 0.15rem 0.4rem;
-		margin: 0;
-	}
-	/* .card__content centers its text; a paragraph of flag copy needs to read left */
-	.card & {
-		text-align: left;
-	}
-	&__flag {
-		display: inline-block;
-		font-family: var(--mono-font);
-		font-size: var(--micro-font-size);
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		font-weight: var(--font-bold);
-		color: var(--accent-text);
-		margin-right: 0.5rem;
-	}
-	& a {
-		color: var(--accent-text);
-		text-decoration: underline;
-	}
-}
-
-/* Page-level dev banner listing everything still outstanding */
-.dev-banner {
-	border: 4px solid var(--first-color);
-	background: var(--body-color);
-	padding: 1.25rem 1.4rem;
-	margin-bottom: 2rem;
-
-	& h2 {
-		font-size: var(--h3-font-size);
-		margin-bottom: 0.5rem;
-
-		& i {
-			color: var(--accent-text);
-			margin-right: 0.4rem;
-		}
-	}
-	& p {
-		font-size: var(--small-font-size);
-		margin-bottom: 0.6rem;
-	}
-	& ul {
-		display: grid;
-		gap: 0.35rem;
-		font-size: var(--small-font-size);
-		padding-left: 1.1rem;
-		list-style: disc;
-	}
-}
-
 /* ── Link out of a schema caption to the entity-graph section ── */
 .schema__more {
 	display: block;
@@ -88,7 +20,7 @@
 	font-weight: var(--font-semi-bold);
 	color: var(--accent-text);
 
-	& i {
+	& .icon {
 		margin-left: 0.25rem;
 	}
 	&:hover {
@@ -490,7 +422,7 @@
 	&__head {
 		border-bottom: 1px solid hsl(0, 0%, 18%);
 
-		& i {
+		& .icon {
 			color: hsl(14, 98%, 55%);
 			font-size: 0.95rem;
 		}

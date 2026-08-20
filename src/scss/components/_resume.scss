@@ -1,7 +1,13 @@
 /*=============== RESUME PAGE ===============*/
+/* Sits on the same element as .container, and a bare `margin-inline: auto` here
+   overrode the container's 1.5rem gutter — on a phone that put the bullet text
+   hard against both screen edges. Keeping the gutter as padding means the
+   860px measure survives on desktop and the text never touches the edge. */
 .resume-wrap {
-	max-width: 860px;
+	width: 100%;
+	max-width: calc(860px + 3rem);
 	margin-inline: auto;
+	padding-inline: 1.5rem;
 }
 
 /* Role line under the name in the hero */
@@ -85,7 +91,7 @@
 		display: inline-flex;
 		align-items: center;
 	}
-	& span i {
+	& span .icon {
 		font-size: 1.3em;
 		line-height: 1;
 		color: var(--accent-text);
@@ -104,48 +110,6 @@
 	& .org2 {
 		color: var(--accent-text);
 		font-weight: var(--font-semi-bold);
-	}
-}
-
-/* Career highlight tiles */
-.highlights {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-	gap: 1.5rem;
-	max-width: 860px;
-	margin: 2.5rem auto 0;
-}
-.hl {
-	position: relative;
-
-	&__border {
-		position: absolute;
-		inset: 0;
-		border: 4px solid var(--first-color);
-		transform: translate(0.45rem, 0.45rem);
-	}
-	&__content {
-		position: relative;
-		z-index: 5;
-		border: 4px solid var(--black-color);
-		background: var(--body-color);
-		padding: 1.25rem 0.9rem;
-		text-align: center;
-		transition: background-color 0.4s, border 0.4s;
-	}
-	& b {
-		display: block;
-		font-family: var(--heading-font);
-		font-size: 1.6rem;
-		font-weight: var(--font-bold);
-		color: var(--accent-text);
-		line-height: 1.1;
-	}
-	& span {
-		font-size: var(--micro-font-size);
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--text-color);
 	}
 }
 
@@ -170,7 +134,7 @@
 		color: var(--accent-text);
 		font-weight: var(--font-semi-bold);
 
-		& i {
+		& .icon {
 			margin-right: 0.4rem;
 		}
 	}
@@ -220,19 +184,8 @@
 	.section__title-2::after {
 		display: none;
 	}
-	.r-entry li::before,
-	.hl__border {
+	.r-entry li::before {
 		background: #444;
-	}
-	.highlights {
-		grid-template-columns: repeat(4, 1fr);
-	}
-	.hl__content {
-		background: #fff;
-		border-color: #444;
-	}
-	.hl b {
-		color: #222;
 	}
 	a {
 		color: #222 !important;

@@ -1,49 +1,39 @@
 <!doctype html>
 <html lang="en-US">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Nick Poole" />
-		<meta name="theme-color" content="#de3d05" />
-		<link rel="canonical" href="https://nickpoole.dev/accessibility/" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index, follow">
+		<meta name="author" content="Nick Poole">
+		<meta name="theme-color" content="#de3d05">
+		<link rel="canonical" href="https://nickpoole.dev/accessibility/">
 		<title>Accessibility Statement | Nick Poole | Baltimore, MD</title>
 		<meta
 			name="description"
-			content="The accessibility statement for nickpoole.dev: WCAG 2.1 Level AA conformance target, scope, testing methods, known limitations, and how to report an issue." />
+			content="The accessibility statement for nickpoole.dev: WCAG 2.1 Level AA conformance target, scope, testing methods, known limitations, and how to report an issue.">
 
 		<!--=============== OPEN GRAPH ===============-->
-		<meta property="og:title" content="Accessibility Statement | Nick Poole | Baltimore, MD" />
+		<meta property="og:title" content="Accessibility Statement | Nick Poole | Baltimore, MD">
 		<meta
 			property="og:description"
-			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev." />
-		<meta property="og:url" content="https://nickpoole.dev/accessibility/" />
-		<meta property="og:type" content="website" />
-		<!-- PENDING: Nick. The seventh OG card exists but is not in the repo yet. Save it
-		     as public/images/og-images/og-accessibility.png, then swap the four lines
-		     below for these, which is the whole change:
-		       <meta property="og:image" content="https://nickpoole.dev/images/og-images/og-accessibility.png" />
-		       <meta property="og:image:width" content="1200" />
-		       <meta property="og:image:height" content="630" />
-		       <meta property="og:image:alt" content="Nick Poole, accessibility statement, with the page's WebPage structured data." />
-		     and the same for twitter:image / twitter:image:alt lower down. Until the file
-		     is on disk this points at the generic card, because an og:image that 404s is
-		     worse than a generic one that resolves. -->
-		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD." />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="Nick Poole" />
+			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev.">
+		<meta property="og:url" content="https://nickpoole.dev/accessibility/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-accessibility.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:image:alt" content="Nick Poole, accessibility statement, with the page's WebPage structured data.">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Nick Poole">
 
 		<!--=============== TWITTER CARD ===============-->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Accessibility Statement | Nick Poole | Baltimore, MD" />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Accessibility Statement | Nick Poole | Baltimore, MD">
 		<meta
 			name="twitter:description"
-			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev." />
-		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
-		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD." />
+			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev.">
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-accessibility.png">
+		<meta name="twitter:image:alt" content="Nick Poole, accessibility statement, with the page's WebPage structured data.">
 
 		<!--=============== STRUCTURED DATA ===============-->
 		<!-- A plain WebPage hanging off the WebSite node. Nothing about this page needs
@@ -74,22 +64,23 @@
 		</script>
 
 		<!--=============== FAVICON ===============-->
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<meta name="apple-mobile-web-app-title" content="nickpoole.dev">
+		<link rel="manifest" href="/site.webmanifest">
 
 		<!--=============== FONTS ===============-->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+		<!-- Self-hosted latin subsets. Nothing third-party in the critical path: no
+		     DNS, TLS, and stylesheet round trip to Google before the text can paint.
+		     The two faces above the fold are preloaded; the rest load on demand. -->
+		<link rel="preload" href="/fonts/bai-jamjuree-400.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/fonts/bai-jamjuree-700.woff2" as="font" type="font/woff2" crossorigin>
 
-		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<!--=============== PRE-PAINT (dark theme + JS flag, before first paint) ===============-->
 		<script>
+			document.documentElement.classList.add('js');
 			try {
 				if (localStorage.getItem('selected-theme') === 'dark') {
 					document.documentElement.classList.add('dark-theme');
@@ -97,17 +88,14 @@
 			} catch (e) {}
 		</script>
 
-		<!--=============== REMIXICONS ===============-->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer" />
-
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
+		<!--=============== ICON SPRITE ===============-->
+		<!-- Remixicon paths, inlined. Only the icons this page uses, so there is no
+		     icon-font request and no unused glyphs on the wire. -->
+		<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="i-arrow-right-line" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></symbol><symbol id="i-arrow-up-double-fill" viewBox="0 0 24 24"><path d="M12 4.83582L5.79291 11.0429L7.20712 12.4571L12 7.66424L16.7929 12.4571L18.2071 11.0429L12 4.83582ZM12 10.4857L5.79291 16.6928L7.20712 18.107L12 13.3141L16.7929 18.107L18.2071 16.6928L12 10.4857Z"/></symbol><symbol id="i-braces-line" viewBox="0 0 24 24"><path d="M4 18V14.3C4 13.4716 3.32843 12.8 2.5 12.8H2V11.2H2.5C3.32843 11.2 4 10.5284 4 9.7V6C4 4.34315 5.34315 3 7 3H8V5H7C6.44772 5 6 5.44772 6 6V10.1C6 10.9858 5.42408 11.7372 4.62623 12C5.42408 12.2628 6 13.0142 6 13.9V18C6 18.5523 6.44772 19 7 19H8V21H7C5.34315 21 4 19.6569 4 18ZM20 14.3V18C20 19.6569 18.6569 21 17 21H16V19H17C17.5523 19 18 18.5523 18 18V13.9C18 13.0142 18.5759 12.2628 19.3738 12C18.5759 11.7372 18 10.9858 18 10.1V6C18 5.44772 17.5523 5 17 5H16V3H17C18.6569 3 20 4.34315 20 6V9.7C20 10.5284 20.6716 11.2 21.5 11.2H22V12.8H21.5C20.6716 12.8 20 13.4716 20 14.3Z"/></symbol><symbol id="i-close-line" viewBox="0 0 24 24"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"/></symbol><symbol id="i-menu-line" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"/></symbol><symbol id="i-moon-line" viewBox="0 0 24 24"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"/></symbol><symbol id="i-sun-line" viewBox="0 0 24 24"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/></symbol></svg>
 		<div id="top"></div>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -116,7 +104,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" width="150" height="150" class="nav__logo-tag">
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -139,7 +127,7 @@
 					</ul>
 
 					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
-						<i class="ri-close-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-close-line"></use></svg>
 					</button>
 				</div>
 
@@ -150,7 +138,7 @@
 						id="theme-button"
 						aria-label="Toggle dark mode"
 						aria-pressed="false">
-						<i class="ri-moon-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-moon-line"></use></svg>
 					</button>
 
 					<button
@@ -160,7 +148,7 @@
 						aria-label="Open navigation menu"
 						aria-expanded="false"
 						aria-controls="nav-menu">
-						<i class="ri-menu-line" aria-hidden="true"></i>
+						<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-menu-line"></use></svg>
 					</button>
 				</div>
 			</nav>
@@ -236,9 +224,11 @@
 						<dt>Scope</dt>
 						<dd>
 							<p>
-								All pages on <span class="mono">nickpoole.dev</span>. That is the home page, the SEO
-								expertise page, the portfolio, the credentials page, the resume, the colophon, this
-								statement, and the contact confirmation page.
+								All pages on <span class="mono">nickpoole.dev</span>. That is
+								the home page, the <a href="/expertise/seo/">SEO expertise page</a>,
+								the <a href="/portfolio/">portfolio</a>, the
+								<a href="/credentials/">credentials page</a>, the <a href="/resume/">resume</a>, the
+								<a href="/colophon/">colophon</a>, this statement, and the contact confirmation page.
 							</p>
 							<p>
 								Third-party sites linked from the portfolio are not in scope. Where a linked site is one
@@ -282,11 +272,6 @@
 									instead. That route has no challenge and reaches me just as fast. I am looking at
 									whether the honeypot field alone is enough to drop the CAPTCHA entirely.
 								</li>
-								<li>
-									Fonts and icons load from third-party CDNs. If those requests fail, the page still
-									reads and every icon is decorative with a text label beside it, but the type falls
-									back to a system stack.
-								</li>
 							</ul>
 							<p>
 								This list is what is known today, not a promise that nothing else exists. If you find
@@ -316,7 +301,7 @@
 				<!-- Update the review date here. It is deliberately the only place on the site
 				     this date appears, so keeping it current is one edit. -->
 				<p class="reviewed">
-					Statement first published: 20 August 2026<br />
+					Statement first published: 20 August 2026<br>
 					Last reviewed: 20 August 2026
 				</p>
 			</section>
@@ -329,7 +314,7 @@
 					<div class="schema__content">
 						<div class="schema__head">
 							<span>application/ld+json &middot; live in this page's source</span>
-							<i class="ri-braces-line" aria-hidden="true"></i>
+							<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-braces-line"></use></svg>
 						</div>
 						<pre tabindex="0" role="region" aria-label="WebPage structured data for this page">{
   <span class="k">"@type"</span>: <span class="v">"WebPage"</span>,
@@ -345,7 +330,7 @@
 				<p class="schema__caption">
 					The smallest node on the site, and still a node.
 					<b>It hangs off the same WebSite identifier as every other page.</b>
-					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-right-line"></use></svg></a>
 				</p>
 			</section>
 
@@ -353,7 +338,7 @@
 			<section class="section container closing">
 				<h2 class="section__title-2"><span>How It Was Built.</span></h2>
 				<a class="button" href="/colophon/">
-					Read the Colophon <i class="ri-arrow-right-line" aria-hidden="true"></i>
+					Read the Colophon <svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-right-line"></use></svg>
 				</a>
 				<a class="button__ghost" href="/#contact">Report an Issue</a>
 			</section>
@@ -378,12 +363,10 @@
 
 			<!--========== SCROLL UP ==========-->
 			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+				<svg class="icon" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="#i-arrow-up-double-fill"></use></svg>
 			</a>
 		</footer>
 
-		<!--=============== SCROLLREVEAL ===============-->
-		<script src="/js/scrollreveal.min.js" defer></script>
 		<!--=============== MAIN JS ===============-->
 		<script src="/js/main.js"></script>
 	</body>

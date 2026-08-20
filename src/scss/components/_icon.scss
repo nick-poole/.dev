@@ -1,0 +1,15 @@
+/*=============== ICONS ===============*/
+/* Remixicon paths are inlined per page as a <symbol> sprite, so an icon costs a
+   <use> reference instead of a 15 KB stylesheet plus a 174 KB webfont from a CDN.
+   Icons size off the current font-size, the way the icon font used to. */
+.sprite {
+	display: none;
+}
+
+.icon {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	flex: none;
+	vertical-align: -0.135em;
+}
