@@ -72,6 +72,10 @@
 
 	& a {
 		display: inline-block;
+		/* Without this cap the inline-block shrink-wraps to the unwrapped quote,
+		   and the blockquote's own max-width: 100% resolves against that too-wide
+		   box — so on a phone the quote ran straight off the screen. */
+		max-width: 100%;
 	}
 	& blockquote {
 		font-family: var(--heading-font);

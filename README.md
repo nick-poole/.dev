@@ -114,7 +114,6 @@ a `Disallow`, so crawlers can actually read the directive.
 - [x] Single-source entity graph: one Person `@id`, referenced by every page
 - [x] Colophon and accessibility statement, plus `llms.txt`
 - [x] Image pipeline: every content image WebP and sized to its slot
-- [ ] Lighthouse scores published in the colophon Audit section
 - [ ] Consulting flip (parked): hero swap + CTA change when ready
 
 ## Audit status
@@ -138,6 +137,22 @@ cannot be statically checked, and the vendor-prefixed scrollbar and autofill
 rules are deliberate).
 
 ## Commit Log
+
+[8/20/26 v3]
+
+- **content: colophon trims, mobile quote overflow, even card grids**
+  - The statement blockquote overflowed small screens: its `max-width: 100%`
+    resolved against a shrink-wrapped inline-block anchor, so the cap did
+    nothing. The anchor now carries `max-width: 100%` and the quote wraps
+  - Rich Results tile removed from the colophon audit list — the site's
+    Person/WebSite/WebPage graph is not rich-result-eligible, so the tool
+    only ever reads as a failure
+  - Lighthouse-scores PENDING block and the dev banner removed; that item is
+    dropped from the plan rather than left as a permanent placeholder
+  - Card copy balanced inside every grid (the Images card ran ~2x its
+    siblings, the Sass card ~3x): Stack 276-302px, Design System 302-327px,
+    Accessibility 276-306px, Inside Part 128-154px — no more tall card
+    stretching short neighbours into empty space
 
 [8/20/26 latest]
 
