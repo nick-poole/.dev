@@ -459,7 +459,7 @@
 			justify-content: space-between;
 		}
 		&__links {
-			column-gap: 3rem;
+			column-gap: 2rem; /* tightened for the 7-link footer nav */
 			order: 1;
 		}
 	}

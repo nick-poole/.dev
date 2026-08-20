@@ -19,20 +19,25 @@ Built with:
 - HTML (static pages in `public/`)
 - Sass / SCSS (compiled to `public/css/styles.css`)
 - Vanilla JavaScript (theme toggle, mobile nav)
-- Deployed on Netlify (Forms + redirects)
+- Deployed on Netlify (redirects in `public/_redirects`, headers in
+  `public/_headers`); the contact form posts to FormSubmit
 
 ## Information architecture
 
-| Route              | Page                                                        |
-| ------------------ | ----------------------------------------------------------- |
-| `/`                | Home — hub hero, routing cards, statement, schema, contact  |
-| `/expertise/seo/`  | SEO expertise — diagnosis, the build, governance, method    |
-| `/portfolio/`      | Portfolio — shipped work, the ownership stack               |
-| `/credentials/`    | Credentials — degrees & certs, what each one trained        |
-| `/resume/`         | On-domain resume (print-friendly)                           |
-| `/thank-you.html`  | Post-contact-form confirmation (excluded from indexing)     |
+| Route              | Page                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| `/`                | Home — hub hero, routing cards, statement, schema, contact   |
+| `/expertise/seo/`  | SEO expertise — diagnosis, the build, governance, method     |
+| `/portfolio/`      | Portfolio — shipped work, the ownership stack                |
+| `/credentials/`    | Credentials — degrees & certs, what each one trained         |
+| `/resume/`         | On-domain resume (print-friendly)                            |
+| `/colophon/`       | Colophon — stack, tokens, entity graph, the files for machines |
+| `/accessibility/`  | Accessibility statement — conformance, scope, how to report  |
+| `/thank-you.html`  | Post-contact-form confirmation (excluded from indexing)      |
 
-Nav: Home · SEO · Portfolio · Credentials · Resume · Contact.
+Nav: Home · SEO · Portfolio · Credentials · Resume · Contact. Colophon and the
+accessibility statement are reachable from the footer on every page; the main
+nav deliberately stays at five destinations.
 
 ## Design system
 
@@ -42,6 +47,13 @@ Nav: Home · SEO · Portfolio · Credentials · Resume · Contact.
   for accessible accent **text**. Section titles carry the offset accent block.
 - Signature patterns: offset-border cards, the schema panel, chapter rows, and
   the letter/icon tiles — all built on the same tokens.
+- Each color token has a matching `--*-label` string token declared beside it.
+  The colophon swatches render those, so the documented value follows the theme
+  and cannot drift from the declaration.
+- `--accent-text` and `--text-color-light` are tuned for AA against
+  `--body-color`. On the darker `--container-color` surface they drop below
+  4.5:1, so new components put text on `--body-color` with a `--black-color`
+  border, which is the existing card treatment.
 
 ## Build & run
 
@@ -63,11 +75,32 @@ Serve `public/` with any static server for local preview.
 - [x] Accessibility pass (WCAG 2.1 AA, 44px tap targets, heading order)
 - [x] Visible-schema motif + validated JSON-LD on every content page
 - [x] On-domain resume (print stylesheet) replacing the external PDF link
-- [x] Netlify contact form with honeypot + `/thank-you.html`
-- [x] Sitemap, canonicals, robots.txt, branded OG card
+- [x] Contact form with honeypot + `/thank-you.html`
+- [x] Sitemap, canonicals, robots.txt, per-page OG cards
+- [x] Single-source entity graph: one Person `@id`, referenced by every page
+- [x] Colophon and accessibility statement, plus `llms.txt`
 - [ ] Consulting flip (parked): hero swap + CTA change when ready
 
 ## Commit Log
+
+[8/20/26]
+
+- **feat: colophon, accessibility statement, and a single-source entity graph**
+  - New `/colophon/`: the stack, live token swatches, the entity-graph diagram,
+    the three files written for machines (peeled-corner `llms.txt` card), and
+    audit links
+  - New `/accessibility/`: WCAG 2.1 AA target, scope, measures, feedback, dates
+  - Person declared once as `https://nickpoole.dev/#nick-poole`; every other
+    page references it by `@id` instead of redeclaring it. Added a WebSite node
+    at `#website` that pages join via `isPartOf`
+  - Every schema panel rewritten to match its page's live JSON-LD
+  - Portfolio: added the `nickpoole.dev` and DAP Global cards, renamed
+    "Enterprise Healthcare" to "Enterprise", extended the ItemList to 14
+  - Footer nav carries Colophon and Accessibility on all pages; main nav unchanged
+  - Breadcrumb links underlined (color alone was the only cue distinguishing
+    them from the surrounding label)
+  - Outstanding content Nick owns is marked with visible `PENDING` blocks
+    rather than filled in
 
 [8/17/26]
 

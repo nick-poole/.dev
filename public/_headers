@@ -1,0 +1,6 @@
+# Netlify serves .txt as text/plain by default. Pinning it here so /llms.txt can
+# never be handed back as application/octet-stream, which turns a file meant to
+# be read into a file that downloads.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600

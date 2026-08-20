@@ -20,6 +20,20 @@
 	--body-color: hsl(0, 0%, 87%);
 	--container-color: hsl(0, 0%, 83%);
 
+	/*========== Token labels ==========*/
+	/* The colophon prints these next to each swatch. They live here, one line
+	   under the value they describe, and are overridden in the dark theme block
+	   alongside the dark values — so the page reports what is actually painted
+	   instead of a copy someone has to remember to update. Change a color above
+	   and its label is on the adjacent line. */
+	--first-color-label: 'hsl(14, 98%, 50%)';
+	--accent-text-label: 'hsl(14, 95%, 36%)';
+	--title-color-label: 'hsl(0, 0%, 0%)';
+	--text-color-label: 'hsl(0, 0%, 35%)';
+	--body-color-label: 'hsl(0, 0%, 87%)';
+	--container-color-label: 'hsl(0, 0%, 83%)';
+	--black-color-label: 'hsl(0, 0%, 0%)';
+
 	/*========== Font and typography ==========*/
 	/*.5rem = 8px | 1rem = 16px ...*/
 	--heading-font: 'Bai Jamjuree', 'Helvetica Neue', sans-serif;

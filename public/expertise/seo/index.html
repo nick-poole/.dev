@@ -22,7 +22,7 @@
 		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-seo.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="“You can't market yourself out of bad tech.” SEO Expertise, Technical First, beside a JSON-LD WebPage snippet" />
+		<meta property="og:image:alt" content="Nick Poole, SEO expertise, with the page's WebPage structured data." />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
@@ -33,34 +33,21 @@
 			name="twitter:description"
 			content="Technical SEO and AI search visibility from a specialist who reads the source code. Diagnosis, enterprise migrations, and search at the decision table." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-seo.png" />
-		<meta name="twitter:image:alt" content="“You can't market yourself out of bad tech.” SEO Expertise, Technical First, beside a JSON-LD WebPage snippet" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO expertise, with the page's WebPage structured data." />
 
 		<!--=============== STRUCTURED DATA ===============-->
+		<!-- References the canonical Person by @id. Its properties are declared once,
+		     on the homepage; repeating them here would fork the entity. -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "WebPage",
+				"@id": "https://nickpoole.dev/expertise/seo/#webpage",
 				"name": "SEO Expertise | Nick Poole",
 				"url": "https://nickpoole.dev/expertise/seo/",
-				"about": {
-					"@type": "Person",
-					"name": "Nick Poole",
-					"jobTitle": "SEO Specialist",
-					"url": "https://nickpoole.dev/",
-					"sameAs": ["https://www.linkedin.com/in/napoole", "https://github.com/nick-poole"],
-					"knowsAbout": [
-						"Technical SEO",
-						"Enterprise Site Migrations",
-						"AI Search Visibility",
-						"Generative Engine Optimization",
-						"Keyword Intent Architecture",
-						"Structured Data",
-						"Share of Voice Measurement",
-						"SEO Platform Strategy",
-						"Product Naming and Positioning",
-						"Content Governance"
-					]
-				}
+				"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+				"about": { "@id": "https://nickpoole.dev/#nick-poole" },
+				"author": { "@id": "https://nickpoole.dev/#nick-poole" }
 			}
 		</script>
 
@@ -197,6 +184,9 @@
 			</section>
 
 			<!--==================== WHAT I KNOW ====================-->
+			<!-- TODO(nick): consolidate hero/What I Know duplication. The hero lede and the
+			     first paragraph below make the same point in nearly the same words. Rewrite
+			     is pending and lands in the copy pass, not here. -->
 			<section class="section container">
 				<h2 class="section__title-1"><span>What I Know.</span></h2>
 				<div class="prose">
@@ -392,23 +382,21 @@
 						</div>
 						<pre tabindex="0" role="region" aria-label="Structured data excerpt for this page">{
   <span class="k">"@type"</span>: <span class="v">"WebPage"</span>,
+  <span class="k">"@id"</span>: <span class="v">"&hellip;/expertise/seo/#webpage"</span>,
+  <span class="k">"isPartOf"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#website"</span> },
   <span class="k">"about"</span>: {
-    <span class="k">"@type"</span>: <span class="v">"Person"</span>,
-    <span class="k">"name"</span>: <span class="v">"Nick Poole"</span>,
-    <span class="k">"knowsAbout"</span>: [
-      <span class="v">"Technical SEO"</span>,
-      <span class="v">"AI Search Visibility"</span>,
-      <span class="v">"Generative Engine Optimization"</span>,
-      <span class="v">"Enterprise Site Migrations"</span>,
-      <span class="v">"SEO Platform Strategy"</span>,
-      <span class="v">"Product Naming and Positioning"</span> ]
-  }
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> },
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> }
 }</pre>
 					</div>
 				</div>
 				<p class="schema__caption">
-					The exact entity data answer engines parse to decide what I know.
+					This page does not repeat who I am. It points at the one Person node the site declares,
+					so an answer engine reading any page resolves to the same entity.
 					<b>An SEO whose own site can't explain itself to a machine isn't one you should hire.</b>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
 				</p>
 			</section>
 
@@ -523,6 +511,8 @@
 					<li><a href="/portfolio/" class="footer__link">Portfolio</a></li>
 					<li><a href="/credentials/" class="footer__link">Credentials</a></li>
 					<li><a href="/resume/" class="footer__link">Resume</a></li>
+					<li><a href="/colophon/" class="footer__link">Colophon</a></li>
+					<li><a href="/accessibility/" class="footer__link">Accessibility</a></li>
 				</ul>
 				<span class="footer__copy">
 					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
