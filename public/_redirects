@@ -1,3 +1,14 @@
-/about     /#about                                      301
-/contact   /#contact                                    301
-/legacy    https://nick-poole-d3velop.netlify.app/      301
+# The old /about section is now the Arsenal block on the homepage. The previous
+# target, /#about, no longer exists as an id, so the rule was silently landing
+# people at the top of the page.
+/about      /#arsenal                                    301
+/contact    /#contact                                    301
+
+# /expertise/ has no index of its own. The SEO page's breadcrumb reads
+# "Home / Expertise / SEO", which invites trimming the URL, so send anyone who
+# tries it to the only page in that directory. Existing files still win over
+# these rules, so /expertise/seo/ is unaffected.
+/expertise  /expertise/seo/                              301
+/expertise/*  /expertise/seo/                            301
+
+/legacy     https://nick-poole-d3velop.netlify.app/      301

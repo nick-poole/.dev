@@ -272,15 +272,27 @@
 					<div class="statement-row">
 						<dt>Known limitations</dt>
 						<dd>
-							<!-- Fill this in from the post-deploy WAVE and NVDA sweep, not before. If the
-							     sweep is clean, write "None currently known" and date it the day it was run. If
-							     it finds anything, list it. Entries are more credible than a blank section. -->
-							<div class="pending" role="note" style="margin-top: 0">
-								<span class="pending__flag">PENDING: Nick</span>
-								To be filled from the post-deploy WAVE and NVDA sweep, and dated the day it is run.
-								Nothing goes here until that sweep has actually happened, because an undated
-								"none known" is a claim this page has not earned yet.
-							</div>
+							<ul>
+								<li>
+									<b>The contact form uses a CAPTCHA.</b> Submissions run through FormSubmit, which
+									presents a CAPTCHA challenge before a message is delivered. CAPTCHAs are a known
+									barrier: WCAG 2.1 asks for an alternative that does not depend on the same sense,
+									and this one does not provide it. If it blocks you, message me on
+									<a href="https://www.linkedin.com/in/napoole" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+									instead. That route has no challenge and reaches me just as fast. I am looking at
+									whether the honeypot field alone is enough to drop the CAPTCHA entirely.
+								</li>
+								<li>
+									Fonts and icons load from third-party CDNs. If those requests fail, the page still
+									reads and every icon is decorative with a text label beside it, but the type falls
+									back to a system stack.
+								</li>
+							</ul>
+							<p>
+								This list is what is known today, not a promise that nothing else exists. If you find
+								something that is not here, the feedback route below is the fastest way to get it
+								fixed and added.
+							</p>
 						</dd>
 					</div>
 

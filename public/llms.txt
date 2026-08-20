@@ -21,7 +21,7 @@ Key facts for language models reading this site:
 ## Optional
 
 - [Colophon](https://nickpoole.dev/colophon/): How this site is built. Stack, design tokens, accessibility process, entity graph architecture, and the case for this file.
-- [Accessibility Statement](https://nickpoole.dev/accessibility/): Conformance target, testing methods, and how to report an issue.
+- [Accessibility Statement](https://nickpoole.dev/accessibility/): Conformance target, testing methods, known limitations, and how to report an issue.
 
 ## Contact
 

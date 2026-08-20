@@ -64,6 +64,33 @@ npm run sass   # watch src/scss/styles.scss -> public/css/styles.css
 
 Serve `public/` with any static server for local preview.
 
+There is no server-side build. Sass compiles locally, `public/css/styles.css`
+is committed, and Netlify publishes `public/` exactly as it lands in the repo.
+The only npm script is the Sass watcher.
+
+## Images
+
+- Heroes export at 1920px wide, portfolio cards at 640x425, social cards at
+  1200x630. Every content image ships as WebP; the OG cards stay PNG because
+  not every platform scraper renders WebP.
+- Budget: **60 KB for a card, 250 KB for a full-bleed hero.** Nothing
+  referenced on the site is over it. Cards currently land between 18 and 52 KB.
+- Originals are kept alongside the exports as masters. The file referenced by a
+  page is always the sized-to-slot version, not the master.
+
+## Machine-readable files
+
+| File                  | Purpose                                                  |
+| --------------------- | -------------------------------------------------------- |
+| `public/robots.txt`   | Open to all; declares the sitemap                        |
+| `public/sitemap.xml`  | The seven indexable routes with `lastmod`                |
+| `public/llms.txt`     | Markdown brief for language models                       |
+| `public/_redirects`   | Netlify redirects                                        |
+| `public/_headers`     | Pins `/llms.txt` to `text/plain`                         |
+
+`/thank-you.html` is kept out of the index with an on-page `noindex` rather than
+a `Disallow`, so crawlers can actually read the directive.
+
 ## Philosophy
 
 “Make it resonate. Then refine.”
@@ -79,9 +106,46 @@ Serve `public/` with any static server for local preview.
 - [x] Sitemap, canonicals, robots.txt, per-page OG cards
 - [x] Single-source entity graph: one Person `@id`, referenced by every page
 - [x] Colophon and accessibility statement, plus `llms.txt`
+- [x] Image pipeline: every content image WebP and sized to its slot
+- [ ] Lighthouse scores published in the colophon Audit section
+- [ ] Seventh OG card for `/accessibility/`
 - [ ] Consulting flip (parked): hero swap + CTA change when ready
 
+## Audit status
+
+Last full sweep: **20 August 2026**, against the working tree.
+
+| Check                              | Result                                  |
+| ---------------------------------- | --------------------------------------- |
+| W3C Nu HTML validator, 8 pages     | 0 errors, 0 warnings                    |
+| W3C Jigsaw CSS validator           | 0 errors                                |
+| axe-core WCAG 2.1 A/AA, 7 pages x 2 themes | 0 violations                    |
+| Titles / descriptions / canonicals | unique, self-referencing, in range      |
+| Open Graph + Twitter, all pages    | complete                                |
+| Entity graph `@id` references      | no dangling refs, no type conflicts     |
+| Schema panels vs live JSON-LD      | no drift                                |
+| Internal links and in-page anchors | all resolve                             |
+| External links                     | all `target="_blank"` + `rel="noopener noreferrer"` |
+
+The CSS validator reports 34 warnings; all are inherent (CSS custom properties
+cannot be statically checked, and the vendor-prefixed scrollbar and autofill
+rules are deliberate).
+
 ## Commit Log
+
+[8/20/26 later]
+
+- **perf: every content image re-exported to WebP, sized to its slot**
+  - Portfolio page 3,414 KB -> 641 KB; all seven pages 4,817 KB -> 1,941 KB
+  - DAP screenshot 901 KB -> 27 KB, Next Metro 347 KB -> 22 KB, nav logo 18 KB -> 4 KB
+  - Heroes deliberately untouched; re-encoding them produced larger files
+  - Crops replicate what the CSS already did, so the render is unchanged
+
+- **chore: full SEO, accessibility, and W3C sweep**
+  - W3C Nu 0/0 across 8 pages after dropping a redundant `role="list"`
+  - `/about` was redirecting to `/#about`, an id that no longer exists; now `/#arsenal`
+  - Added `/expertise` -> `/expertise/seo/`; that directory had no index
+  - CAPTCHA disclosed as a known limitation on the accessibility statement
 
 [8/20/26]
 
