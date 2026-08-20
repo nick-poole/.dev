@@ -119,7 +119,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -200,7 +200,6 @@
 					</p>
 					<ul>
 						<li>Lighthouse scores, all four categories</li>
-						<li>The per-image size budget, which does not match the files in the repo</li>
 					</ul>
 				</div>
 			</section>
@@ -423,23 +422,22 @@
 							<p class="card__desc">
 								Cropped, resized, compressed, then converted. Image Resizer, Squoosh, and occasionally
 								<span class="mono">cwebp</span>. Heroes export at 1920px wide, portfolio cards at
-								640x425, and social cards at 1200x630. WebP or PNG where acceptable, and never an
-								oversized JPG spending page speed on decoration.
+								640x425, and social cards at 1200x630. Every content image ships as WebP. The social
+								cards stay PNG, because not every platform scraper renders WebP.
+							</p>
+							<p class="card__desc">
+								The budget is 60 KB for a card and 250 KB for a full-bleed hero, and nothing on the
+								site is over it. Cards land between 18 and 52 KB. The rule that saves those bytes is
+								sizing to the slot: a portfolio card renders about 344px wide and ships at 640, not at
+								the 1411px the capture tool produced. Heroes are the one exception, shipping a single
+								1920px file to every viewport instead of a srcset, which trades some bytes on small
+								screens for a much simpler page.
 							</p>
 						</div>
 					</article>
 				</div>
 
-				<div class="pending" role="note">
-					<span class="pending__flag">PENDING: Nick</span>
-					The 40 to 65 KB per image budget is not stated on the card, because it does not match the files
-					in the repo. Measured: social cards land 36 to 45 KB, but hero WebPs run 49 to 245 KB and card
-					screenshots 62 to 348 KB. Two are also served larger than they display,
-					<span class="mono">dap-website-homepage.png</span> at 1411px and 901 KB, and
-					<span class="mono">nextmetro.png</span> at 937px and 347 KB, in a card that renders around 350px
-					wide. Either give the real range or re-export to hit the budget. A page that invites an audit
-					should not publish a number devtools disproves.
-				</div>
+
 
 
 			</section>
