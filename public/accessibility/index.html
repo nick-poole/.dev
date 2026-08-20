@@ -19,9 +19,16 @@
 			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev." />
 		<meta property="og:url" content="https://nickpoole.dev/accessibility/" />
 		<meta property="og:type" content="website" />
-		<!-- PENDING: Nick. There are six OG images and seven pages. This page falls back
-		     to the generic card until a seventh is made; the other six pages each carry
-		     their own and no longer reference this file. -->
+		<!-- PENDING: Nick. The seventh OG card exists but is not in the repo yet. Save it
+		     as public/images/og-images/og-accessibility.png, then swap the four lines
+		     below for these, which is the whole change:
+		       <meta property="og:image" content="https://nickpoole.dev/images/og-images/og-accessibility.png" />
+		       <meta property="og:image:width" content="1200" />
+		       <meta property="og:image:height" content="630" />
+		       <meta property="og:image:alt" content="Nick Poole, accessibility statement, with the page's WebPage structured data." />
+		     and the same for twitter:image / twitter:image:alt lower down. Until the file
+		     is on disk this points at the generic card, because an og:image that 404s is
+		     worse than a generic one that resolves. -->
 		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
@@ -49,6 +56,7 @@
 				"name": "Accessibility Statement | Nick Poole",
 				"url": "https://nickpoole.dev/accessibility/",
 				"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+				"about": { "@type": "Thing", "name": "Accessibility" },
 				"author": { "@id": "https://nickpoole.dev/#nick-poole" }
 			}
 		</script>
@@ -166,7 +174,8 @@
 			<section class="page-hero">
 				<div class="container page-hero__inner">
 					<p class="breadcrumb"><a href="/">Home</a> / Accessibility Statement</p>
-					<!-- PENDING: Nick may prefer a different H1. This is the plain, conventional one. -->
+					<!-- Plain wording on purpose. "Accessibility Statement" is the term lawyers,
+					     procurement teams, and screen reader users all search for. -->
 					<h1>Accessibility Statement</h1>
 					<p class="lede">
 						This statement covers nickpoole.dev, the personal site of Nick Poole.
@@ -263,11 +272,14 @@
 					<div class="statement-row">
 						<dt>Known limitations</dt>
 						<dd>
+							<!-- Fill this in from the post-deploy WAVE and NVDA sweep, not before. If the
+							     sweep is clean, write "None currently known" and date it the day it was run. If
+							     it finds anything, list it. Entries are more credible than a blank section. -->
 							<div class="pending" role="note" style="margin-top: 0">
 								<span class="pending__flag">PENDING: Nick</span>
-								List anything currently known to fall short, or state plainly that nothing is known to
-								and date that claim. An empty limitations section reads as an unchecked box; a dated
-								"none currently known" reads as an answer.
+								To be filled from the post-deploy WAVE and NVDA sweep, and dated the day it is run.
+								Nothing goes here until that sweep has actually happened, because an undated
+								"none known" is a claim this page has not earned yet.
 							</div>
 						</dd>
 					</div>
@@ -282,14 +294,9 @@
 							</p>
 							<p>
 								Useful details, if you have them: the page, what you were trying to do, and the browser
-								or assistive technology you were using. I read every message that comes through the form,
-								and I intend to respond to accessibility reports and fix what I can.
+								or assistive technology you were using. I read every message that comes through the form.
+								<b>I aim to respond to accessibility reports within five business days.</b>
 							</p>
-							<div class="pending" role="note">
-								<span class="pending__flag">PENDING: Nick</span>
-								Optional: commit to a response window if you want one on the record. A stated number is
-								stronger than an intent, and it has not been invented for you here.
-							</div>
 						</dd>
 					</div>
 				</dl>
@@ -317,6 +324,7 @@
   <span class="k">"@id"</span>: <span class="v">"&hellip;/accessibility/#webpage"</span>,
   <span class="k">"isPartOf"</span>: {
     <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#website"</span> },
+  <span class="k">"about"</span>: <span class="v">"Accessibility"</span>,
   <span class="k">"author"</span>: {
     <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> }
 }</pre>

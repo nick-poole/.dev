@@ -172,10 +172,10 @@
 		<!--==================== MAIN ====================-->
 		<main class="main" id="main-content">
 			<!--==================== HERO ====================-->
-			<!-- PENDING: Nick to choose a banner image or approve the plain treatment.
-			     This is the site-standard .page-hero component with the image and overlay
-			     omitted. Adding a banner is two elements plus --hero-pos / --hero-overlay,
-			     exactly as on the other subpages. -->
+			<!-- Plain treatment, deliberately. Every other page opens with a photo; the page
+			     about the machinery opens with none, which leaves the peeled corner further
+			     down as the only visual event here. This is the site-standard .page-hero with
+			     the image and overlay omitted. -->
 			<section class="page-hero">
 				<div class="container page-hero__inner">
 					<p class="breadcrumb"><a href="/">Home</a> / Colophon</p>
@@ -199,11 +199,10 @@
 						filled with a guess.
 					</p>
 					<ul>
-						<li>Hero banner image, or approval to keep the plain treatment</li>
 						<li>Deploy trigger, DNS registrar, and TLS details</li>
 						<li>Image sizing and compression workflow</li>
 						<li>Lighthouse scores, all four categories</li>
-						<li>Final links for the two llms.txt studies</li>
+						<li>Approved copy for the llms.txt argument card</li>
 					</ul>
 				</div>
 			</section>
@@ -586,10 +585,18 @@
 						<span class="filecard__path">The argument</span>
 						<h3>The honest case for llms.txt</h3>
 						<p>
-							The evidence is not on its side. An Ahrefs study of llms.txt in June 2026 and an SE
-							Ranking study across 300,000 domains in November 2025 both looked for adoption, and
-							neither found the thing working the way its proponents hoped. No major model provider has
-							committed to reading it.
+							The evidence is not on its side.
+							<a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener noreferrer">Ahrefs
+							looked at 137,000 sites in June 2026</a> and found 97% of llms.txt files never get
+							requested at all.
+							<a href="https://seranking.com/blog/llms-txt/" target="_blank" rel="noopener noreferrer">SE
+							Ranking looked at nearly 300,000 domains in November 2025</a> and found no correlation
+							between having the file and getting cited. No major model provider has committed to
+							reading it.
+						</p>
+						<p>
+							SE Ranking still landed on adding it: their own conclusion was that the file is a
+							low-effort way to be prepared, even though they could not measure any citation effect.
 						</p>
 						<p>
 							So the file is here anyway, for two reasons. It costs one file and no runtime, and the
@@ -600,9 +607,11 @@
 						</p>
 						<div class="pending" role="note">
 							<span class="pending__flag">PENDING: Nick</span>
-							Confirm the final links for both studies, and confirm this card reads the way the approved
-							draft did. The two citations are named here but not yet linked, and the conclusions are
-							stated no more strongly than the source supports.
+							Replace this card's body with the approved copy from the colophon mockup. Both citations
+							above are now linked and their findings verified against the published articles, but this
+							wording is a stand-in written without sight of your draft. The approved version carries
+							the Lighthouse contradiction, the point that nobody controls whether agents start reading
+							the file, and the org-conversation close. None of those are here.
 						</div>
 					</div>
 				</div>
