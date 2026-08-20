@@ -372,14 +372,28 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<!-- PENDING: swap this placeholder for the homepage screenshot at 640x425.
-							     Nothing is wired to a file that does not exist yet. -->
-							<div class="proj__thumb proj__thumb--pending">
-								<p class="pending" role="note">
-									<span class="pending__flag">PENDING: Nick</span>
-									Capture the nickpoole.dev homepage at 640x425 and drop it in
-									<span class="mono">/images/portfolio-images/</span>.
-								</p>
+							<!-- No screenshot here on purpose. Every other card shows you a site you
+							     cannot otherwise see; this one is the page you are already standing in, so
+							     a picture of it adds nothing. It quotes its own entity record instead,
+							     which is the motif the whole site is built on. Every line below is live
+							     in the WebSite node declared on / and /colophon/. -->
+							<div class="proj__thumb proj__thumb--selfdesc">
+								<div class="selfdesc">
+									<div class="selfdesc__head">
+										<span>the record, not a picture</span>
+										<i class="ri-braces-line" aria-hidden="true"></i>
+									</div>
+									<pre class="selfdesc__code">{
+  <span class="k">"@type"</span>: <span class="v">"WebSite"</span>,
+  <span class="k">"@id"</span>: <span class="v">"&hellip;/#website"</span>,
+  <span class="k">"name"</span>: <span class="v">"nickpoole.dev"</span>,
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"&hellip;#nick-poole"</span> }
+}</pre>
+									<div class="selfdesc__foot">
+										declared on <span>/</span> and <span>/colophon/</span>
+									</div>
+								</div>
 							</div>
 							<span class="proj__badge">This Site!</span>
 							<span class="proj__tag">Portfolio &middot; Meta</span>

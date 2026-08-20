@@ -1787,21 +1787,6 @@ img {
   border-bottom: 4px solid var(--first-color);
 }
 .proj {
-  /* Placeholder standing in for a screenshot that does not exist yet. Keeps the
-     card the same height as its neighbours without wiring a missing file. */
-}
-.proj__thumb--pending {
-  display: flex;
-  align-items: center;
-  aspect-ratio: 3/2;
-  background: var(--body-color);
-  border-bottom: 4px solid var(--first-color);
-  padding: 0 1rem;
-}
-.proj__thumb--pending .pending {
-  margin: 0;
-}
-.proj {
   /* Loud badge for the one card that is the site you are reading */
 }
 .proj__badge {
@@ -1933,6 +1918,12 @@ img {
   padding: 0.15rem 0.4rem;
   margin: 0;
 }
+.pending {
+  /* .card__content centers its text; a paragraph of flag copy needs to read left */
+}
+.card .pending {
+  text-align: left;
+}
 .pending__flag {
   display: inline-block;
   font-family: var(--mono-font);
@@ -2044,6 +2035,31 @@ img {
   font-size: var(--micro-font-size-lg);
   color: var(--text-color);
   margin-top: 0.5rem;
+}
+
+/* Full-width card. The hosting copy runs several paragraphs; sat in a normal
+   column it would stretch its row-mate into whitespace. Centered text stops
+   working at this measure, so this variant reads left and caps its own width. */
+.card--wide {
+  grid-column: 1/-1;
+}
+.card--wide .card__content {
+  text-align: left;
+  padding: 2rem 1.75rem;
+}
+.card--wide {
+  /* .card__box is positioned off the icon's right edge, so the icon must stay
+     shrink-wrapped. Made it a block and the accent square flew to the far
+     corner with nothing to anchor to. */
+}
+.card--wide .card__icon {
+  display: inline-block;
+}
+.card--wide .card__desc {
+  max-width: 68ch;
+}
+.card--wide .card__desc + .card__desc {
+  margin-top: 0.8rem;
 }
 
 /* ── Entity graph: one hub, every page hanging off it ── */
@@ -2323,6 +2339,66 @@ img {
     gap: 0.6rem;
   }
 }
+/* ── Self-describing card thumbnail ──
+   Stands where a screenshot would go on the one portfolio card whose subject is
+   this site. A screenshot of the page you are already looking at says nothing;
+   the entity record behind it says what the card is claiming. Pinned dark in
+   both themes, exactly like the schema panels it is quoting. */
+.proj__thumb--selfdesc {
+  margin: -2rem -1.4rem 1.2rem;
+  border-bottom: 4px solid var(--first-color);
+  background: hsl(0, 0%, 7%);
+}
+
+.selfdesc__head, .selfdesc__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--mono-font);
+  font-size: var(--micro-font-size);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 55%);
+}
+.selfdesc__head {
+  border-bottom: 1px solid hsl(0, 0%, 18%);
+}
+.selfdesc__head i {
+  color: hsl(14, 98%, 55%);
+  font-size: 0.95rem;
+}
+.selfdesc__foot {
+  border-top: 1px solid hsl(0, 0%, 18%);
+  justify-content: flex-start;
+  /* Sentence case here: the two values in this line are real paths, and an
+     uppercased path is not the path. The head above is a label, so it keeps
+     the tracking treatment. */
+  text-transform: none;
+  letter-spacing: 0;
+}
+.selfdesc__foot span {
+  color: hsl(0, 0%, 88%);
+}
+.selfdesc__code {
+  font-family: var(--mono-font);
+  font-size: var(--micro-font-size);
+  line-height: 1.6;
+  color: hsl(0, 0%, 72%);
+  padding: 0.8rem 0.9rem;
+  /* Lines are kept short enough to fit the narrowest card track, so this
+     never becomes a scroll region needing its own tab stop. */
+  white-space: pre;
+  overflow: hidden;
+}
+.selfdesc__code .k {
+  color: hsl(14, 98%, 55%);
+}
+.selfdesc__code .v {
+  color: hsl(0, 0%, 92%);
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {

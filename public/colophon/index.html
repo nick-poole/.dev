@@ -199,10 +199,9 @@
 						filled with a guess.
 					</p>
 					<ul>
-						<li>Deploy trigger, DNS registrar, and TLS details</li>
-						<li>Image sizing and compression workflow</li>
 						<li>Lighthouse scores, all four categories</li>
 						<li>Approved copy for the llms.txt argument card</li>
+						<li>The per-image size budget, which does not match the files in the repo</li>
 					</ul>
 				</div>
 			</section>
@@ -211,10 +210,12 @@
 			<section class="section container">
 				<h2 class="section__title-1"><span>The Stack.</span></h2>
 				<p class="prose section__lead">
-					No framework, no build pipeline beyond a stylesheet compiler, no JavaScript required to read a
-					word of it. <b>Four pieces, and you can read all of them.</b>
+					No framework, no server-side build, no JavaScript required to read a word of it. Sass compiles
+					on my machine, the compiled CSS is committed, and Netlify publishes
+					<span class="mono">/public</span> exactly as it lands in the repo.
+					<b>Four pieces, and you can read all of them.</b>
 				</p>
-				<div class="cards-grid cards-grid--pairs">
+				<div class="cards-grid">
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content">
@@ -239,9 +240,12 @@
 							</div>
 							<h3 class="card__title">Sass</h3>
 							<p class="card__desc">
-								Nineteen partials under <span class="mono">/src/scss</span>, split into config, base,
-								theme, layout, and components, compiled to one stylesheet with
-								<span class="mono">npm run sass</span>.
+								Nineteen partials under <span class="mono">/src/scss</span>, in five folders: base,
+								config, theme, layout, and components. One entry file imports all nineteen and
+								compiles to a single 61 KB stylesheet. The setup is deliberately plain: no mixins, no
+								functions, no Sass variables, no loops. Nesting and partials are the whole reason it
+								is Sass, and the theming is done with CSS custom properties instead. One script runs
+								it, <span class="mono">npm run sass</span>, and that script is a watcher.
 							</p>
 						</div>
 					</article>
@@ -262,27 +266,37 @@
 						</div>
 					</article>
 
-					<article class="card">
+					<article class="card card--wide">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content">
 							<div class="card__icon">
 								<div class="card__box" aria-hidden="true"></div>
 								<i class="ri-cloud-line" aria-hidden="true"></i>
 							</div>
-							<h3 class="card__title">Netlify</h3>
+							<h3 class="card__title">Hosting &amp; Delivery</h3>
 							<p class="card__desc">
-								Static hosting, with redirects declared in <span class="mono">/_redirects</span>. The
-								contact form posts to FormSubmit with a honeypot field and a confirmation page.
+								Deployed on Netlify from the public repo. A push publishes the
+								<span class="mono">/public</span> directory as committed: there is no server-side
+								build step, because Sass compiles locally and the compiled CSS ships in the commit.
+								Redirects live in <span class="mono">/public/_redirects</span> and response headers in
+								<span class="mono">/public/_headers</span>, both read straight from the published
+								directory.
+							</p>
+							<p class="card__desc">
+								The domain is registered at Namecheap with DNS delegated to Netlify DNS, resolving on
+								NS1 infrastructure, with www redirecting to the apex. TLS is a Let's Encrypt
+								certificate covering the apex and wildcard, provisioned and auto-renewed by Netlify.
+								The contact form posts to FormSubmit, which handles the honeypot field and its own
+								CAPTCHA, and returns to a confirmation page at
+								<span class="mono">/thank-you.html</span>.
+							</p>
+							<p class="card__desc">
+								Nothing above is a secret. The registrar, nameservers, and full certificate history are
+								public in RDAP and Certificate Transparency logs. The only redacted fields are personal
+								contact details, which is exactly how it should be.
 							</p>
 						</div>
 					</article>
-				</div>
-
-				<div class="pending" role="note">
-					<span class="pending__flag">PENDING: Nick</span>
-					Deploy trigger, DNS registrar, and TLS details. The portfolio claims the domain, DNS, and
-					certificate layer as owned work, so this page should name who the registrar is, what triggers a
-					deploy, and where the certificate comes from.
 				</div>
 			</section>
 
@@ -398,13 +412,37 @@
 							</p>
 						</div>
 					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-image-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Images</h3>
+							<p class="card__desc">
+								Cropped, resized, compressed, then converted. Image Resizer, Squoosh, and occasionally
+								<span class="mono">cwebp</span>. Heroes export at 1920px wide, portfolio cards at
+								640x425, and social cards at 1200x630. WebP or PNG where acceptable, and never an
+								oversized JPG spending page speed on decoration.
+							</p>
+						</div>
+					</article>
 				</div>
 
 				<div class="pending" role="note">
 					<span class="pending__flag">PENDING: Nick</span>
-					Image sizing and compression workflow. Hero images were re-encoded to WebP at a 20x saving; the
-					page should say with what, at what dimensions, and at what quality setting.
+					The 40 to 65 KB per image budget is not stated on the card, because it does not match the files
+					in the repo. Measured: social cards land 36 to 45 KB, but hero WebPs run 49 to 245 KB and card
+					screenshots 62 to 348 KB. Two are also served larger than they display,
+					<span class="mono">dap-website-homepage.png</span> at 1411px and 901 KB, and
+					<span class="mono">nextmetro.png</span> at 937px and 347 KB, in a card that renders around 350px
+					wide. Either give the real range or re-export to hit the budget. A page that invites an audit
+					should not publish a number devtools disproves.
 				</div>
+
+
 			</section>
 
 			<!--==================== ACCESSIBILITY ====================-->

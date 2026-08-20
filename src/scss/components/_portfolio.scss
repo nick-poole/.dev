@@ -57,21 +57,6 @@
 		}
 	}
 
-	/* Placeholder standing in for a screenshot that does not exist yet. Keeps the
-	   card the same height as its neighbours without wiring a missing file. */
-	&__thumb--pending {
-		display: flex;
-		align-items: center;
-		aspect-ratio: 3 / 2;
-		background: var(--body-color);
-		border-bottom: 4px solid var(--first-color);
-		padding: 0 1rem;
-
-		& .pending {
-			margin: 0;
-		}
-	}
-
 	/* Loud badge for the one card that is the site you are reading */
 	&__badge {
 		display: inline-block;
