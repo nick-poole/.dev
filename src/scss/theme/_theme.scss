@@ -41,6 +41,16 @@
 	--text-color-light: hsl(0, 0%, 64%); /* muted text keeps 64% on dark bg */
 	--body-color: hsl(0, 0%, 8%);
 	--container-color: hsl(0, 0%, 12%);
+
+	/* Dark counterparts of the colophon swatch labels. Kept in this block so a
+	   dark-theme color and the string that names it move together. */
+	--first-color-label: 'hsl(14, 80%, 50%)';
+	--accent-text-label: 'hsl(14, 85%, 58%)';
+	--title-color-label: 'hsl(0, 0%, 95%)';
+	--text-color-label: 'hsl(0, 0%, 70%)';
+	--body-color-label: 'hsl(0, 0%, 8%)';
+	--container-color-label: 'hsl(0, 0%, 12%)';
+	--black-color-label: 'hsl(0, 0%, 18%)';
 }
 
 /*==========

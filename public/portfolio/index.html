@@ -22,7 +22,7 @@
 		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-portfolio.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="“I know websites inside and out.” Portfolio: Built, Shipped, Public, beside a JSON-LD CollectionPage snippet" />
+		<meta property="og:image:alt" content="Nick Poole, portfolio of shipped work, with the page's CollectionPage structured data." />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
@@ -33,18 +33,25 @@
 			name="twitter:description"
 			content="Sites I designed, built, and shipped solo, enterprise healthcare pages shipped at CareFirst, and the layers you don't see: DNS, code, integrations, and search." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-portfolio.png" />
-		<meta name="twitter:image:alt" content="“I know websites inside and out.” Portfolio: Built, Shipped, Public, beside a JSON-LD CollectionPage snippet" />
+		<meta name="twitter:image:alt" content="Nick Poole, portfolio of shipped work, with the page's CollectionPage structured data." />
 
 		<!--=============== STRUCTURED DATA ===============-->
+		<!-- The gallery is enumerated as an ItemList; the person who built it is referenced
+		     by @id, not redescribed. Card count and list length are kept in step by hand. -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "CollectionPage",
+				"@id": "https://nickpoole.dev/portfolio/#webpage",
 				"name": "Portfolio | Nick Poole",
 				"url": "https://nickpoole.dev/portfolio/",
-				"about": { "@type": "Person", "name": "Nick Poole", "url": "https://nickpoole.dev/" },
+				"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+				"about": { "@id": "https://nickpoole.dev/#nick-poole" },
+				"author": { "@id": "https://nickpoole.dev/#nick-poole" },
+				"creator": { "@id": "https://nickpoole.dev/#nick-poole" },
 				"mainEntity": {
 					"@type": "ItemList",
+					"numberOfItems": 14,
 					"itemListElement": [
 						{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "name": "Next Metro", "url": "https://nextmetro.live" } },
 						{ "@type": "ListItem", "position": 2, "item": { "@type": "WebSite", "name": "Haitian Sensation Mission", "url": "https://haitiansensationmission.org/" } },
@@ -52,12 +59,14 @@
 						{ "@type": "ListItem", "position": 4, "item": { "@type": "WebSite", "name": "Revolt Urban Farms", "url": "https://revolturbanfarms.org/" } },
 						{ "@type": "ListItem", "position": 5, "item": { "@type": "WebSite", "name": "Al-Hakeem's Tonsorial", "url": "https://alhakeems.com/" } },
 						{ "@type": "ListItem", "position": 6, "item": { "@type": "WebSite", "name": "Savanna Altenor, LCSW-C", "url": "https://savannaaltenor.com/" } },
-						{ "@type": "ListItem", "position": 7, "item": { "@type": "WebPage", "name": "CareFirst: Your Guide to a Healthy Pregnancy", "url": "https://www.carefirst.com/pregnancy/" } },
-						{ "@type": "ListItem", "position": 8, "item": { "@type": "WebPage", "name": "CareFirst: Behavioral Health & Addiction", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page" } },
-						{ "@type": "ListItem", "position": 9, "item": { "@type": "WebPage", "name": "CareFirst: Substance Use", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/substance-abuse-recovery.page" } },
-						{ "@type": "ListItem", "position": 10, "item": { "@type": "WebPage", "name": "CareFirst: Intensive Outpatient Programs", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/intensive-outpatient-programs.page" } },
-						{ "@type": "ListItem", "position": 11, "item": { "@type": "WebPage", "name": "CareFirst: Using Your HSA or FSA", "url": "https://member.carefirst.com/members/health-wellness/family-health/pregnancy/hsa-fsa.page" } },
-						{ "@type": "ListItem", "position": 12, "item": { "@type": "WebPage", "name": "CareFirst: Supporting You Through Changes", "url": "https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html" } }
+						{ "@type": "ListItem", "position": 7, "item": { "@type": "WebSite", "name": "nickpoole.dev", "url": "https://nickpoole.dev/" } },
+						{ "@type": "ListItem", "position": 8, "item": { "@type": "WebSite", "name": "DAP Global", "url": "https://www.dap.com/" } },
+						{ "@type": "ListItem", "position": 9, "item": { "@type": "WebPage", "name": "CareFirst: Your Guide to a Healthy Pregnancy", "url": "https://www.carefirst.com/pregnancy/" } },
+						{ "@type": "ListItem", "position": 10, "item": { "@type": "WebPage", "name": "CareFirst: Behavioral Health & Addiction", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/behavioral-health-and-addiction.page" } },
+						{ "@type": "ListItem", "position": 11, "item": { "@type": "WebPage", "name": "CareFirst: Substance Use", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/substance-abuse-recovery.page" } },
+						{ "@type": "ListItem", "position": 12, "item": { "@type": "WebPage", "name": "CareFirst: Intensive Outpatient Programs", "url": "https://member.carefirst.com/members/health-wellness/behavioral-health/intensive-outpatient-programs.page" } },
+						{ "@type": "ListItem", "position": 13, "item": { "@type": "WebPage", "name": "CareFirst: Using Your HSA or FSA", "url": "https://member.carefirst.com/members/health-wellness/family-health/pregnancy/hsa-fsa.page" } },
+						{ "@type": "ListItem", "position": 14, "item": { "@type": "WebPage", "name": "CareFirst: Supporting You Through Changes", "url": "https://www.carefirst.com/fedhmo/resources/supporting-you-through-changes.html" } }
 					]
 				}
 			}
@@ -118,7 +127,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -188,8 +197,9 @@
 					<p class="breadcrumb"><a href="/">Home</a> / Portfolio</p>
 					<h1>I know websites inside and out.</h1>
 					<p class="lede">
-						Sites I designed, built, and shipped solo, and pages I shipped inside a 3.5M-member health
-						plan. Not just what you see, but the layers you don't:
+						Sites I designed, built, and shipped solo, pages I shipped inside a 3.5M-member health plan,
+						and the relaunch of dap.com, where I carried the search workstream from architecture to
+						launch. Not just what you see, but the layers you don't:
 						<b>the domain, the DNS, the code, the integrations, and the search signals underneath.</b>
 					</p>
 					<div class="layers" role="list" aria-label="Layers of a website I have owned">
@@ -217,7 +227,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/portfolio-images/nextmetro.png" alt="Next Metro web app showing live DC Metro arrival times" width="937" height="615" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/portfolio-images/nextmetro-card-640x425.webp" alt="Next Metro web app showing live DC Metro arrival times" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Web App · Live Data</span>
 							<h3>Next Metro</h3>
 							<p class="proj__dates">nextmetro.live</p>
@@ -240,7 +250,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/portfolio-images/hsm-card-640x425.jpg" alt="Haitian Sensation Mission nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/portfolio-images/hsm-card-640x425.webp" alt="Haitian Sensation Mission nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Nonprofit · Donations</span>
 							<h3>Haitian Sensation Mission</h3>
 							<p class="proj__dates">2023 · Digital Project Engineer</p>
@@ -263,7 +273,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/portfolio-images/nhr-card-640-425.jpg" alt="New Harlem Renaissance barber brand website homepage" width="640" height="425" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/portfolio-images/nhr-card-640x425.webp" alt="New Harlem Renaissance barber brand website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Brand Site · Booking</span>
 							<h3>New Harlem Renaissance</h3>
 							<p class="proj__dates">2022 – 2023</p>
@@ -287,7 +297,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/portfolio-images/ruf-card-640x425.jpg" alt="Revolt Urban Farms nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/portfolio-images/ruf-card-640x425.webp" alt="Revolt Urban Farms nonprofit website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Nonprofit · Outreach</span>
 							<h3>Revolt Urban Farms</h3>
 							<p class="proj__dates">2021 – 2022</p>
@@ -311,7 +321,7 @@
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
-							<div class="proj__thumb"><img src="/images/portfolio-images/aht-card-640x425.jpg" alt="Al-Hakeem's Tonsorial barbershop website homepage" width="640" height="425" loading="lazy" /></div>
+							<div class="proj__thumb"><img src="/images/portfolio-images/aht-card-640x425.webp" alt="Al-Hakeem's Tonsorial barbershop website homepage" width="640" height="425" loading="lazy" /></div>
 								<span class="proj__tag">Local Business · Local SEO</span>
 							<h3>Al-Hakeem's Tonsorial</h3>
 							<p class="proj__dates">Owings Mills, MD</p>
@@ -336,7 +346,7 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/savanna-altenor-640x425.jpg"
+									src="/images/portfolio-images/savanna-altenor-640x425.webp"
 									alt="Savanna Altenor therapy practice website homepage"
 									width="640"
 									height="425"
@@ -358,25 +368,103 @@
 							</p>
 						</div>
 					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<!-- No screenshot here on purpose. Every other card shows you a site you
+							     cannot otherwise see; this one is the page you are already standing in, so
+							     a picture of it adds nothing. It quotes its own entity record instead,
+							     which is the motif the whole site is built on. Every line below is live
+							     in the WebSite node declared on / and /colophon/. -->
+							<div class="proj__thumb proj__thumb--selfdesc">
+								<div class="selfdesc">
+									<div class="selfdesc__head">
+										<span>the record, not a picture</span>
+										<i class="ri-braces-line" aria-hidden="true"></i>
+									</div>
+									<pre class="selfdesc__code">{
+  <span class="k">"@type"</span>: <span class="v">"WebSite"</span>,
+  <span class="k">"@id"</span>: <span class="v">"&hellip;/#website"</span>,
+  <span class="k">"name"</span>: <span class="v">"nickpoole.dev"</span>,
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"&hellip;#nick-poole"</span> }
+}</pre>
+									<div class="selfdesc__foot">
+										declared on <span>/</span> and <span>/colophon/</span>
+									</div>
+								</div>
+							</div>
+							<span class="proj__badge">This Site!</span>
+							<span class="proj__tag">Portfolio &middot; Meta</span>
+							<h3>nickpoole.dev</h3>
+							<p class="proj__dates">You are here</p>
+							<p class="proves">
+								The seventh solo build is the one you're standing in. Hand-coded, tokenized design
+								system, light and dark themes, a JSON-LD entity graph on every page, and accessibility
+								tested by hand. Read how it's built on the <a href="/colophon/">colophon</a>.
+							</p>
+							<div class="proj__chips"><span>Sass</span><span>JavaScript</span><span>JSON-LD</span><span>Netlify</span></div>
+							<p class="proj__links">
+								<a href="/">
+									Live Site (you're on it) <i class="ri-arrow-right-line" aria-hidden="true"></i>
+								</a>
+								<a href="https://github.com/nick-poole/.dev" target="_blank" rel="noopener noreferrer">
+									Repo <i class="ri-github-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
 				</div>
 			</section>
 
-			<!--==================== ENTERPRISE HEALTHCARE ====================-->
+			<!--==================== ENTERPRISE ====================-->
 			<section class="section container">
-				<h2 class="section__title-2"><span>Enterprise Healthcare.</span></h2>
+				<h2 class="section__title-2"><span>Enterprise.</span></h2>
 				<p class="prose section__lead">
-					Member-facing pages I built and shipped at
+					Work shipped inside large organizations, on enterprise platforms, through legal, brand, and
+					compliance review. A ground-up relaunch at <b>DAP Global</b>, and member-facing pages built at
 					<b>CareFirst BlueCross BlueShield</b> (via TalTeam), a regulated health plan serving 3.5M+
-					members. Same craft as the work above, run through legal, brand, and HIPAA review, on an
-					enterprise CMS, at enterprise scale.
+					members. Same craft as the work above, at enterprise scale.
 				</p>
 				<div class="projgrid">
 					<article class="card">
 						<div class="card__border" aria-hidden="true"></div>
 						<div class="card__content proj">
+							<!-- Native-resolution capture Nick placed in the repo. Crop to 640x425 to match the
+							     rest of the grid when a card-sized screenshot is ready. -->
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/pregnancy-journey-640x425.png"
+									src="/images/portfolio-images/dap-card-640x425.webp"
+									alt="The relaunched dap.com homepage"
+									width="640"
+									height="425"
+									loading="lazy" />
+							</div>
+							<span class="proj__tag">Enterprise Replatform &middot; SEO Workstream</span>
+							<h3>DAP Global</h3>
+							<p class="proj__dates">dap.com &middot; Launched August 2026</p>
+							<p class="proves">
+								Ground-up relaunch of dap.com on Sitecore XM Cloud with a headless Next.js frontend. Led
+								the SEO workstream end to end: URL architecture, redirect mapping, canonical logic,
+								structured data, and all core page content and metadata. Launched August 2026.
+							</p>
+							<div class="proj__chips"><span>Sitecore XM Cloud</span><span>Next.js</span><span>JSON-LD</span><span>Content</span></div>
+							<p class="proj__links">
+								<!-- www, confirmed against the live site's self-referencing canonical. -->
+								<a href="https://www.dap.com/" target="_blank" rel="noopener noreferrer">
+									Live Site <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+								</a>
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content proj">
+							<div class="proj__thumb">
+								<img
+									src="/images/portfolio-images/pregnancy-journey-640x425.webp"
 									alt="CareFirst pregnancy journey guide with a step-by-step timeline"
 									width="640"
 									height="425"
@@ -404,7 +492,7 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/bha-card-640x425.jpg"
+									src="/images/portfolio-images/bha-card-640x425.webp"
 									alt="CareFirst Behavioral Health and Addiction landing page"
 									width="640"
 									height="425"
@@ -435,9 +523,9 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/sa-card-640x425.jpg"
+									src="/images/portfolio-images/sa-card-595x395.webp"
 									alt="CareFirst Substance Use resource page with support contact options"
-									width="640"
+									width="595"
 									height="395"
 									loading="lazy" />
 							</div>
@@ -465,7 +553,7 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/iop-card-640x425.jpg"
+									src="/images/portfolio-images/iop-card-640x425.webp"
 									alt="CareFirst Intensive Outpatient Programs page listing participating provider centers"
 									width="640"
 									height="425"
@@ -495,7 +583,7 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/hsa-fsa-640x425.png"
+									src="/images/portfolio-images/hsa-fsa-640x425.webp"
 									alt="CareFirst HSA and FSA eligible expenses page with contribution limit tables"
 									width="640"
 									height="425"
@@ -525,9 +613,9 @@
 						<div class="card__content proj">
 							<div class="proj__thumb">
 								<img
-									src="/images/portfolio-images/sytc-card-2-640x425.jpg"
+									src="/images/portfolio-images/sytc-card-580x385.webp"
 									alt="CareFirst Supporting You Through Changes resource page for federal members"
-									width="640"
+									width="580"
 									height="385"
 									loading="lazy" />
 							</div>
@@ -597,8 +685,11 @@
 						</div>
 						<pre tabindex="0" role="region" aria-label="CollectionPage structured data for this page">{
   <span class="k">"@type"</span>: <span class="v">"CollectionPage"</span>,
+  <span class="k">"creator"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> },
   <span class="k">"mainEntity"</span>: {
     <span class="k">"@type"</span>: <span class="v">"ItemList"</span>,
+    <span class="k">"numberOfItems"</span>: <span class="v">14</span>,
     <span class="k">"itemListElement"</span>: [
       <span class="v">"Next Metro"</span>,
       <span class="v">"Haitian Sensation Mission"</span>,
@@ -606,14 +697,17 @@
       <span class="v">"Revolt Urban Farms"</span>,
       <span class="v">"Al-Hakeem's Tonsorial"</span>,
       <span class="v">"Savanna Altenor, LCSW-C"</span>,
-      <span class="v">"CareFirst BlueCross BlueShield"</span> &hellip; ]
+      <span class="v">"nickpoole.dev"</span>,
+      <span class="v">"DAP Global"</span> &hellip; ]
   }
 }</pre>
 					</div>
 				</div>
 				<p class="schema__caption">
-					This portfolio is enumerated as structured data. Machines get the same list you do.
+					This portfolio is enumerated as structured data, and its creator is the same
+					<span class="mono">@id</span> the homepage declares. Machines get the same list you do.
 					<b>Even the gallery is machine-readable.</b>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
 				</p>
 			</section>
 
@@ -636,6 +730,8 @@
 					<li><a href="/portfolio/" class="footer__link">Portfolio</a></li>
 					<li><a href="/credentials/" class="footer__link">Credentials</a></li>
 					<li><a href="/resume/" class="footer__link">Resume</a></li>
+					<li><a href="/colophon/" class="footer__link">Colophon</a></li>
+					<li><a href="/accessibility/" class="footer__link">Accessibility</a></li>
 				</ul>
 				<span class="footer__copy">
 					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved

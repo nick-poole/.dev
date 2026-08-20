@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
+		<link rel="canonical" href="https://nickpoole.dev/accessibility/" />
+		<title>Accessibility Statement | Nick Poole | Baltimore, MD</title>
+		<meta
+			name="description"
+			content="The accessibility statement for nickpoole.dev: WCAG 2.1 Level AA conformance target, scope, testing methods, known limitations, and how to report an issue." />
+
+		<!--=============== OPEN GRAPH ===============-->
+		<meta property="og:title" content="Accessibility Statement | Nick Poole | Baltimore, MD" />
+		<meta
+			property="og:description"
+			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev." />
+		<meta property="og:url" content="https://nickpoole.dev/accessibility/" />
+		<meta property="og:type" content="website" />
+		<!-- PENDING: Nick. The seventh OG card exists but is not in the repo yet. Save it
+		     as public/images/og-images/og-accessibility.png, then swap the four lines
+		     below for these, which is the whole change:
+		       <meta property="og:image" content="https://nickpoole.dev/images/og-images/og-accessibility.png" />
+		       <meta property="og:image:width" content="1200" />
+		       <meta property="og:image:height" content="630" />
+		       <meta property="og:image:alt" content="Nick Poole, accessibility statement, with the page's WebPage structured data." />
+		     and the same for twitter:image / twitter:image:alt lower down. Until the file
+		     is on disk this points at the generic card, because an og:image that 404s is
+		     worse than a generic one that resolves. -->
+		<meta property="og:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD." />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Nick Poole" />
+
+		<!--=============== TWITTER CARD ===============-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Accessibility Statement | Nick Poole | Baltimore, MD" />
+		<meta
+			name="twitter:description"
+			content="Conformance target, scope, testing methods, known limitations, and how to report an issue on nickpoole.dev." />
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-card.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD." />
+
+		<!--=============== STRUCTURED DATA ===============-->
+		<!-- A plain WebPage hanging off the WebSite node. Nothing about this page needs
+		     to redescribe the Person, so it does not. -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"@id": "https://nickpoole.dev/accessibility/#webpage",
+				"name": "Accessibility Statement | Nick Poole",
+				"url": "https://nickpoole.dev/accessibility/",
+				"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+				"about": { "@type": "Thing", "name": "Accessibility" },
+				"author": { "@id": "https://nickpoole.dev/#nick-poole" }
+			}
+		</script>
+
+		<!--=============== BREADCRUMB ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nickpoole.dev/" },
+					{ "@type": "ListItem", "position": 2, "name": "Accessibility Statement", "item": "https://nickpoole.dev/accessibility/" }
+				]
+			}
+		</script>
+
+		<!--=============== FAVICON ===============-->
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+		<!--=============== CSS ===============-->
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<div id="top"></div>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+
+		<!--==================== HEADER ====================-->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="/" class="nav__logo">
+					<span class="sr-only">Nick Poole - SEO Specialist</span>
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
+					<div class="nav__logo-text">
+						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
+						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
+					</div>
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<span class="nav__title">Menu</span>
+					<span class="nav__name">Nick</span>
+
+					<ul class="nav__list">
+						<li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+						<li class="nav__item"><a href="/expertise/seo/" class="nav__link">SEO</a></li>
+						<li class="nav__item"><a href="/portfolio/" class="nav__link">Portfolio</a></li>
+						<li class="nav__item"><a href="/credentials/" class="nav__link">Credentials</a></li>
+						<li class="nav__item"><a href="/resume/" class="nav__link">Resume</a></li>
+						<li class="nav__item">
+							<a href="/#contact" class="nav__link nav__link-button">Contact</a>
+						</li>
+					</ul>
+
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
+						<i class="ri-close-line" aria-hidden="true"></i>
+					</button>
+				</div>
+
+				<div class="nav__buttons">
+					<button
+						type="button"
+						class="change-theme"
+						id="theme-button"
+						aria-label="Toggle dark mode"
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
+
+					<button
+						type="button"
+						class="nav__toggle"
+						id="nav-toggle"
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
+						<i class="ri-menu-line" aria-hidden="true"></i>
+					</button>
+				</div>
+			</nav>
+		</header>
+
+		<!--==================== MAIN ====================-->
+		<main class="main" id="main-content">
+			<!--==================== HERO ====================-->
+			<!-- Same treatment decision as the colophon: the site-standard .page-hero with
+			     the banner image omitted, pending Nick's call on both pages together. -->
+			<section class="page-hero">
+				<div class="container page-hero__inner">
+					<p class="breadcrumb"><a href="/">Home</a> / Accessibility Statement</p>
+					<!-- Plain wording on purpose. "Accessibility Statement" is the term lawyers,
+					     procurement teams, and screen reader users all search for. -->
+					<h1>Accessibility Statement</h1>
+					<p class="lede">
+						This statement covers nickpoole.dev, the personal site of Nick Poole.
+						<b>It records what this site targets, how it was tested, and what is still open.</b>
+					</p>
+				</div>
+			</section>
+
+			<!--==================== COMMITMENT ====================-->
+			<!-- The opening paragraph names family members who use screen readers. If that
+			     detail should not be public, delete the first <p> and change the second to
+			     open with: "Accessibility is a professional signal, and it is also a personal
+			     standard." The rest stands unchanged either way. -->
+			<section class="section container">
+				<h2 class="section__title-1"><span>The Commitment.</span></h2>
+				<div class="prose">
+					<p>
+						Accessibility is personal for me. I have relatives who rely on screen readers, so I know what
+						a skipped heading or an unlabeled button costs someone on the other side of the glass.
+					</p>
+					<p>
+						It is also a professional signal. A site that gets screen readers right almost always gets
+						user experience right everywhere else, because both come from the same habit: caring about
+						how a page is actually experienced instead of how it looks in a comp. Most organizations
+						treat accessibility as an afterthought, and the consequences are real, from users quietly
+						locked out to lawsuits that were entirely avoidable.
+					</p>
+					<p>
+						The overlap with technical SEO is nearly total. Semantic headings, real link names, alt text,
+						and a parseable DOM serve screen readers and search crawlers alike. Build honestly for one
+						and you have mostly built for the other, which is why this site treats them as a single
+						discipline.
+					</p>
+					<p>
+						WCAG 2.1 AA is the standard this site holds itself to. AAA and Section 508 are not every
+						organization's goal, but AA is a reasonable ask for the private sector. Legally blind and
+						dyslexic people don't deserve to be left out in the cold because an organization can't be
+						bothered to invest in proper code.
+					</p>
+				</div>
+			</section>
+
+			<!--==================== THE RECORD ====================-->
+			<section class="section container">
+				<h2 class="section__title-2"><span>The Record.</span></h2>
+				<dl class="statement-list">
+					<div class="statement-row">
+						<dt>Conformance target</dt>
+						<dd>
+							<p>
+								Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. That is the target this site
+								is built and tested against.
+							</p>
+						</dd>
+					</div>
+
+					<div class="statement-row">
+						<dt>Scope</dt>
+						<dd>
+							<p>
+								All pages on <span class="mono">nickpoole.dev</span>. That is the home page, the SEO
+								expertise page, the portfolio, the credentials page, the resume, the colophon, this
+								statement, and the contact confirmation page.
+							</p>
+							<p>
+								Third-party sites linked from the portfolio are not in scope. Where a linked site is one
+								I built, it was built to the same standard, but the live version is under its owner's
+								control.
+							</p>
+						</dd>
+					</div>
+
+					<div class="statement-row">
+						<dt>Measures taken</dt>
+						<dd>
+							<ul>
+								<li>
+									Contrast managed at the token level, with a separate
+									<span class="mono">--accent-text</span> token so accent copy clears AA in both the
+									light and dark themes rather than only one
+								</li>
+								<li>
+									Semantic HTML first: real headings in order, real buttons for controls, ARIA only
+									where the markup runs out
+								</li>
+								<li>Keyboard navigation tested manually, including focus order and focus return</li>
+								<li>Automated scans with WAVE</li>
+								<li>Screen reader testing with NVDA</li>
+								<li>Contrast checked per theme, in both light and dark</li>
+							</ul>
+						</dd>
+					</div>
+
+					<div class="statement-row">
+						<dt>Known limitations</dt>
+						<dd>
+							<ul>
+								<li>
+									<b>The contact form uses a CAPTCHA.</b> Submissions run through FormSubmit, which
+									presents a CAPTCHA challenge before a message is delivered. CAPTCHAs are a known
+									barrier: WCAG 2.1 asks for an alternative that does not depend on the same sense,
+									and this one does not provide it. If it blocks you, message me on
+									<a href="https://www.linkedin.com/in/napoole" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+									instead. That route has no challenge and reaches me just as fast. I am looking at
+									whether the honeypot field alone is enough to drop the CAPTCHA entirely.
+								</li>
+								<li>
+									Fonts and icons load from third-party CDNs. If those requests fail, the page still
+									reads and every icon is decorative with a text label beside it, but the type falls
+									back to a system stack.
+								</li>
+							</ul>
+							<p>
+								This list is what is known today, not a promise that nothing else exists. If you find
+								something that is not here, the feedback route below is the fastest way to get it
+								fixed and added.
+							</p>
+						</dd>
+					</div>
+
+					<div class="statement-row">
+						<dt>Feedback</dt>
+						<dd>
+							<p>
+								If something on this site does not work for you, tell me and I will fix it.
+								<a href="/#contact">Use the contact form</a>, or reach me on
+								<a href="https://www.linkedin.com/in/napoole" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+							</p>
+							<p>
+								Useful details, if you have them: the page, what you were trying to do, and the browser
+								or assistive technology you were using. I read every message that comes through the form.
+								<b>I aim to respond to accessibility reports within five business days.</b>
+							</p>
+						</dd>
+					</div>
+				</dl>
+
+				<!-- Update the review date here. It is deliberately the only place on the site
+				     this date appears, so keeping it current is one edit. -->
+				<p class="reviewed">
+					Statement first published: 20 August 2026<br />
+					Last reviewed: 20 August 2026
+				</p>
+			</section>
+
+			<!--==================== VISIBLE SCHEMA ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>This Page Describes Itself.</span></h2>
+				<div class="schema">
+					<div class="schema__border" aria-hidden="true"></div>
+					<div class="schema__content">
+						<div class="schema__head">
+							<span>application/ld+json &middot; live in this page's source</span>
+							<i class="ri-braces-line" aria-hidden="true"></i>
+						</div>
+						<pre tabindex="0" role="region" aria-label="WebPage structured data for this page">{
+  <span class="k">"@type"</span>: <span class="v">"WebPage"</span>,
+  <span class="k">"@id"</span>: <span class="v">"&hellip;/accessibility/#webpage"</span>,
+  <span class="k">"isPartOf"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#website"</span> },
+  <span class="k">"about"</span>: <span class="v">"Accessibility"</span>,
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> }
+}</pre>
+					</div>
+				</div>
+				<p class="schema__caption">
+					The smallest node on the site, and still a node.
+					<b>It hangs off the same WebSite identifier as every other page.</b>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+				</p>
+			</section>
+
+			<!--==================== CLOSING ====================-->
+			<section class="section container closing">
+				<h2 class="section__title-2"><span>How It Was Built.</span></h2>
+				<a class="button" href="/colophon/">
+					Read the Colophon <i class="ri-arrow-right-line" aria-hidden="true"></i>
+				</a>
+				<a class="button__ghost" href="/#contact">Report an Issue</a>
+			</section>
+		</main>
+
+		<!--==================== FOOTER ====================-->
+		<footer class="footer">
+			<div class="footer__container container grid">
+				<ul class="footer__links">
+					<li><a href="/" class="footer__link">Home</a></li>
+					<li><a href="/expertise/seo/" class="footer__link">SEO</a></li>
+					<li><a href="/portfolio/" class="footer__link">Portfolio</a></li>
+					<li><a href="/credentials/" class="footer__link">Credentials</a></li>
+					<li><a href="/resume/" class="footer__link">Resume</a></li>
+					<li><a href="/colophon/" class="footer__link">Colophon</a></li>
+					<li><a href="/accessibility/" class="footer__link" aria-current="page">Accessibility</a></li>
+				</ul>
+				<span class="footer__copy">
+					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
+				</span>
+			</div>
+
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
+		</footer>
+
+		<!--=============== SCROLLREVEAL ===============-->
+		<script src="/js/scrollreveal.min.js" defer></script>
+		<!--=============== MAIN JS ===============-->
+		<script src="/js/main.js"></script>
+	</body>
+</html>

@@ -21,7 +21,7 @@
 		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-home.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD, beside a JSON-LD Person snippet listing Technical SEO and AI Search" />
+		<meta property="og:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD, with the page's Person structured data." />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Nick Poole" />
 
@@ -32,41 +32,74 @@
 			name="twitter:description"
 			content="SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, AI search visibility, and accessible builds." />
 		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-home.png" />
-		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist, Baltimore, MD, beside a JSON-LD Person snippet listing Technical SEO and AI Search" />
+		<meta name="twitter:image:alt" content="Nick Poole, SEO Specialist in Baltimore, MD, with the page's Person structured data." />
 
 		<!--=============== STRUCTURED DATA ===============-->
+		<!-- Canonical entity graph. The Person node declared here is the one every other
+		     page on this site points at by @id; nothing else redeclares its properties. -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Nick Poole",
-				"url": "https://nickpoole.dev/",
-				"jobTitle": "SEO Specialist",
-				"image": "https://nickpoole.dev/images/headshots/nick-poole-headshot-1.webp",
-				"description": "SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, and AI search visibility.",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Baltimore",
-					"addressRegion": "MD",
-					"addressCountry": "US"
-				},
-				"knowsAbout": [
-					"Technical SEO",
-					"AI Search Visibility",
-					"Enterprise Site Migrations",
-					"Structured Data",
-					"Web Development",
-					"Accessibility",
-					"SEO Platform Strategy",
-					"Product Naming and Positioning",
-					"Content Governance",
-					"Share of Voice Measurement"
-				],
-				"alumniOf": [
-					{ "@type": "CollegeOrUniversity", "name": "Georgetown University" },
-					{ "@type": "CollegeOrUniversity", "name": "Pennsylvania Western University" }
-				],
-				"sameAs": ["https://www.linkedin.com/in/napoole", "https://github.com/nick-poole"]
+				"@graph": [
+					{
+						"@type": "Person",
+						"@id": "https://nickpoole.dev/#nick-poole",
+						"name": "Nick Poole",
+						"url": "https://nickpoole.dev/",
+						"jobTitle": "SEO Specialist",
+						"image": "https://nickpoole.dev/images/headshots/nick-poole-headshot-1.webp",
+						"description": "SEO Specialist in Baltimore, MD with a web development and IT foundation. Enterprise search strategy, technical SEO, and AI search visibility.",
+						"address": {
+							"@type": "PostalAddress",
+							"addressLocality": "Baltimore",
+							"addressRegion": "MD",
+							"addressCountry": "US"
+						},
+						"knowsAbout": [
+							"Technical SEO",
+							"AI Search Visibility",
+							"Enterprise Site Migrations",
+							"Structured Data",
+							"Web Development",
+							"Accessibility",
+							"SEO Platform Strategy",
+							"Product Naming and Positioning",
+							"Content Governance",
+							"Share of Voice Measurement"
+						],
+						"alumniOf": [
+							{ "@type": "CollegeOrUniversity", "name": "Georgetown University" },
+							{ "@type": "CollegeOrUniversity", "name": "Pennsylvania Western University" }
+						],
+						"hasCredential": [
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "M.P.S., Applied Intelligence" },
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "B.S., Criminal Justice" },
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "CompTIA A+" },
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "CompTIA Network+" },
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "CompTIA Security+" },
+							{ "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Google IT Support Certificate" }
+						],
+						"sameAs": ["https://www.linkedin.com/in/napoole", "https://github.com/nick-poole"]
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://nickpoole.dev/#website",
+						"name": "nickpoole.dev",
+						"url": "https://nickpoole.dev/",
+						"inLanguage": "en-US",
+						"author": { "@id": "https://nickpoole.dev/#nick-poole" },
+						"creator": { "@id": "https://nickpoole.dev/#nick-poole" },
+						"publisher": { "@id": "https://nickpoole.dev/#nick-poole" }
+					},
+					{
+						"@type": "WebPage",
+						"@id": "https://nickpoole.dev/#webpage",
+						"url": "https://nickpoole.dev/",
+						"name": "Nick Poole | SEO Specialist | Baltimore, MD",
+						"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+						"about": { "@id": "https://nickpoole.dev/#nick-poole" }
+					}
+				]
 			}
 		</script>
 
@@ -113,7 +146,7 @@
 			<nav class="nav container">
 				<a href="/" class="nav__logo">
 					<span class="sr-only">Nick Poole - SEO Specialist</span>
-					<img src="/images/logos/tag-bg-removed.png" alt="" class="nav__logo-tag" />
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
 					<div class="nav__logo-text">
 						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
 						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
@@ -189,10 +222,10 @@
 				<div class="home-hero__photo">
 					<div class="home-hero__photo-border" aria-hidden="true"></div>
 					<img
-						src="/images/headshots/nick-poole-headshot-1.webp"
+						src="/images/headshots/nick-poole-headshot-400.webp"
 						alt="Nick Poole, SEO Specialist, on a Baltimore rooftop"
-						width="200"
-						height="200"
+						width="400"
+						height="400"
 						fetchpriority="high"
 						class="home-hero__img" />
 				</div>
@@ -308,20 +341,24 @@
 						</div>
 						<pre tabindex="0" role="region" aria-label="Person structured data for this page">{
   <span class="k">"@type"</span>: <span class="v">"Person"</span>,
+  <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span>,
   <span class="k">"name"</span>: <span class="v">"Nick Poole"</span>,
   <span class="k">"jobTitle"</span>: <span class="v">"SEO Specialist"</span>,
-  <span class="k">"addressLocality"</span>: <span class="v">"Baltimore, MD"</span>,
+  <span class="k">"addressLocality"</span>: <span class="v">"Baltimore"</span>,
+  <span class="k">"addressRegion"</span>: <span class="v">"MD"</span>,
   <span class="k">"knowsAbout"</span>: [
     <span class="v">"Technical SEO"</span>,
     <span class="v">"AI Search Visibility"</span>,
     <span class="v">"Web Development"</span>,
-    <span class="v">"Accessibility"</span> ]
+    <span class="v">"Accessibility"</span> &hellip; ]
 }</pre>
 					</div>
 				</div>
 				<p class="schema__caption">
 					Live structured data in this page's source, the exact entity record search and answer
-					engines read. <b>Every page on this site carries its own.</b>
+					engines read. This is the canonical Person node for the whole site.
+					<b>Every other page points back to this <span class="mono">@id</span> instead of repeating it.</b>
+					<a class="schema__more" href="/colophon/#entity-graph">See the entity graph <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
 				</p>
 			</section>
 
@@ -432,7 +469,7 @@
 									class="home__social-link"
 									aria-label="View Nick's LinkedIn page"
 									title="View Nick's LinkedIn page">
-									<i class="ri-linkedin-box-line"></i>
+									<i class="ri-linkedin-box-line" aria-hidden="true"></i>
 								</a>
 								<a
 									href="https://github.com/nick-poole"
@@ -441,7 +478,7 @@
 									class="home__social-link"
 									aria-label="View Nick's Github"
 									title="View Nick's Github">
-									<i class="ri-github-fill"></i>
+									<i class="ri-github-fill" aria-hidden="true"></i>
 								</a>
 								<a
 									href="https://buymeacoffee.com/nickpoole"
@@ -450,7 +487,7 @@
 									class="home__social-link"
 									aria-label="Buy me a Coffee"
 									title="Buy me a Coffee">
-									<i class="ri-cup-line"></i>
+									<i class="ri-cup-line" aria-hidden="true"></i>
 								</a>
 							</div>
 						</div>
@@ -481,6 +518,14 @@
 
 					<li>
 						<a href="/resume/" class="footer__link">Resume</a>
+					</li>
+
+					<li>
+						<a href="/colophon/" class="footer__link">Colophon</a>
+					</li>
+
+					<li>
+						<a href="/accessibility/" class="footer__link">Accessibility</a>
 					</li>
 				</ul>
 

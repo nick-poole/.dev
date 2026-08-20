@@ -57,7 +57,28 @@
 		}
 	}
 
+	/* Loud badge for the one card that is the site you are reading */
+	&__badge {
+		display: inline-block;
+		/* .proj is a flex column, so an inline-block child still stretches to the
+		   card width unless it opts out. */
+		align-self: flex-start;
+		font-size: var(--micro-font-size);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		font-weight: var(--font-bold);
+		/* Filled with --black-color, not --first-color: white on the accent is
+		   3.2:1 and black on it fails in the dark theme. The accent stays as the
+		   underline so the badge still reads as the loud one. */
+		color: var(--white-color);
+		background: var(--black-color);
+		border-bottom: 3px solid var(--first-color);
+		padding: 0.2rem 0.55rem;
+		margin-bottom: 0.5rem;
+	}
+
 	&__tag {
+		display: block;
 		font-size: var(--micro-font-size);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -75,6 +96,12 @@
 	}
 	& p.proves {
 		font-size: var(--small-font-size);
+
+		& a {
+			color: var(--accent-text);
+			font-weight: var(--font-semi-bold);
+			text-decoration: underline;
+		}
 	}
 	&__chips {
 		display: flex;

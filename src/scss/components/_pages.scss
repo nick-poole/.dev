@@ -83,6 +83,10 @@
 
 	& a {
 		color: var(--accent-text);
+		/* Underlined, not just recolored. Inside a text block the accent alone is
+		   under 3:1 against the surrounding label, which makes color the only cue
+		   telling the two apart. */
+		text-decoration: underline;
 	}
 }
 
@@ -221,6 +225,12 @@
 	padding-top: 1rem;
 	max-width: 1000px;
 	margin-inline: auto;
+
+	/* Four-card groups: a narrower track forces 2x2 rather than a row of three
+	   with one card orphaned underneath. */
+	&--pairs {
+		max-width: 720px;
+	}
 }
 .card {
 	position: relative;

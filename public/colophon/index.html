@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Nick Poole" />
+		<meta name="theme-color" content="#de3d05" />
+		<link rel="canonical" href="https://nickpoole.dev/colophon/" />
+		<title>Colophon | Nick Poole | Baltimore, MD</title>
+		<meta
+			name="description"
+			content="How nickpoole.dev is built: the stack, the design tokens, the accessibility process, the JSON-LD entity graph, and the files written for machines." />
+
+		<!--=============== OPEN GRAPH ===============-->
+		<meta property="og:title" content="Colophon | Nick Poole | Baltimore, MD" />
+		<meta
+			property="og:description"
+			content="The stack, the design tokens, the accessibility process, the entity graph, and the case for llms.txt. Every claim on this page is checkable in the source." />
+		<meta property="og:url" content="https://nickpoole.dev/colophon/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://nickpoole.dev/images/og-images/og-colophon.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Nick Poole, how this site is built, with the page's AboutPage structured data." />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Nick Poole" />
+
+		<!--=============== TWITTER CARD ===============-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Colophon | Nick Poole | Baltimore, MD" />
+		<meta
+			name="twitter:description"
+			content="The stack, the design tokens, the accessibility process, the entity graph, and the case for llms.txt. Every claim on this page is checkable in the source." />
+		<meta name="twitter:image" content="https://nickpoole.dev/images/og-images/og-colophon.png" />
+		<meta name="twitter:image:alt" content="Nick Poole, how this site is built, with the page's AboutPage structured data." />
+
+		<!--=============== STRUCTURED DATA ===============-->
+		<!-- This page is about the site itself, so its subject is the WebSite node
+		     rather than the Person. The WebSite node's author points back at the
+		     canonical Person by @id, which is the arrangement the page documents. -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "AboutPage",
+						"@id": "https://nickpoole.dev/colophon/#webpage",
+						"name": "Colophon | Nick Poole",
+						"url": "https://nickpoole.dev/colophon/",
+						"isPartOf": { "@id": "https://nickpoole.dev/#website" },
+						"about": { "@id": "https://nickpoole.dev/#website" },
+						"author": { "@id": "https://nickpoole.dev/#nick-poole" }
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://nickpoole.dev/#website",
+						"name": "nickpoole.dev",
+						"url": "https://nickpoole.dev/",
+						"inLanguage": "en-US",
+						"author": { "@id": "https://nickpoole.dev/#nick-poole" }
+					}
+				]
+			}
+		</script>
+
+		<!--=============== BREADCRUMB ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nickpoole.dev/" },
+					{ "@type": "ListItem", "position": 2, "name": "Colophon", "item": "https://nickpoole.dev/colophon/" }
+				]
+			}
+		</script>
+
+		<!--=============== FAVICON ===============-->
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="nickpoole.dev" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!--=============== FONTS ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+		<!--=============== THEME (pre-paint, avoids a light flash for dark-mode users) ===============-->
+		<script>
+			try {
+				if (localStorage.getItem('selected-theme') === 'dark') {
+					document.documentElement.classList.add('dark-theme');
+				}
+			} catch (e) {}
+		</script>
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+		<!--=============== CSS ===============-->
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<div id="top"></div>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+
+		<!--==================== HEADER ====================-->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="/" class="nav__logo">
+					<span class="sr-only">Nick Poole - SEO Specialist</span>
+					<img src="/images/logos/tag-bg-removed-150.webp" alt="" class="nav__logo-tag" />
+					<div class="nav__logo-text">
+						<span class="nav__logo-name" aria-hidden="true">Nick Poole</span>
+						<span class="nav__logo-title" aria-hidden="true">SEO Specialist</span>
+					</div>
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<span class="nav__title">Menu</span>
+					<span class="nav__name">Nick</span>
+
+					<ul class="nav__list">
+						<li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+						<li class="nav__item"><a href="/expertise/seo/" class="nav__link">SEO</a></li>
+						<li class="nav__item"><a href="/portfolio/" class="nav__link">Portfolio</a></li>
+						<li class="nav__item"><a href="/credentials/" class="nav__link">Credentials</a></li>
+						<li class="nav__item"><a href="/resume/" class="nav__link">Resume</a></li>
+						<li class="nav__item">
+							<a href="/#contact" class="nav__link nav__link-button">Contact</a>
+						</li>
+					</ul>
+
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
+						<i class="ri-close-line" aria-hidden="true"></i>
+					</button>
+				</div>
+
+				<div class="nav__buttons">
+					<button
+						type="button"
+						class="change-theme"
+						id="theme-button"
+						aria-label="Toggle dark mode"
+						aria-pressed="false">
+						<i class="ri-moon-line" aria-hidden="true"></i>
+					</button>
+
+					<button
+						type="button"
+						class="nav__toggle"
+						id="nav-toggle"
+						aria-label="Open navigation menu"
+						aria-expanded="false"
+						aria-controls="nav-menu">
+						<i class="ri-menu-line" aria-hidden="true"></i>
+					</button>
+				</div>
+			</nav>
+		</header>
+
+		<!--==================== MAIN ====================-->
+		<main class="main" id="main-content">
+			<!--==================== HERO ====================-->
+			<!-- Plain treatment, deliberately. Every other page opens with a photo; the page
+			     about the machinery opens with none, which leaves the peeled corner further
+			     down as the only visual event here. This is the site-standard .page-hero with
+			     the image and overlay omitted. -->
+			<section class="page-hero">
+				<div class="container page-hero__inner">
+					<p class="breadcrumb"><a href="/">Home</a> / Colophon</p>
+					<h1>How this site is built.</h1>
+					<p class="lede">
+						A colophon is the note at the back of a book listing the type, the paper, and the press.
+						This is that note for a website.
+						<b>Every claim on this page is checkable in the source,</b> which is the point: an SEO who
+						says a site should be legible to machines should be willing to show his own.
+					</p>
+				</div>
+			</section>
+
+			<!--==================== DEV BANNER ====================-->
+			<!-- Remove this whole section once every item below is resolved. -->
+			<section class="section container">
+				<div class="dev-banner" role="note">
+					<h2><i class="ri-error-warning-line" aria-hidden="true"></i>Unresolved on this page</h2>
+					<p>
+						Placeholders are marked in the copy below and left visible on purpose. Nothing here is
+						filled with a guess.
+					</p>
+					<ul>
+						<li>Lighthouse scores, all four categories</li>
+					</ul>
+				</div>
+			</section>
+
+			<!--==================== THE STACK ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>The Stack.</span></h2>
+				<p class="prose section__lead">
+					No framework, no server-side build, no JavaScript required to read a word of it. Sass compiles
+					on my machine, the compiled CSS is committed, and Netlify publishes
+					<span class="mono">/public</span> exactly as it lands in the repo.
+					<b>Four pieces, and you can read all of them.</b>
+				</p>
+				<div class="cards-grid">
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-html5-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Hand-written HTML</h3>
+							<p class="card__desc">
+								Static pages under <span class="mono">/public</span>, one file per route. No templating
+								layer, which means the markup you view-source is the markup I wrote.
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-palette-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Sass</h3>
+							<p class="card__desc">
+								Nineteen partials under <span class="mono">/src/scss</span>, in five folders: base,
+								config, theme, layout, and components. One entry file imports all nineteen and
+								compiles to a single 61 KB stylesheet. The setup is deliberately plain: no mixins, no
+								functions, no Sass variables, no loops. Nesting and partials are the whole reason it
+								is Sass, and the theming is done with CSS custom properties instead. One script runs
+								it, <span class="mono">npm run sass</span>, and that script is a watcher.
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-code-s-slash-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Vanilla JavaScript</h3>
+							<p class="card__desc">
+								<span class="mono">/js/main.js</span> holds the theme toggle, the mobile nav, and one
+								batched scroll handler. ScrollReveal is the only third-party script, and it sits out
+								entirely when a visitor has asked for reduced motion. No content depends on any of it.
+							</p>
+						</div>
+					</article>
+
+					<article class="card card--wide">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-cloud-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Hosting &amp; Delivery</h3>
+							<p class="card__desc">
+								Deployed on Netlify from the public repo. A push publishes the
+								<span class="mono">/public</span> directory as committed: there is no server-side
+								build step, because Sass compiles locally and the compiled CSS ships in the commit.
+								Redirects live in <span class="mono">/public/_redirects</span> and response headers in
+								<span class="mono">/public/_headers</span>, both read straight from the published
+								directory.
+							</p>
+							<p class="card__desc">
+								The domain is registered at Namecheap with DNS delegated to Netlify DNS, resolving on
+								NS1 infrastructure, with www redirecting to the apex. TLS is a Let's Encrypt
+								certificate covering the apex and wildcard, provisioned and auto-renewed by Netlify.
+								The contact form posts to FormSubmit, which handles the honeypot field and its own
+								CAPTCHA, and returns to a confirmation page at
+								<span class="mono">/thank-you.html</span>.
+							</p>
+							<p class="card__desc">
+								Nothing above is a secret. The registrar, nameservers, and full certificate history are
+								public in RDAP and Certificate Transparency logs. The only redacted fields are personal
+								contact details, which is exactly how it should be.
+							</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!--==================== THE DESIGN SYSTEM ====================-->
+			<section class="section container">
+				<h2 class="section__title-2"><span>The Design System.</span></h2>
+				<p class="prose section__lead">
+					Every color on this site is a token. Nothing is a loose hex value in a component, which is why
+					a theme switch is a variable swap and not a rewrite.
+					<b>These swatches are painted with the live tokens,</b> and the values beside them are read
+					from the same declarations, so they follow the theme you are in right now.
+				</p>
+
+				<div class="swatches">
+					<div class="swatch" style="--swatch-color: var(--first-color); --swatch-label: var(--first-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--first-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Decorative accent. Offset borders, blocks, and rails.</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--accent-text); --swatch-label: var(--accent-text-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--accent-text</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">
+								Accent for text only. Darker in light mode, lighter in dark, so accent copy clears AA
+								contrast in both.
+							</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--title-color); --swatch-label: var(--title-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--title-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Headings and emphasized copy.</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--text-color); --swatch-label: var(--text-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--text-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Body copy.</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--body-color); --swatch-label: var(--body-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--body-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Page background.</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--container-color); --swatch-label: var(--container-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--container-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Chips, section rules, and form fields.</span>
+						</div>
+					</div>
+
+					<div class="swatch" style="--swatch-color: var(--black-color); --swatch-label: var(--black-color-label)">
+						<div class="swatch__chip" aria-hidden="true"></div>
+						<div class="swatch__body">
+							<span class="swatch__name">--black-color</span>
+							<span class="swatch__value"></span>
+							<span class="swatch__role">Hard borders and the footer ground.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="cards-grid" style="margin-top: 2.5rem">
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-contrast-2-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">The Accent Split</h3>
+							<p class="card__desc">
+								One accent is not enough. A saturated orange that looks right as a four-pixel border
+								fails contrast as body text, so the system carries two:
+								<span class="mono">--first-color</span> for anything decorative and
+								<span class="mono">--accent-text</span> for anything you read. The split is why accent
+								text passes AA in both themes instead of only one.
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-text" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Two Typefaces, Two Jobs</h3>
+							<p class="card__desc">
+								Bai Jamjuree carries everything a person reads. JetBrains Mono carries everything that
+								exists in source: file paths, token names, schema keys, and the panels. If it is set in
+								mono on this site, you can go find it.
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-image-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Images</h3>
+							<p class="card__desc">
+								Cropped, resized, compressed, then converted. Image Resizer, Squoosh, and occasionally
+								<span class="mono">cwebp</span>. Heroes export at 1920px wide, portfolio cards at
+								640x425, and social cards at 1200x630. Every content image ships as WebP. The social
+								cards stay PNG, because not every platform scraper renders WebP.
+							</p>
+							<p class="card__desc">
+								The budget is 60 KB for a card and 250 KB for a full-bleed hero, and nothing on the
+								site is over it. Cards land between 18 and 52 KB. The rule that saves those bytes is
+								sizing to the slot: a portfolio card renders about 344px wide and ships at 640, not at
+								the 1411px the capture tool produced. Heroes are the one exception, shipping a single
+								1920px file to every viewport instead of a srcset, which trades some bytes on small
+								screens for a much simpler page.
+							</p>
+						</div>
+					</article>
+				</div>
+
+
+
+
+			</section>
+
+			<!--==================== ACCESSIBILITY ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>Accessibility.</span></h2>
+				<p class="prose section__lead">
+					Tested by hand, not assumed. <b>The automated pass is the floor, not the finish line.</b>
+				</p>
+				<div class="cards-grid">
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-contrast-drop-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Contrast at the token level</h3>
+							<p class="card__desc">
+								Contrast is handled where the colors are declared rather than patched per component.
+								Both themes are checked separately, because a palette that passes in light can fail
+								inverted.
+							</p>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-keyboard-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">Keyboard and screen reader</h3>
+							<p class="card__desc">
+								Semantic HTML first, ARIA only where markup runs out. Nav controls are real buttons
+								with <span class="mono">aria-expanded</span>, Escape closes the menu and returns focus,
+								and the scrollable schema panels are reachable by keyboard.
+							</p>
+						</div>
+					</article>
+
+					<article class="card card--link">
+						<div class="card__border" aria-hidden="true"></div>
+						<div class="card__content">
+							<div class="card__icon">
+								<div class="card__box" aria-hidden="true"></div>
+								<i class="ri-wheelchair-line" aria-hidden="true"></i>
+							</div>
+							<h3 class="card__title">The full statement</h3>
+							<p class="card__desc">
+								Conformance target, scope, the measures taken, known limitations, and how to report
+								something this page got wrong.
+							</p>
+							<a class="card__stretch" href="/accessibility/" aria-label="Read the accessibility statement"></a>
+							<i class="card__go ri-arrow-right-line" aria-hidden="true"></i>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!--==================== THE ENTITY GRAPH ====================-->
+			<section class="section container" id="entity-graph">
+				<h2 class="section__title-2"><span>The Entity Graph.</span></h2>
+				<p class="prose section__lead">
+					Seven pages, one entity. The Person is declared once, on the homepage, with a stable
+					<span class="mono">@id</span>. Every other page points at that identifier instead of
+					redescribing me, so a crawler that reads any page resolves to the same node rather than to
+					seven similar-looking strangers. <b>This is the arrangement the schema panels show.</b>
+				</p>
+
+				<div class="entity-graph">
+					<div class="eg-hub">
+						<span class="eg-hub__label">Canonical node, declared on <span class="mono">/</span></span>
+						<span class="eg-hub__id">https://nickpoole.dev/#nick-poole</span>
+						<span class="eg-hub__type">"@type": "Person"</span>
+					</div>
+					<div class="eg-trunk" aria-hidden="true"></div>
+
+					<ul class="eg-nodes">
+						<li class="eg-node">
+							<span class="eg-node__page">/</span>
+							<span class="eg-node__type">Person &middot; WebSite &middot; WebPage</span>
+							<span class="eg-node__edge">declares the node &middot; #website author &rarr; @id</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/expertise/seo/</span>
+							<span class="eg-node__type">WebPage</span>
+							<span class="eg-node__edge">about &rarr; @id</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/portfolio/</span>
+							<span class="eg-node__type">CollectionPage</span>
+							<span class="eg-node__edge">author, creator &rarr; @id</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/credentials/</span>
+							<span class="eg-node__type">ProfilePage</span>
+							<span class="eg-node__edge">mainEntity &rarr; @id</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/resume/</span>
+							<span class="eg-node__type">ProfilePage</span>
+							<span class="eg-node__edge">mainEntity &rarr; @id, worksFor</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/colophon/</span>
+							<span class="eg-node__type">AboutPage</span>
+							<span class="eg-node__edge">about &rarr; #website</span>
+						</li>
+						<li class="eg-node">
+							<span class="eg-node__page">/accessibility/</span>
+							<span class="eg-node__type">WebPage</span>
+							<span class="eg-node__edge">isPartOf &rarr; #website</span>
+						</li>
+					</ul>
+				</div>
+
+				<p class="prose" style="margin-top: 2.25rem">
+					The second node is the site itself, <span class="mono">https://nickpoole.dev/#website</span>,
+					whose author is the Person. Pages that are about the work point at the Person; pages that are
+					about the site, this one included, point at the WebSite.
+					<b>Two identifiers, seven pages, no duplicates.</b>
+				</p>
+			</section>
+
+			<!--==================== FOR MACHINES ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>For Machines.</span></h2>
+				<p class="prose section__lead">
+					Three plain-text files at the root, each written for a different reader.
+					<b>All three are public. Go look.</b>
+				</p>
+
+				<div class="machines">
+					<div class="filecard">
+						<span class="filecard__path">/robots.txt</span>
+						<h3>Crawler instructions</h3>
+						<p>
+							Open to everyone, with the sitemap declared. The confirmation page is kept out of the
+							index with an on-page <span class="mono">noindex</span> rather than a
+							<span class="mono">Disallow</span>, because a blocked URL is a URL whose noindex nobody
+							ever reads, and it ends up in results as a bare link anyway.
+						</p>
+						<a class="filecard__link" href="/robots.txt">
+							Read robots.txt <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+						</a>
+					</div>
+
+					<div class="filecard">
+						<span class="filecard__path">/sitemap.xml</span>
+						<h3>The map</h3>
+						<p>
+							Every indexable page, with a last-modified date that gets updated when the page actually
+							changes. A sitemap whose dates are decorative teaches a crawler to stop trusting them.
+						</p>
+						<a class="filecard__link" href="/sitemap.xml">
+							Read sitemap.xml <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+						</a>
+					</div>
+
+					<!-- The peeled corner: signature element of this page. One use only. -->
+					<div class="peel">
+						<div class="filecard">
+							<span class="filecard__path">/llms.txt</span>
+							<h3>The one for language models</h3>
+							<p>
+								A short markdown brief for models reading this site: who I am, the key facts, and where
+								each page lives. Written to be read, not crawled around.
+							</p>
+							<a class="filecard__link" href="/llms.txt">
+								Read llms.txt <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</div>
+						<div class="peel__fold" aria-hidden="true"></div>
+					</div>
+
+					<div class="filecard filecard--wide">
+						<span class="filecard__path">The argument</span>
+						<h3>The honest case for llms.txt</h3>
+						<p>
+							llms.txt is a September 2024 proposal by Jeremy Howard of Answer.AI: a Markdown file at
+							the domain root pointing language models at your most important content. As of 2026 it has
+							no standards-body backing and no confirmed consumer among the major AI providers. Google's
+							documentation says it has no effect on Search or AI Overviews, and John Mueller has
+							compared it to the keywords meta tag. The data agrees with him.
+							<a href="https://seranking.com/blog/llms-txt/" target="_blank" rel="noopener noreferrer">SE
+							Ranking's 300,000-domain study</a> found no correlation between the file and AI citations,
+							and
+							<a href="https://ahrefs.com/blog/llmstxt-study/" target="_blank" rel="noopener noreferrer">Ahrefs'
+							log analysis</a> found 97 percent of deployed files were never requested by anyone at all.
+						</p>
+						<p>
+							And yet. The Chrome team shipped an experimental Lighthouse audit that checks for the
+							file, on the theory that browsing agents may use it to navigate sites more cheaply. Even
+							SE Ranking, whose own study found zero effect, concluded it is a low-effort way to prepare
+							for whatever AI indexing becomes. Both positions are currently true, and nobody controls
+							whether agents start reading the file, including the companies saying it doesn't matter.
+						</p>
+						<p>
+							Mine costs nothing to carry, took twenty minutes to write, and stays accurate because it
+							describes a site I control. The real value was never the file. It is the conversation an
+							organization has while deciding whether to ship one: what do we want machines to know
+							about us, and who owns that answer? Have that conversation now, whatever you decide about
+							the file.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!--==================== AUDIT THIS SITE ====================-->
+			<section class="section container">
+				<h2 class="section__title-2"><span>Audit This Site.</span></h2>
+				<p class="prose section__lead">
+					Do not take any of this on faith. <b>The tools are free and the site is public.</b>
+				</p>
+
+				<div class="audit">
+					<div class="audit__item">
+						<h3>Structured data</h3>
+						<p>
+							<a
+								href="https://validator.schema.org/#url=https%3A%2F%2Fnickpoole.dev%2F"
+								target="_blank"
+								rel="noopener noreferrer">
+								Schema.org validator <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</p>
+					</div>
+					<div class="audit__item">
+						<h3>Rich results</h3>
+						<p>
+							<a
+								href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fnickpoole.dev%2F"
+								target="_blank"
+								rel="noopener noreferrer">
+								Google Rich Results Test <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</p>
+					</div>
+					<div class="audit__item">
+						<h3>Markup</h3>
+						<p>
+							<a
+								href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fnickpoole.dev%2F"
+								target="_blank"
+								rel="noopener noreferrer">
+								W3C Nu HTML Checker <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</p>
+					</div>
+					<div class="audit__item">
+						<h3>Accessibility</h3>
+						<p>
+							<a href="https://wave.webaim.org/report#/https://nickpoole.dev/" target="_blank" rel="noopener noreferrer">
+								WAVE <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</p>
+					</div>
+					<div class="audit__item">
+						<h3>Performance</h3>
+						<p>
+							<a
+								href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fnickpoole.dev%2F"
+								target="_blank"
+								rel="noopener noreferrer">
+								PageSpeed Insights <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="pending" role="note" style="max-width: 960px; margin-inline: auto">
+					<span class="pending__flag">PENDING: Nick</span>
+					Lighthouse scores for all four categories: Performance, Accessibility, Best Practices, and SEO.
+					Run them and publish the numbers here. A page that tells you to audit the site should already
+					have posted its own results.
+				</div>
+			</section>
+
+			<!--==================== VISIBLE SCHEMA ====================-->
+			<section class="section container">
+				<h2 class="section__title-1"><span>This Page Describes Itself.</span></h2>
+				<div class="schema">
+					<div class="schema__border" aria-hidden="true"></div>
+					<div class="schema__content">
+						<div class="schema__head">
+							<span>application/ld+json &middot; live in this page's source</span>
+							<i class="ri-braces-line" aria-hidden="true"></i>
+						</div>
+						<pre tabindex="0" role="region" aria-label="AboutPage structured data for this page">{
+  <span class="k">"@type"</span>: <span class="v">"AboutPage"</span>,
+  <span class="k">"@id"</span>: <span class="v">"&hellip;/colophon/#webpage"</span>,
+  <span class="k">"about"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#website"</span> },
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> }
+}
+{
+  <span class="k">"@type"</span>: <span class="v">"WebSite"</span>,
+  <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#website"</span>,
+  <span class="k">"author"</span>: {
+    <span class="k">"@id"</span>: <span class="v">"https://nickpoole.dev/#nick-poole"</span> }
+}</pre>
+					</div>
+				</div>
+				<p class="schema__caption">
+					The page about the site is the one page whose subject is the site.
+					<b>Both nodes above are the same two identifiers drawn in the diagram further up.</b>
+				</p>
+			</section>
+
+			<!--==================== CLOSING ====================-->
+			<section class="section container closing">
+				<h2 class="section__title-2"><span>Now Go Read the Source.</span></h2>
+				<a class="button" href="https://github.com/nick-poole/.dev" target="_blank" rel="noopener noreferrer">
+					View the Repo <i class="ri-github-line" aria-hidden="true"></i>
+				</a>
+				<a class="button__ghost" href="/accessibility/">Accessibility Statement</a>
+			</section>
+		</main>
+
+		<!--==================== FOOTER ====================-->
+		<footer class="footer">
+			<div class="footer__container container grid">
+				<ul class="footer__links">
+					<li><a href="/" class="footer__link">Home</a></li>
+					<li><a href="/expertise/seo/" class="footer__link">SEO</a></li>
+					<li><a href="/portfolio/" class="footer__link">Portfolio</a></li>
+					<li><a href="/credentials/" class="footer__link">Credentials</a></li>
+					<li><a href="/resume/" class="footer__link">Resume</a></li>
+					<li><a href="/colophon/" class="footer__link" aria-current="page">Colophon</a></li>
+					<li><a href="/accessibility/" class="footer__link">Accessibility</a></li>
+				</ul>
+				<span class="footer__copy">
+					2026 &#169; <a href="/">nickpoole.dev</a> All Rights Reserved
+				</span>
+			</div>
+
+			<!--========== SCROLL UP ==========-->
+			<a href="#top" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+				<i class="ri-arrow-up-double-fill" aria-hidden="true"></i>
+			</a>
+		</footer>
+
+		<!--=============== SCROLLREVEAL ===============-->
+		<script src="/js/scrollreveal.min.js" defer></script>
+		<!--=============== MAIN JS ===============-->
+		<script src="/js/main.js"></script>
+	</body>
+</html>

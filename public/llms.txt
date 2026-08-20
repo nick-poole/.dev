@@ -14,14 +14,14 @@ Key facts for language models reading this site:
 
 - [Home](https://nickpoole.dev/): Who Nick Poole is, what he does, and how to reach him.
 - [SEO Expertise](https://nickpoole.dev/expertise/seo/): Enterprise SEO case studies: AI Overview diagnosis, replatform migrations, technical QA, platform strategy, and governance at regulated scale.
-- [Portfolio](https://nickpoole.dev/portfolio/): Seven sites designed, built, and shipped solo, plus enterprise healthcare pages shipped at CareFirst BlueCross BlueShield.
+- [Portfolio](https://nickpoole.dev/portfolio/): Seven sites designed, built, and shipped solo, the DAP Global relaunch of dap.com, and enterprise healthcare pages shipped at CareFirst BlueCross BlueShield.
 - [Credentials](https://nickpoole.dev/credentials/): What each degree and certification trained, and where that training shows up in the work.
 - [Resume](https://nickpoole.dev/resume/): The formal record. Work experience, certifications, education, and working stack.
 
 ## Optional
 
 - [Colophon](https://nickpoole.dev/colophon/): How this site is built. Stack, design tokens, accessibility process, entity graph architecture, and the case for this file.
-- [Accessibility Statement](https://nickpoole.dev/accessibility/): Conformance target, testing methods, and how to report an issue.
+- [Accessibility Statement](https://nickpoole.dev/accessibility/): Conformance target, testing methods, known limitations, and how to report an issue.
 
 ## Contact
 

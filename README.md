@@ -19,20 +19,25 @@ Built with:
 - HTML (static pages in `public/`)
 - Sass / SCSS (compiled to `public/css/styles.css`)
 - Vanilla JavaScript (theme toggle, mobile nav)
-- Deployed on Netlify (Forms + redirects)
+- Deployed on Netlify (redirects in `public/_redirects`, headers in
+  `public/_headers`); the contact form posts to FormSubmit
 
 ## Information architecture
 
-| Route              | Page                                                        |
-| ------------------ | ----------------------------------------------------------- |
-| `/`                | Home — hub hero, routing cards, statement, schema, contact  |
-| `/expertise/seo/`  | SEO expertise — diagnosis, the build, governance, method    |
-| `/portfolio/`      | Portfolio — shipped work, the ownership stack               |
-| `/credentials/`    | Credentials — degrees & certs, what each one trained        |
-| `/resume/`         | On-domain resume (print-friendly)                           |
-| `/thank-you.html`  | Post-contact-form confirmation (excluded from indexing)     |
+| Route              | Page                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| `/`                | Home — hub hero, routing cards, statement, schema, contact   |
+| `/expertise/seo/`  | SEO expertise — diagnosis, the build, governance, method     |
+| `/portfolio/`      | Portfolio — shipped work, the ownership stack                |
+| `/credentials/`    | Credentials — degrees & certs, what each one trained         |
+| `/resume/`         | On-domain resume (print-friendly)                            |
+| `/colophon/`       | Colophon — stack, tokens, entity graph, the files for machines |
+| `/accessibility/`  | Accessibility statement — conformance, scope, how to report  |
+| `/thank-you.html`  | Post-contact-form confirmation (excluded from indexing)      |
 
-Nav: Home · SEO · Portfolio · Credentials · Resume · Contact.
+Nav: Home · SEO · Portfolio · Credentials · Resume · Contact. Colophon and the
+accessibility statement are reachable from the footer on every page; the main
+nav deliberately stays at five destinations.
 
 ## Design system
 
@@ -42,6 +47,13 @@ Nav: Home · SEO · Portfolio · Credentials · Resume · Contact.
   for accessible accent **text**. Section titles carry the offset accent block.
 - Signature patterns: offset-border cards, the schema panel, chapter rows, and
   the letter/icon tiles — all built on the same tokens.
+- Each color token has a matching `--*-label` string token declared beside it.
+  The colophon swatches render those, so the documented value follows the theme
+  and cannot drift from the declaration.
+- `--accent-text` and `--text-color-light` are tuned for AA against
+  `--body-color`. On the darker `--container-color` surface they drop below
+  4.5:1, so new components put text on `--body-color` with a `--black-color`
+  border, which is the existing card treatment.
 
 ## Build & run
 
@@ -51,6 +63,33 @@ npm run sass   # watch src/scss/styles.scss -> public/css/styles.css
 ```
 
 Serve `public/` with any static server for local preview.
+
+There is no server-side build. Sass compiles locally, `public/css/styles.css`
+is committed, and Netlify publishes `public/` exactly as it lands in the repo.
+The only npm script is the Sass watcher.
+
+## Images
+
+- Heroes export at 1920px wide, portfolio cards at 640x425, social cards at
+  1200x630. Every content image ships as WebP; the OG cards stay PNG because
+  not every platform scraper renders WebP.
+- Budget: **60 KB for a card, 250 KB for a full-bleed hero.** Nothing
+  referenced on the site is over it. Cards currently land between 18 and 52 KB.
+- Originals are kept alongside the exports as masters. The file referenced by a
+  page is always the sized-to-slot version, not the master.
+
+## Machine-readable files
+
+| File                  | Purpose                                                  |
+| --------------------- | -------------------------------------------------------- |
+| `public/robots.txt`   | Open to all; declares the sitemap                        |
+| `public/sitemap.xml`  | The seven indexable routes with `lastmod`                |
+| `public/llms.txt`     | Markdown brief for language models                       |
+| `public/_redirects`   | Netlify redirects                                        |
+| `public/_headers`     | Pins `/llms.txt` to `text/plain`                         |
+
+`/thank-you.html` is kept out of the index with an on-page `noindex` rather than
+a `Disallow`, so crawlers can actually read the directive.
 
 ## Philosophy
 
@@ -63,11 +102,69 @@ Serve `public/` with any static server for local preview.
 - [x] Accessibility pass (WCAG 2.1 AA, 44px tap targets, heading order)
 - [x] Visible-schema motif + validated JSON-LD on every content page
 - [x] On-domain resume (print stylesheet) replacing the external PDF link
-- [x] Netlify contact form with honeypot + `/thank-you.html`
-- [x] Sitemap, canonicals, robots.txt, branded OG card
+- [x] Contact form with honeypot + `/thank-you.html`
+- [x] Sitemap, canonicals, robots.txt, per-page OG cards
+- [x] Single-source entity graph: one Person `@id`, referenced by every page
+- [x] Colophon and accessibility statement, plus `llms.txt`
+- [x] Image pipeline: every content image WebP and sized to its slot
+- [ ] Lighthouse scores published in the colophon Audit section
+- [ ] Seventh OG card for `/accessibility/`
 - [ ] Consulting flip (parked): hero swap + CTA change when ready
 
+## Audit status
+
+Last full sweep: **20 August 2026**, against the working tree.
+
+| Check                              | Result                                  |
+| ---------------------------------- | --------------------------------------- |
+| W3C Nu HTML validator, 8 pages     | 0 errors, 0 warnings                    |
+| W3C Jigsaw CSS validator           | 0 errors                                |
+| axe-core WCAG 2.1 A/AA, 7 pages x 2 themes | 0 violations                    |
+| Titles / descriptions / canonicals | unique, self-referencing, in range      |
+| Open Graph + Twitter, all pages    | complete                                |
+| Entity graph `@id` references      | no dangling refs, no type conflicts     |
+| Schema panels vs live JSON-LD      | no drift                                |
+| Internal links and in-page anchors | all resolve                             |
+| External links                     | all `target="_blank"` + `rel="noopener noreferrer"` |
+
+The CSS validator reports 34 warnings; all are inherent (CSS custom properties
+cannot be statically checked, and the vendor-prefixed scrollbar and autofill
+rules are deliberate).
+
 ## Commit Log
+
+[8/20/26 later]
+
+- **perf: every content image re-exported to WebP, sized to its slot**
+  - Portfolio page 3,414 KB -> 641 KB; all seven pages 4,817 KB -> 1,941 KB
+  - DAP screenshot 901 KB -> 27 KB, Next Metro 347 KB -> 22 KB, nav logo 18 KB -> 4 KB
+  - Heroes deliberately untouched; re-encoding them produced larger files
+  - Crops replicate what the CSS already did, so the render is unchanged
+
+- **chore: full SEO, accessibility, and W3C sweep**
+  - W3C Nu 0/0 across 8 pages after dropping a redundant `role="list"`
+  - `/about` was redirecting to `/#about`, an id that no longer exists; now `/#arsenal`
+  - Added `/expertise` -> `/expertise/seo/`; that directory had no index
+  - CAPTCHA disclosed as a known limitation on the accessibility statement
+
+[8/20/26]
+
+- **feat: colophon, accessibility statement, and a single-source entity graph**
+  - New `/colophon/`: the stack, live token swatches, the entity-graph diagram,
+    the three files written for machines (peeled-corner `llms.txt` card), and
+    audit links
+  - New `/accessibility/`: WCAG 2.1 AA target, scope, measures, feedback, dates
+  - Person declared once as `https://nickpoole.dev/#nick-poole`; every other
+    page references it by `@id` instead of redeclaring it. Added a WebSite node
+    at `#website` that pages join via `isPartOf`
+  - Every schema panel rewritten to match its page's live JSON-LD
+  - Portfolio: added the `nickpoole.dev` and DAP Global cards, renamed
+    "Enterprise Healthcare" to "Enterprise", extended the ItemList to 14
+  - Footer nav carries Colophon and Accessibility on all pages; main nav unchanged
+  - Breadcrumb links underlined (color alone was the only cue distinguishing
+    them from the surrounding label)
+  - Outstanding content Nick owns is marked with visible `PENDING` blocks
+    rather than filled in
 
 [8/17/26]
 
